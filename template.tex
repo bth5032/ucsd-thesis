@@ -113,6 +113,9 @@
 \usepackage{scrextend}
 \usepackage{pslatex}
 \usepackage{graphicx}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -126,6 +129,8 @@
 \usepackage{setspace}
 \doublespace
 \usepackage[font=small, width=0.9\textwidth]{caption}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
 
 %% SUBFIG - Use this to place multiple images in a
 %    single figure.  Subfig will handle placement and
@@ -217,6 +222,12 @@
 % Of course, if you prefer, you can just start with
 %   \chapter{My First Chapter Name}
 % and start typing away.  
+
+\include{ch1-Introduction}
+\include{ch2-DAQ}
+\include{ch3-ZMET}
+
+
 \chapter{Just a Test}
 This is only a test.
 \section{A section}
