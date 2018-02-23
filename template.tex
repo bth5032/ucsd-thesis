@@ -114,8 +114,6 @@
 \usepackage{pslatex}
 \usepackage{graphicx}
 \usepackage{color}
-\usepackage{amsmath}
-\usepackage{}
 
 %% CAPTION
 % This overrides some of the ugliness in ucsd.cls and
@@ -132,6 +130,10 @@
 
 \newcommand\todo[1]{\textcolor{red}{#1}}
 \newcommand\bitem[1]{\item{\textbf{#1}} -- }
+
+\newcommand{\pt}{\ensuremath{\text{p}_\text{T}}\xspace}
+\newcommand{\GeV}{\ensuremath{\text{GeV}}\xspace}
+\newcommand{\abs}[1]{\ensuremath{\left| #1 \right|}}
 
 %% SUBFIG - Use this to place multiple images in a
 %    single figure.  Subfig will handle placement and
@@ -195,7 +197,11 @@
 \usepackage{rotating}  % Enables the sideways environment (NCPW)
 \usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
 \usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
-\usepackage{hyperref}  % Enables \toprule  http://ctan.org/pkg/array
+\usepackage{hyperref}  
+\usepackage{amsmath}
+\usepackage{xspace}
+\usepackage{doi}
+\usepackage{float}
 
 
 

@@ -38,33 +38,35 @@
 \BOOKMARK [1][-]{section.3.2}{Analysis Strategy}{chapter.3}% 38
 \BOOKMARK [2][-]{subsection.3.2.1}{Background Considerations}{section.3.2}% 39
 \BOOKMARK [1][-]{section.3.3}{Object Selection}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.1}{Electron ID and Isolation}{section.3.3}% 41
-\BOOKMARK [2][-]{subsection.3.3.2}{Muon ID and Isolation}{section.3.3}% 42
-\BOOKMARK [2][-]{subsection.3.3.3}{Jet Selection}{section.3.3}% 43
-\BOOKMARK [2][-]{subsection.3.3.4}{Photon Selection}{section.3.3}% 44
-\BOOKMARK [2][-]{subsection.3.3.5}{Isolated Tracks}{section.3.3}% 45
-\BOOKMARK [1][-]{section.3.4}{Event Selection}{chapter.3}% 46
-\BOOKMARK [2][-]{subsection.3.4.1}{Lepton Selection}{section.3.4}% 47
-\BOOKMARK [2][-]{subsection.3.4.2}{Event Vetos}{section.3.4}% 48
-\BOOKMARK [2][-]{subsection.3.4.3}{Search Regions}{section.3.4}% 49
-\BOOKMARK [2][-]{subsection.3.4.4}{Flavor Symmetric Control Region}{section.3.4}% 50
-\BOOKMARK [2][-]{subsection.3.4.5}{MET Templates Closure Region}{section.3.4}% 51
-\BOOKMARK [2][-]{subsection.3.4.6}{EWK Subtraction Closure Region}{section.3.4}% 52
-\BOOKMARK [1][-]{section.3.5}{Background Estimation Methods}{chapter.3}% 53
-\BOOKMARK [2][-]{subsection.3.5.1}{Z + Hadronic}{section.3.5}% 54
-\BOOKMARK [2][-]{subsection.3.5.2}{Flavor Symmetric Background}{section.3.5}% 55
-\BOOKMARK [2][-]{subsection.3.5.3}{Z + }{section.3.5}% 56
-\BOOKMARK [1][-]{section.3.6}{Results}{chapter.3}% 57
-\BOOKMARK [1][-]{section.3.7}{Signal Interpretations}{chapter.3}% 58
-\BOOKMARK [1][-]{section.3.8}{The Electroweak Combination}{chapter.3}% 59
-\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 60
-\BOOKMARK [1][-]{section.4.1}{What the hell did I do, and what didn't I do?}{chapter.4}% 61
-\BOOKMARK [2][-]{subsection.4.1.1}{What I did}{section.4.1}% 62
-\BOOKMARK [2][-]{subsection.4.1.2}{What I didn't do}{section.4.1}% 63
-\BOOKMARK [0][-]{chapter.5}{Glossary Of Terms}{}% 64
-\BOOKMARK [0][-]{chapter.6}{Just a Test}{}% 65
-\BOOKMARK [1][-]{section.6.1}{A section}{chapter.6}% 66
-\BOOKMARK [2][-]{subsection.6.1.1}{A Figure Example}{section.6.1}% 67
-\BOOKMARK [2][-]{subsection.6.1.2}{A Table Example}{section.6.1}% 68
-\BOOKMARK [0][-]{appendix.A}{Final notes}{}% 69
-\BOOKMARK [0][-]{appendix*.23}{Bibliography}{}% 70
+\BOOKMARK [2][-]{subsection.3.3.1}{Lepton ID}{section.3.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.2}{Lepton Isolation}{section.3.3}% 42
+\BOOKMARK [2][-]{subsection.3.3.3}{Electron ID and Isolation}{section.3.3}% 43
+\BOOKMARK [2][-]{subsection.3.3.4}{Muon ID and Isolation}{section.3.3}% 44
+\BOOKMARK [2][-]{subsection.3.3.5}{Photon Selection}{section.3.3}% 45
+\BOOKMARK [2][-]{subsection.3.3.6}{Jet Selection}{section.3.3}% 46
+\BOOKMARK [2][-]{subsection.3.3.7}{Isolated Tracks}{section.3.3}% 47
+\BOOKMARK [1][-]{section.3.4}{Event Selection}{chapter.3}% 48
+\BOOKMARK [2][-]{subsection.3.4.1}{Lepton Selection}{section.3.4}% 49
+\BOOKMARK [2][-]{subsection.3.4.2}{Event Vetos}{section.3.4}% 50
+\BOOKMARK [2][-]{subsection.3.4.3}{Search Regions}{section.3.4}% 51
+\BOOKMARK [2][-]{subsection.3.4.4}{Flavor Symmetric Control Region}{section.3.4}% 52
+\BOOKMARK [2][-]{subsection.3.4.5}{MET Templates Closure Region}{section.3.4}% 53
+\BOOKMARK [2][-]{subsection.3.4.6}{EWK Subtraction Closure Region}{section.3.4}% 54
+\BOOKMARK [1][-]{section.3.5}{Background Estimation Methods}{chapter.3}% 55
+\BOOKMARK [2][-]{subsection.3.5.1}{Z + Hadronic}{section.3.5}% 56
+\BOOKMARK [2][-]{subsection.3.5.2}{Flavor Symmetric Background}{section.3.5}% 57
+\BOOKMARK [2][-]{subsection.3.5.3}{Z + }{section.3.5}% 58
+\BOOKMARK [1][-]{section.3.6}{Results}{chapter.3}% 59
+\BOOKMARK [1][-]{section.3.7}{Signal Interpretations}{chapter.3}% 60
+\BOOKMARK [1][-]{section.3.8}{The Electroweak Combination}{chapter.3}% 61
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 62
+\BOOKMARK [1][-]{section.4.1}{What the hell did I do, and what didn't I do?}{chapter.4}% 63
+\BOOKMARK [2][-]{subsection.4.1.1}{What I did}{section.4.1}% 64
+\BOOKMARK [2][-]{subsection.4.1.2}{What I didn't do}{section.4.1}% 65
+\BOOKMARK [0][-]{chapter.5}{Glossary Of Terms}{}% 66
+\BOOKMARK [0][-]{chapter.6}{Just a Test}{}% 67
+\BOOKMARK [1][-]{section.6.1}{A section}{chapter.6}% 68
+\BOOKMARK [2][-]{subsection.6.1.1}{A Figure Example}{section.6.1}% 69
+\BOOKMARK [2][-]{subsection.6.1.2}{A Table Example}{section.6.1}% 70
+\BOOKMARK [0][-]{appendix.A}{Final notes}{}% 71
+\BOOKMARK [0][-]{appendix*.27}{Bibliography}{}% 72

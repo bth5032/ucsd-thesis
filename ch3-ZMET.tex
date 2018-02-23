@@ -79,14 +79,165 @@
 
 \section{Object Selection}
 
+  After the particle flow algorithm identifies lepton, jet, and photon candidates, and before events can be classified as belonging to the various search, control, and closure regions, an additional set of selections are applied in order to further purify the analysis object collection. The purpose of this section is to define these selections, sometimes called a ``preselection."
+
+  \subsection{Lepton ID}
+    There are essentially two ways to get ``fake" leptons in the lepton population:
+
+    \begin{enumerate}
+      \item A set of calorimeter and tracker hits from hadronic activity mimics the geometry expected by an lepton closely enough that a lepton is reconstructed from what should be called a jet.
+      \item An unstable particle, normally a charm or bottom quark, decays via a(n), often virtual, W boson and emits a real lepton and its complimentary neutrino. In physics parlance, this is called \emph{non-prompt} lepton, as it is a secondary decay (\emph{prompt} meaning created at the primary vertex).
+    \end{enumerate}
+
+    Although item (2) is a ``real" lepton in the colloquial sense, in the context of most analyses, this one included, we do not want these sorts of objects contaminating our lepton population. To guard against these fake leptons, an additional set of cuts, called an ID is required to be passed by each candidate before it is considered a ``good" lepton.
+
+    In this analysis, we identify two ``working points" for leptons, tight and loose. These categories are defined based the lepton flavor and a set of cuts described below. Any lepton which passes the criteria to be classified as tight would necessarily pass the criteria to be classified as loose.
+
+  \subsection{Lepton Isolation}
+    In addition to the ID, isolation requirements are also necessary for leptons to be added to the analysis selection. In this analysis we use the variable miniRelIso, which is defined as the energy inside a variable size cone, determined by the lepton candidates \pt, about the lepton divided by the leptons \pt. The cone size is set by \pt in the following manner (units in \GeV):
+
+    \[   
+      \Delta R = 
+      \begin{cases}
+        0.2                & \pt < 50  \\
+        \frac{10}{\pt}     & 50 \le \pt < 200 \\
+        0.05               & \pt \ge 200 \\
+      \end{cases}.
+    \]
+
+    The miniRelIso variable is then defined as the energy of all particle flow candidates inside the cone of size $\Delta R$ with effective area corrections applied \todo{cite EA corrections} divided by the \pt of the lepton.
+
+    \[
+      \text{miniRelIso} = \frac{\text{E}_\text{cone}}{\pt}.
+    \]
+
+
   \subsection{Electron ID and Isolation} \label{sec:electron_id_and_isolation}
-    Transcribe ID and Iso requirements.
+    \todo{cite https://arxiv.org/pdf/1502.02701.pdf}
+    The electron candidates are required to pass the following cuts in addition to the particle flow identification:
+
+    \begin{table}[!h]
+      \begin{center}
+      \caption{\label{table:electrons} Requirements for electron identification in addition to particle flow. Variables can be looked up in the \hyperref[ch:glossary]{Glossary} }
+        \begin{tabular}{l|c}
+          \hline
+          Cut variable                  & Requirement   \\
+          \hline
+          \pt\                           & $>10$ GeV    \\ 
+          $d_{0}$ (w.r.t. 1st good PV)   & $<0.05$ cm   \\
+          $d_{z}$ (w.r.t. 1st good PV)   & $<0.1$  cm   \\
+          miniRelIso / \pt               & $<0.10$      \\
+          abs(SIP3D)                     & $< 8$        \\
+          maxLostHits                    & $==$ 0       \\
+          Conversion Veto                & must pass    \\
+          Spring 2016 POG MVA            & see below    \\
+          miniRelIso                     & $<0.10$      \\
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    The tight and loose criteria for electrons is based entirely on the MVA output. The POG MVA is a boosted decision tree (BDT)\footnote{A boosted decision tree is a sort of classifier that assigns a real number to a well-formed tuple of data. The algorithm tries to construct a map such that the number output for tuples in the same category are close to each other, then that number can be used discriminate between categories. Technical details are beyond the scope of this thesis, but a good review can be found \todo{find BDT document}. In the case of the electron ID MVA, the categories are real or fake and the numbers lie between -1 and 1.} prepared by the CMS EGamma Physics Object Group (POG). The BDT is trained on simulated Z$\to e^+ e^-$ events where electrons are considered to be real if the candidate can be matched to an electron emitted from the Z, and fake otherwise. An additional validation sample of mostly real electrons in data is constructed from $e^+ e^-$ events where the dilepton mass is within 7.5 GeV of the Z pole mass, $\abs{M_{ll} - M_Z} < 7.5$ GeV, and each lepton is required to be isolated such that the energy in a cone around the electron must be less than 10\% of the total energy in the cone (including the electron). A sample of mostly fake leptons in data is constructed by requiring a third lepton candidate in these events which has inverted isolation criteria and the additional requirement that the MET in the event is less than 25 GeV to suppress WZ events. 
+
+    Distributions of various kinematical quantities are constructed from simulation and data that have reason to discriminate between real and fake electrons, for instance the spread of the calorimeter hits in $\eta$. Some of these distributions are shown in figure \ref{fig:electron_mva_discriminating_vars}. The MVA is trained on the simulated events then checked against the data samples described above for consistency. Finally electrons in the barrel region and endcap regions are partitioned and each set is used to train an MVA specifically targeting the detector subsystems there \cite{cms_electron_photon_performance}. 
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=.8\textwidth]{figures/electron_mva_discriminating_distributions.pdf}
+      \caption{Some distributions used in the electron MVA that help discriminate between real (prompt) and fake (non-prompt) electrons. Simulation provides a guaranteed way to tag electrons as prompt or not-prompt, and so is used to train the MVA. However, it is important that data and simulation agree in these variables. $\Delta \eta$ and $\sigma_{\eta\eta}$ are variables that characterize the spread of detector hits associated with the electron in the $\eta$ direction. $E_\text{SC}$ is all the energy deposited into the ECAL which is associated to the electron, and $p$ is the electron's momentum. \todo{Do I need to make these plots myself?}}
+      \label{fig:electron_mva_discriminating_vars}
+    \end{figure}
+
+    The working points for electrons based on the MVA output are shown below:
+
+    \begin{table}[!h]
+      \begin{center}
+        \caption{\label{tab:elId}  Electron identification working points used in this analysis.}
+        \begin{tabular}{rl|rl|l|l}
+          \hline
+          \multicolumn{2}{c|}{pseudorapidity region} & \multicolumn{2}{c|}{momentum [GeV]} & loose WP & tight WP \\ 
+          \hline\hline
+          $0<~|\eta|$&$<0.8$     &  10 $<$ ~\pt\ &$<$ 15 &  -0.86 & 0.77 \\ 
+          $0<~|\eta|$&$<0.8$     &  15 $<$ ~\pt\ &$<$ 25 &  -0.96+$0.10*\frac{\pt-15}{10}$ & 0.52+$0.25*\frac{\pt-15}{10}$ \\ 
+          $0<~|\eta|$&$<0.8$     &   ~\pt\ &$>$ 25       &  -0.96 & 0.52 \\ 
+          \hline
+          $0.8<~|\eta|$&$<1.479$ &  10 $<$ ~\pt\ &$<$ 15 &  -0.85 & 0.56 \\ 
+          $0.8<~|\eta|$&$<1.479$ &  15 $<$ ~\pt\ &$<$ 25 &  -0.96+$0.11*\frac{\pt-15}{10}$ & 0.11+$0.45*\frac{\pt-15}{10}$ \\ 
+          $0.8<~|\eta|$&$<1.479$ &   ~\pt\ &$>$ 25       &  -0.96 & 0.11 \\ 
+          \hline
+          $1.479<~|\eta|$&$<2.5$ &  10 $<$ ~\pt\ &$<$ 15 &  -0.81 & 0.48 \\ 
+          $1.479<~|\eta|$&$<2.5$ &  15 $<$ ~\pt\ &$<$ 25 &  -0.95+$0.14*\frac{\pt-15}{10}$ & -0.01+$0.49*\frac{\pt-15}{10}$ \\ 
+          $1.479<~|\eta|$&$<2.5$ &  ~\pt\ &$>$ 25        &  -0.95 & -0.01 \\ 
+          \hline\hline
+        \end{tabular}
+        
+      \end{center}
+    \end{table}
 
   \subsection{Muon ID and Isolation} \label{sec:muon_id_and_isolation}
 
-  \subsection{Jet Selection}
+    The muon ID is based purely on a cut-based approach, no MVA is used. Again, the selection criteria is based upon the muon POG, which is documented in more detail at ~\cite{muon_POG}. The selection used for the muon ID and isolation are defined below:
 
-  \subsection{Photon Selection}
+    \begin{table}[!h]
+      \begin{center}
+        \caption{\label{table:muons} Summary of the muons selection requirements. \todo{Version from Bobak's Thesis} }
+        \begin{tabular}{l|c|c}
+          \hline
+          \hline
+          \multicolumn{3}{c}{Good Global Muon Requirements} \\
+          \hline
+          Quantity   &  Tight Requirement & Loose Requirement \\
+          \hline
+          Fraction of valid tracker hits    & $>$ 0.8     & $>$ 0.8  \\ 
+          Normalized global-track $\chi^2$  & $<$ 3       & $<$ 3    \\
+          Tracker-Standalone position match & $<$ 12      & $<$ 12   \\
+          Kick finder                       & $<$ 20      & $<$ 20   \\
+          Segment compatibility             &$>$ 0.451 or & $>$ 0.303 \\
+                                            &passes above requirements & \\
+          \hline
+          muon type & \multicolumn{2}{c}{(global muon or tracker muon) and PF muon} \\
+          \hline
+          $d_{0}$ (w.r.t. 1st good PV)   & $<0.05$ cm & $<0.05$ cm \\
+          $d_{z}$ (w.r.t. 1st good PV)   & $<0.1$ cm  & $<0.1$ cm  \\
+          SIP3D                          & $< 8$      & $< 8$      \\
+          miniRelIso                     & $<0.20$ & $<0.40$       \\
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    \todo{brief blurb on global/tracker muons.}
+
+\newpage
+
+  \subsection{Photon Selection} \label{sec:photon_selection}
+
+    Photons are used in this analysis as part of the Z+Hadronic background prediction. The details of this prediction are in \ref{sec:z_+_hadronic}
+
+    \begin{itemize}
+      \item \pt $ > 22$ GeV
+      \item $|\eta| < 2.4$
+      \item No matching pixel track (pixel veto)
+      \item There must be a jet candidate of \pt $ >$ 10 GeV matched to the photon within $\mathrm{ \Delta R} < 0.3$. 
+      The matched jet is required to have a neutral electromagnetic energy fraction of at least 70\%.
+
+      \item We reject photons which have an electron of at least \pt $>$ 10 GeV within $\mathrm{ \Delta R} < 0.2$
+      in order to reject conversions from electrons from W decays which are accompanied by real MET.
+
+      \item We reject photons which are aligned with the MET to within 0.4 radians in phi.
+      \item To ensure full efficiency with respect to the isolated photon triggers used, we apply the following additional cuts:
+      \begin{itemize}
+        \item ratio of the energy of the energy of the photon's 3X3 supercluster to the photons 5X5 supercluster (R9) $>$ 0.92
+        \item $\frac{H}{E} < 0.2$ %\fixme{is this the HLT H/E or still offline?}
+        \item hollow track isolation $<$ 3 GeV
+        \item photons with $|\eta| < 1.4$ have ECAL pfcluster iso $<$ 3 GeV + \pt ($\gamma$) * 0.0053
+        \item photons with $|\eta| < 1.4$ have HCAL pfcluster iso $<$ 7 GeV + \pt ($\gamma$) * 0.014
+        \item photons with $|\eta| > 1.6$ have ECAL pfcluster iso $<$ 3 GeV + \pt ($\gamma$) * 0.0034
+        \item photons with $|\eta| > 1.6$ have HCAL pfcluster iso $<$ 7 GeV + \pt ($\gamma$) * 0.0139
+      \end{itemize}
+    \end{itemize}
+
+  \subsection{Jet Selection} \label{sec:jet_selection}
 
   \subsection{Isolated Tracks} \label{sec:isolated_tracks}
 
@@ -128,7 +279,7 @@
 
       \begin{description}
         \bitem{Lepton Cone Isolation} The two tight leptons are within a cone of $\Delta R < 0.1$ of each other.
-        \bitem{Extra Lepton Veto} There is an additional loose lepton in addition to the two tight leptons that constitute the dilepton pair. IDs are defined in \ref{sec:electron_id_and_isolation} and \ref{sec:muon_id_and_isolation}. 
+        \bitem{Extra Lepton Veto} There is an additional loose or tighter lepton in the event. In other words, event with three or more loose IDed leptons are vetoed. IDs are defined in \ref{sec:electron_id_and_isolation} and \ref{sec:muon_id_and_isolation}. 
       \end{description}
 
   \subsection{Search Regions}

@@ -1,4 +1,15 @@
-\begin{thebibliography}{Mar83}
+\begin{thebibliography}{Col15b}
+
+\bibitem[Col15a]{muon_POG}
+CMS Collaboration.
+\newblock Baseline muon selections.
+\newblock https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonIdRun2, 2015.
+
+\bibitem[Col15b]{cms_electron_photon_performance}
+The~CMS Collaboration.
+\newblock Performance of electron reconstruction and selection with the {CMS}
+  detector in proton-proton collisions at √s= 8 {TeV}.
+\newblock {\em Journal of Instrumentation}, 10(06):P06005--P06005, jun 2015.
 
 \bibitem[Mar83]{Martin_1983}
 Robert~D. Martin.
