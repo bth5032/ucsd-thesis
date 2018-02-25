@@ -6,15 +6,37 @@
 
   \subsection{Motivating Models} \label{sec:susy_models}
 
+  GMSB: https://arxiv.org/pdf/hep-ph/9707450.pdf
+  https://arxiv.org/pdf/hep-ph/9801271.pdf
+
   \begin{figure}[h!]
     \centering
-    \includegraphics[width=.5\textwidth]{figures/placeholder.png}
-    \caption{\todo{To Be Updated Strong and EWK SUSY diagrams.}}
-    \label{fig:SUSY-diagrams}
+    \includegraphics[width=.5\textwidth]{figures/diagrams/T5ZZ.pdf}
+    \caption{The Feynman diagram for the additional term added to The Standard Model lagrangian to produce the simplified supersymmetric model used to interpret this in analysis in the context of ``strong SUSY". In this model, SUSY is broken by the Gauge sector (wtf is GMSB) }
+    \label{fig:feynman_str}
   \end{figure}
+
+  \begin{figure}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiWZ.pdf} 
+    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiZZ.pdf} 
+    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiHZ.pdf} 
+  \end{center}
+  \caption{
+    \label{sig:feynman_ewk} \todo{same cap as AN}
+    Diagrams for models with electroweak production.
+    The left shows chargino-neutralino production decaying to WZ+\MET (TChiWZ).
+    The middle shows neutralino-neutralino production decaying to ZZ+\MET (TChiZZ),
+    while the right shows the same production decaying to HZ+\MET (TChiHZ).
+    The TChiZZ and TChiHZ diagrams containing a massless gravitino ($\tilde{\mathrm{G}}$) represent gauge mediated SUSY breaking (GMSB) models.
+  }
+\end{figure}
 
   1. Show the models Strong and EWK SUSY model diagrams we use here.
   2. Discuss why they are useful tools (i.e. give an idea of SMS)
+
+  \subsection{SUSY Simulation} \label{sec:susy_simulation}
+    Explain how madgraph is used here, what crap we assume, ect...
 
 \section{Analysis Strategy}
 
@@ -44,7 +66,7 @@
       Finally, due to the instability of the $\tau$ lepton, we neglect this channel from the search. $\tau$ leptons are much harder to identify than the light leptons, and further they can decay to light leptons in a flavor symmetric manner, so are predicted by that background channel's prediction method.
 
     \subsubsection{Hadronic Activity Requirements}
-      As mentioned above, the major production mode of opposite sign dilepton pairs with dilepton mass near 91 GeV is from Drell-Yan production of Z. The diagram for this type of process is shown in \ref{fig:DY-diagram}. As can be seen in the figure, the leading order diagram for this process has no free quarks or gluons. That there are no free colored particles means that the vast majority of these events will likewise come without any jets. Diagrams with ISR and FSR which take a cross-section production hit of roughly 1/5 \todo{explain this}, which means that we can suppress the DY background by a factor of 100 by requiring at least 2 jets in an event. This keeps our signal count low. Further, the prediction of 0 or 1 jet bins is a completely different process due to the sources of MET, and many of our motivating models will have many jets as part of their decay chain. 
+      As mentioned above, the major production mode of opposite sign dilepton pairs with dilepton mass near 91 GeV is from Drell-Yan production of Z. The diagram for this type of process is shown in \ref{fig:DY-diagram}. As can be seen in the figure, the leading order diagram for this process has no free quarks or gluons. That there are no free colored particles means that the vast majority of these events will likewise come without any jets. Diagrams with ISR and FSR which take a cross-section production hit of roughly 1/5 \todo{explain this}, which means that we can suppress the DY background by a factor of 100 by requiring at least 2 jets in an event. This keeps our signal count low. Further, the prediction of 0 or 1 jet bins is a completely different process due to the sources of \MET, and many of our motivating models will have many jets as part of their decay chain. 
 
       \begin{figure}[h!]
         \centering
@@ -62,8 +84,8 @@
         \label{fig:DY-diagram}
       \end{figure}
 
-    \subsubsection{MET Binning}
-      Again, inspecting the diagram above, when the Z decays to charged leptons, no neutrinos are produced. This means that DY has no genuine MET, any missing energy must come from mismeasurements of the jet energy, misattributions of jets to the DY vertex, or loss of objects out of the detectors fiducial area. These should be relatively small effects and we will discuss how we predict the MET distribution for this type of event in the following sections. For now, consider that the leading background when searching for Z bosons can be reduced dramatically by considering only events with high MET. In this analysis, we only look at events with more than 100 GeV of missing energy.
+    \subsubsection{\MET Binning}
+      Again, inspecting the diagram above, when the Z decays to charged leptons, no neutrinos are produced. This means that DY has no genuine \MET, any missing energy must come from mismeasurements of the jet energy, misattributions of jets to the DY vertex, or loss of objects out of the detectors fiducial area. These should be relatively small effects and we will discuss how we predict the \MET distribution for this type of event in the following sections. For now, consider that the leading background when searching for Z bosons can be reduced dramatically by considering only events with high \MET. In this analysis, we only look at events with more than 100 GeV of missing energy.
 
     \subsubsection{MT2}
       The MT2 variable is defined as
@@ -78,6 +100,8 @@
       We also like to bin in b-tags. This is because the background composition changes dramatically with b-tagging as the second largest background is TTBar. This allows us to use a slightly higher MT2 cut in regions with a b-tag, as they will be more dominated by TTBar than by DY since DY is likely not going to have a b-tag even though it might.
 
 \section{Object Selection}
+
+  \todo{Add all the selection variables to the glossary}
 
   After the particle flow algorithm identifies lepton, jet, and photon candidates, and before events can be classified as belonging to the various search, control, and closure regions, an additional set of selections are applied in order to further purify the analysis object collection. The purpose of this section is to define these selections, sometimes called a ``preselection."
 
@@ -108,7 +132,7 @@
     The miniRelIso variable is then defined as the energy of all particle flow candidates inside the cone of size $\Delta R$ with effective area corrections applied \todo{cite EA corrections} divided by the \pt of the lepton.
 
     \[
-      \text{miniRelIso} = \frac{\text{E}_\text{cone}}{\pt}.
+      \text{miniRelIso} = \frac{\text{E}_\text{cone}}{\pt}.\footnote{The miniRelIso variable is normally defined as just the energy of the cone, but for the sake of simplicity in terms of the use in this analysis, we define it as the ratio of the conventional miniRelIso to the lepton's \pt}
     \]
 
 
@@ -126,7 +150,7 @@
           \pt\                           & $>10$ GeV    \\ 
           $d_{0}$ (w.r.t. 1st good PV)   & $<0.05$ cm   \\
           $d_{z}$ (w.r.t. 1st good PV)   & $<0.1$  cm   \\
-          miniRelIso / \pt               & $<0.10$      \\
+          miniRelIso                     & $<0.10$      \\
           abs(SIP3D)                     & $< 8$        \\
           maxLostHits                    & $==$ 0       \\
           Conversion Veto                & must pass    \\
@@ -137,7 +161,7 @@
       \end{center}
     \end{table}
 
-    The tight and loose criteria for electrons is based entirely on the MVA output. The POG MVA is a boosted decision tree (BDT)\footnote{A boosted decision tree is a sort of classifier that assigns a real number to a well-formed tuple of data. The algorithm tries to construct a map such that the number output for tuples in the same category are close to each other, then that number can be used discriminate between categories. Technical details are beyond the scope of this thesis, but a good review can be found \todo{find BDT document}. In the case of the electron ID MVA, the categories are real or fake and the numbers lie between -1 and 1.} prepared by the CMS EGamma Physics Object Group (POG). The BDT is trained on simulated Z$\to e^+ e^-$ events where electrons are considered to be real if the candidate can be matched to an electron emitted from the Z, and fake otherwise. An additional validation sample of mostly real electrons in data is constructed from $e^+ e^-$ events where the dilepton mass is within 7.5 GeV of the Z pole mass, $\abs{M_{ll} - M_Z} < 7.5$ GeV, and each lepton is required to be isolated such that the energy in a cone around the electron must be less than 10\% of the total energy in the cone (including the electron). A sample of mostly fake leptons in data is constructed by requiring a third lepton candidate in these events which has inverted isolation criteria and the additional requirement that the MET in the event is less than 25 GeV to suppress WZ events. 
+    The tight and loose criteria for electrons is based entirely on the MVA output. The POG MVA is a boosted decision tree (BDT)\footnote{A boosted decision tree is a sort of classifier that assigns a real number to a well-formed tuple of data. The algorithm tries to construct a map such that the number output for tuples in the same category are close to each other, then that number can be used discriminate between categories. Technical details are beyond the scope of this thesis, but a good review can be found \todo{find BDT document}. In the case of the electron ID MVA, the categories are real or fake and the numbers lie between -1 and 1.} prepared by the CMS EGamma Physics Object Group (POG). The BDT is trained on simulated Z$\to e^+ e^-$ events where electrons are considered to be real if the candidate can be matched to an electron emitted from the Z, and fake otherwise. An additional validation sample of mostly real electrons in data is constructed from $e^+ e^-$ events where the dilepton mass is within 7.5 GeV of the Z pole mass, $\abs{M_{ll} - M_Z} < 7.5$ GeV, and each lepton is required to be isolated such that the energy in a cone around the electron must be less than 10\% of the total energy in the cone (including the electron). A sample of mostly fake leptons in data is constructed by requiring a third lepton candidate in these events which has inverted isolation criteria and the additional requirement that the \MET in the event is less than 25 GeV to suppress WZ events. 
 
     Distributions of various kinematical quantities are constructed from simulation and data that have reason to discriminate between real and fake electrons, for instance the spread of the calorimeter hits in $\eta$. Some of these distributions are shown in figure \ref{fig:electron_mva_discriminating_vars}. The MVA is trained on the simulated events then checked against the data samples described above for consistency. Finally electrons in the barrel region and endcap regions are partitioned and each set is used to train an MVA specifically targeting the detector subsystems there \cite{cms_electron_photon_performance}. 
 
@@ -174,33 +198,54 @@
       \end{center}
     \end{table}
 
+    \clearpage
+
   \subsection{Muon ID and Isolation} \label{sec:muon_id_and_isolation}
 
     The muon ID is based purely on a cut-based approach, no MVA is used. Again, the selection criteria is based upon the muon POG, which is documented in more detail at ~\cite{muon_POG}. The selection used for the muon ID and isolation are defined below:
 
     \begin{table}[!h]
       \begin{center}
-        \caption{\label{table:muons} Summary of the muons selection requirements. \todo{Version from Bobak's Thesis} }
+        \caption{\label{table:muons} Summary of the muons selection requirements. }
         \begin{tabular}{l|c|c}
           \hline
           \hline
-          \multicolumn{3}{c}{Good Global Muon Requirements} \\
+          \multicolumn{3}{c}{Good Muon Requirements} \\
           \hline
           Quantity   &  Tight Requirement & Loose Requirement \\
           \hline
+          Quality Muon                      & Must pass   & Must pass     \\
           Fraction of valid tracker hits    & $>$ 0.8     & $>$ 0.8  \\ 
-          Normalized global-track $\chi^2$  & $<$ 3       & $<$ 3    \\
-          Tracker-Standalone position match & $<$ 12      & $<$ 12   \\
-          Kick finder                       & $<$ 20      & $<$ 20   \\
-          Segment compatibility             &$>$ 0.451 or & $>$ 0.303 \\
-                                            &passes above requirements & \\
-          \hline
-          muon type & \multicolumn{2}{c}{(global muon or tracker muon) and PF muon} \\
           \hline
           $d_{0}$ (w.r.t. 1st good PV)   & $<0.05$ cm & $<0.05$ cm \\
           $d_{z}$ (w.r.t. 1st good PV)   & $<0.1$ cm  & $<0.1$ cm  \\
           SIP3D                          & $< 8$      & $< 8$      \\
-          miniRelIso                     & $<0.20$ & $<0.40$       \\
+          miniRelIso                     & $<0.20$    & $<0.40$       \\
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    The criteria to be a ``Quality Muon" is given below:
+    \begin{table}[!h]
+      \begin{center}
+        \caption{\label{table:muons} Summary of Quality Muon requirements.}
+        \begin{tabular}{l|c}
+          \hline
+          \hline
+          \multicolumn{2}{c}{Quality Muon Requirements} \\
+          \hline
+          Quantity   &  Requirement \\
+          \hline
+          Segment compatibility             &$>$ 0.451 \\
+          \hline
+          \emph{or} & \\
+          \hline
+          Normalized global-track $\chi^2$  & $<$ 3    \\
+          Tracker-Standalone position match & $<$ 12   \\
+          Kick finder                       & $<$ 20   \\
+          Segment compatibility             & $>$ 0.303 \\
+          \hline
           \hline
         \end{tabular}
       \end{center}
@@ -212,19 +257,19 @@
 
   \subsection{Photon Selection} \label{sec:photon_selection}
 
-    Photons are used in this analysis as part of the Z+Hadronic background prediction. The details of this prediction are in \ref{sec:z_+_hadronic}
+    Photons are used in this analysis as part of the Z+Hadronic background prediction. The details of this prediction are in \ref{sec:z_+_hadronic}. The bulk of these selections are in order to ensure there is no inefficiency for the trigger for $\gamma +$jets events. 
 
     \begin{itemize}
       \item \pt $ > 22$ GeV
       \item $|\eta| < 2.4$
       \item No matching pixel track (pixel veto)
-      \item There must be a jet candidate of \pt $ >$ 10 GeV matched to the photon within $\mathrm{ \Delta R} < 0.3$. 
+      \item There must be a jet candidate of \pt $ >$ 10 GeV matched to the photon within $\DR < 0.3$. 
       The matched jet is required to have a neutral electromagnetic energy fraction of at least 70\%.
 
-      \item We reject photons which have an electron of at least \pt $>$ 10 GeV within $\mathrm{ \Delta R} < 0.2$
-      in order to reject conversions from electrons from W decays which are accompanied by real MET.
+      \item We reject photons which have an electron of at least \pt $>$ 10 GeV within $\DR < 0.2$
+      in order to reject conversions from electrons from W decays which are accompanied by real \MET.
 
-      \item We reject photons which are aligned with the MET to within 0.4 radians in phi.
+      \item We reject photons which are aligned with the \MET to within 0.4 radians in phi.
       \item To ensure full efficiency with respect to the isolated photon triggers used, we apply the following additional cuts:
       \begin{itemize}
         \item ratio of the energy of the energy of the photon's 3X3 supercluster to the photons 5X5 supercluster (R9) $>$ 0.92
@@ -239,7 +284,68 @@
 
   \subsection{Jet Selection} \label{sec:jet_selection}
 
+  Jets are selected from the particle flow selection and are refined via ``charged hadron subtraction" and ``jet energy corrections" described in \ref{sec:jets}. In this analysis, we distinguish between jets and ``b-tagged jets." B-tagging is described in \ref{sec:b-tagging}, but it comes down to a numerical quantity assigned to each jet called its \emph{b-tag csv value}. If the csv value is large enough, a jet is considered likely to have been generated by a free bottom quark. 
+
+      \begin{table}[!h]
+      \begin{center}
+        \caption{\label{table:muons} Summary Of Good Jet Requirements.}
+        \begin{tabular}{l|c|c}
+          \hline
+          \hline
+          \multicolumn{3}{c}{Jet Selections} \\
+          \hline
+          \hline
+          Quantity                  & \multicolumn{2}{c}{ Cut Value } \\
+          \hline
+          $\abs{\eta}$              & \multicolumn{2}{c}{$< 2.4$}   \\
+          Lepton Veto               & \multicolumn{2}{c}{Not within $\abs{\DR} < 0.4$ of a tight lepton} \\
+          Photon Veto               & \multicolumn{2}{c}{Not within $\abs{\DR} < 0.4$ of a good photon } \\
+          Neutral Hadron Fraction   & \multicolumn{2}{c}{ $< 0.99$} \\
+          Neutral EM fraction       & \multicolumn{2}{c}{ $< 0.99$} \\
+          Charged hadron fraction   & \multicolumn{2}{c}{ $> 0   $} \\
+          Charged multiplicity      & \multicolumn{2}{c}{ $> 0   $} \\
+          Charged EM fraction       & \multicolumn{2}{c}{ $< .99 $} \\
+          Number of constituents    & \multicolumn{2}{c}{ $> 1   $} \\
+          \hline
+          \hline
+          Quantity                  &  Jet Requirement & B-tagged Jet Requirement\\
+          \hline
+          \pt                       & $> 35\; \GeV $     & $> 25\; \GeV$   \\
+          B-tag CSV                 & None             & $> 0.8484$    \\
+          \hline
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
   \subsection{Isolated Tracks} \label{sec:isolated_tracks}
+  In addition to vetoing events which have extra loose leptons, a typically more inclusive veto is applied to kill events which might have an extra prompt lepton based on the identification of an isolated charged object. 
+
+  To distinguish these types of objects, we introduce the notion of ``track isolation," defined as the total energy of all the particle flow charged candidates that trace back to within $\abs{dz} < 0.1$ cm of the primary vertex within a cone of $\abs{\DR} <0.3$ about the lepton.\footnote{Notice that the miniRelIso we defined above was defined as a relative isolation, the energy in a cone divided by the \pt of the object in question, track isolation as defined here has units of energy.}
+
+  There are two types of isolated tracks, those that are seeded by particle flow charged hadron candidates, and those that are seeded by particle flow electron or muon candidates. The criteria on top of the particle flow identification for these two sources are listed in the tables below:
+
+  \begin{table}[!h]
+      \begin{center}
+        \caption{\label{table:muons} Summary Of Isolated Track Requirements.}
+        \begin{tabular}{l|c|c}
+          \hline
+          \hline
+          \multicolumn{3}{c}{Isolated Track Selections} \\
+          \hline
+          \hline
+          Quantity                  &  Charged Hadronic Requirement & Light Lepton Requirement\\
+          \hline
+          \pt                       & $> 10\; \GeV $                & $> 5\; \GeV$           \\
+          Vertex Association\footnote{PVTight means the particle was closer to the primary vertex than any other reconstructed vertex. PVUsedInFit means the particle was used to define the primary vertex. There are more details in the glossary.}     & PVTight or PVUsedInFit  & PVTight or PVUsedInFit \\ 
+          Track Isolation           & $<8\; \GeV$                   & $<8\; \GeV$             \\
+          Track Isolation / \pt     & $<0.2$                        & $<0.1$                  \\
+          $\abs{dz}$                & $< 0.1$ cm                    & $< 0.1$ cm              \\
+          \hline
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
 
 \section{Event Selection}
 
@@ -248,8 +354,8 @@
   \begin{description}
     \bitem{Search Regions (SR)} Events with two opposite charge and same flavor light leptons build our search regions, we have either a $e^+e^-$ or a $\mu^+ \mu^-$ pair in each event.
     \bitem{Flavor Symmetric Control Regions (FSCR)} Events with two opposite charge and different flavor light leptons build our flavor symmetric control region, we have either a $e^+\mu^-$ or a $\mu^+ e^-$ pair in each event. This region is used to predict the flavor symmetric background.
-    \bitem{MET Templates Control Region (MTCR)} Events with a single photon are used to construct the MET templates control region. 
-    \bitem{EWK Contamination Closure Region (ECCR)} Events with a photon and muon are used to check the modeling of the ``EWK contamination" in the MET Templates prediction, described in section \ref{sec:ewk_subtraction}.
+    \bitem{\MET Templates Control Region (MTCR)} Events with a single photon are used to construct the \MET templates control region. 
+    \bitem{EWK Contamination Closure Region (ECCR)} Events with a photon and muon are used to check the modeling of the ``EWK contamination" in the \MET Templates prediction, described in section \ref{sec:ewk_subtraction}.
   \end{description}
 
   The CMS datasets which seed these events are described in \ref{sec:datasets}.
@@ -262,6 +368,7 @@
     \begin{itemize}
       \item The (sub)leading lepton in each event must have at least (20) 25 GeV of transverse momentum. These points were selected so that the event would be in the "trigger turn-on" described in \ref{sec:event_triggering}.
       \item The pseudorapidity for each lepton must be within the inner tracker's fiducial area, namely $\left|\eta\right| < 2.4$
+      \item No lepton should be in the ``dead zone" described in section \ref{sec:fiducial_area}, this is in the range $1.4 < \left|\eta\right| < 1.6$
       \item For the search region, events must have exactly one pair of opposite charge same flavor (OCSF) light leptons, for the FSCR events must have exactly one pair of opposite charge and different flavor (OCDF) light leptons.
       \item The mass constructed out of the sum of lepton vectors (dilepton mass) must be between 86 and 96 GeV.
       \item The transverse momentum of the dilepton system must be at least 25 GeV in order to ensure the Z+hadronic background prediction has enough statistics. This is explained in more detail in \ref{sec:z_+_hadronic}.
@@ -272,7 +379,7 @@
 
     \begin{description}
       \bitem{Isolated Track Veto} Events with an isolated track, defined in \ref{sec:isolated_tracks}.
-      \bitem{MET Filters} Events where any of the ``MET Filters", described in section \ref{sec:met_filters}, are true.
+      \bitem{\MET Filters} Events where any of the ``\MET Filters", described in section \ref{sec:met_filters}, are true.
     \end{description}
 
     Dilepton events specifically, those within the SRs and FSCRs, are vetoed under the following conditions:
@@ -288,21 +395,21 @@
   \subsection{Flavor Symmetric Control Region} \label{sec:flavor_symmetric_control_region}
     A flavor symmetric control region in constructed for every search region by flipping the requirement for an OCSF dilepton pair to a OCDF dilepton pair. The number of events in these regions is used to predict the background of events where the two leptons come from a pair of W bosons as described in \ref{sec:flavor_symmetric_background}
 
-  \subsection{MET Templates Closure Region} \label{sec:met_templates_control_region}
+  \subsection{\MET Templates Closure Region} \label{sec:met_templates_control_region}
 
   \subsection{EWK Subtraction Closure Region} \label{sec:ewk_subtraction_closure_region}
 
 
 
-\section{Background Estimation Methods}
+\section{Background Estimation Methods} \label{sec:background_estimation_methods}
   Fakes are taken care of by the flavor symmetric BG.
 
-  For the signal regions, we select events with opposite charge and same flavor dilepton pairs, for the flavor-symmetric background prediction, we select events with same sign and same flavor dilepton pairs, for the MET templates prediction, we select from single photon events which are seeded by an entirely different dataset.
+  For the signal regions, we select events with opposite charge and same flavor dilepton pairs, for the flavor-symmetric background prediction, we select events with same sign and same flavor dilepton pairs, for the \MET templates prediction, we select from single photon events which are seeded by an entirely different dataset.
 
   \subsection{Z + Hadronic} \label{sec:z_+_hadronic}
-  PT of the Z greater than 25 GeV for photon trigger.
+  \pt of the Z greater than 25 GeV for photon trigger.
     
-    \subsubsection{Contamination From Events With Real MET (Electroweak Subtraction)} \label{sec:ewk_subtraction}
+    \subsubsection{Contamination From Events With Real \MET (Electroweak Subtraction)} \label{sec:ewk_subtraction}
       Explain the EWK subtraction method here.
 
     \subsubsection{Electroweak Subtraction Control Region} \ref{sec:ewk_subtraction_control_region}
@@ -311,9 +418,235 @@
 
   \subsection{Z + $\nu$} \label{sec:z_+_neutrino}
 
-\section{Results}
+\section{Results} \label{sec:results}
+  \subsection{Strong Search Regions} \label{sec:strong_search_regions}
+    In this section, we show the search results for the strong signal regions. Figure \ref{fig:results_SR_str} shows the results visually, each search region is shown binned in \MET, the background predictions are broken down as described in \ref{sec:background_estimation_methods} and uncertainty bands are shown as a hashing that captures all sources described above. The number of events in data seen are shown as black dots in the figures. The same data is shown numerically in table \ref{tab:results_SR_str}.
+
+    \begin{table}[!h]
+      \scriptsize
+      \centering
+      \caption{\label{tab:results_SR_str} \todo{identical cap to AN}
+      Results are shown for the strong signal regions.
+      The uncertainties shown include both statistical and systematic errors. Note that the 50-100 \MET bin agrees perfectly by construction as it is used to normalize the DY prediction. See figure~\ref{fig:results_SR_str}~for the corresponding plots.
+      }
+      \begin{center}
+        \begin{tabular} {l | l | l | l | l | l }
+          SRA & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
+          & Template  & 208.5$\pm$16.1 & 13.6$\pm$3.1 & 2.5$\pm$0.9 & 3.3$\pm$2.4 \\
+          & FS  & $0.4^{+0.3}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.2^{+0.2}_{-0.1}$  & $0.2^{+0.2}_{-0.1}$  \\
+          & Rares  & 1.1$\pm$0.4 & 0.8$\pm$0.3 & 1.4$\pm$0.4 & 2.4$\pm$0.8 \\ 
+          & Sum  & $210.0^{+16.1}_{-16.1}$  & $14.8^{+3.2}_{-3.2}$  & $4.0^{+1.0}_{-1.0}$  & $5.9^{+2.5}_{-2.5}$ \\ 
+          & Data  & 210 & 23 & 5 & 4 \\ \hline 
+
+
+          SRAb & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
+          & Template  & 92.2$\pm$10.4 & 8.2$\pm$2.1 & 1.2$\pm$0.5 & 0.5$\pm$0.3 \\
+          & FS  & $1.9^{+0.7}_{-0.7}$  & $2.3^{+0.8}_{-0.8}$  & $1.7^{+0.7}_{-0.6}$  & $0.1^{+0.2}_{-0.1}$  \\
+          & Rares  & 1.9$\pm$0.4 & 1.9$\pm$0.4 & 2.0$\pm$0.5 & 1.8$\pm$0.6 \\ 
+          & Sum  & $96.0^{+10.4}_{-10.4}$  & $12.4^{+2.3}_{-2.3}$  & $4.9^{+1.0}_{-1.0}$  & $2.5^{+0.7}_{-0.7}$ \\ 
+          & Data  & 96 & 14 & 7 & 1 \\ \hline 
+
+
+          SRB & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
+          & Template  & 130.1$\pm$12.8 & 12.8$\pm$2.3 & 0.9$\pm$0.3 & 0.4$\pm$0.2 \\
+          & FS  & $0.3^{+0.2}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.1^{+0.2}_{-0.1}$  \\
+          & Rares  & 0.6$\pm$0.2 & 0.3$\pm$0.1 & 0.7$\pm$0.2 & 1.2$\pm$0.4 \\ 
+          & Sum  & $131.0^{+12.8}_{-12.8}$  & $13.6^{+2.4}_{-2.4}$  & $2.0^{+0.5}_{-0.5}$  & $1.6^{+0.5}_{-0.4}$ \\ 
+          & Data  & 131 & 10 & 4 & 0 \\ \hline 
+
+
+          SRBb & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
+          & Template  & 37.9$\pm$6.7 & 7.7$\pm$3.1 & 4.0$\pm$3.3 & 0.1$\pm$0.1 \\
+          & FS  & $0.7^{+0.4}_{-0.3}$  & $1.4^{+0.6}_{-0.5}$  & $1.1^{+0.5}_{-0.4}$  & $0.2^{+0.2}_{-0.1}$  \\
+          & Rares  & 1.3$\pm$0.4 & 2.0$\pm$0.5 & 2.3$\pm$0.6 & 1.0$\pm$0.3 \\ 
+          & Sum  & $40.0^{+6.8}_{-6.8}$  & $11.1^{+3.2}_{-3.2}$  & $7.4^{+3.4}_{-3.4}$  & $1.3^{+0.4}_{-0.3}$ \\ 
+          & Data  & 40 & 10 & 5 & 0 \\ \hline 
+
+
+          SRC & \MET [GeV]  &  50-100 &  100-150 & \multicolumn{2}{l}{ 150+ } \\ \hline 
+          & Template  &  23.8$\pm$5.5 &  1.2$\pm$0.4 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
+          & FS  &  $0.1^{+0.2}_{-0.1}$  &  $0.4^{+0.3}_{-0.2}$  & \multicolumn{2}{l}{ $0.1^{+0.2}_{-0.1}$  } \\ 
+          & Rares  &  0.2$\pm$0.1 &  0.1$\pm$0.1 & \multicolumn{2}{l}{ 0.5$\pm$0.2 } \\ 
+          & Sum  &  $24.0^{+5.5}_{-5.5}$  &  $1.7^{+0.5}_{-0.5}$  & \multicolumn{2}{l}{ $0.7^{+0.3}_{-0.2}$ } \\ 
+          & Data  &  24 &  4 & \multicolumn{2}{l}{ 0 } \\ \hline 
+
+
+          SRCb & \MET [GeV]  &  50-100 &  100-150 & \multicolumn{2}{l}{ 150+ } \\ \hline 
+          & Template  &  9.9$\pm$3.7 &  0.1$\pm$0.5 & \multicolumn{2}{l}{ 0.0$\pm$0.3 } \\ 
+          & FS  &  $0.1^{+0.2}_{-0.1}$  &  $0.0^{+0.1}_{-0.0}$  & \multicolumn{2}{l}{ $0.3^{+0.2}_{-0.2}$  } \\ 
+          & Rares  &  0.0$\pm$0.1 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.6$\pm$0.2 } \\ 
+          & Sum  &  $10.0^{+3.7}_{-3.7}$  &  $0.8^{+0.5}_{-0.5}$  & \multicolumn{2}{l}{ $0.9^{+0.5}_{-0.4}$ } \\ 
+          & Data  &  10 &  2 & \multicolumn{2}{l}{ 2 } \\ \hline 
+
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    \begin{figure}[!htb]
+      \centering
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_2jbv.pdf}%
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_2jbt.pdf}
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_4jbv.pdf}%
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_4jbt.pdf}
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_6jbv.pdf}%
+      \includegraphics[width=0.35\linewidth]{figures/results/h_met_SR_6jbt.pdf}
+      \caption{\label{fig:results_SR_str} \todo{identical cap to AN}
+      The \MET distribution is shown for data vs. the data-driven predictions in the strong signal regions with $\nb = 0$ (left) and $\nb \geq 1$ (right).
+      The top row shows events in SRA which are required to have 2-3 jets and \HT\ $>$ 500 (200)~GeV for events with exactly 0 bjets (at least one bjet),
+      the second row shows events in SRB which are required to have 4-5 jets and \HT\ $>$ 500 (200)~GeV for events with exactly 0 bjets (at least one bjet),
+      and the bottom row shows events in SRC which are required to have $\geq$~6 jets.
+      Note that the 50-100 \MET bin agrees perfectly by construction as it is used to normalize the DY prediction. The yields for these plots are shown in table~\ref{tab:results_SR_str}.
+      }
+    \end{figure}
+
+  \clearpage
+
+  \subsection{Electroweak Search Regions}
+
+    The following shows the results for the electroweak search regions. 
+
+    \begin{figure}[!h]
+      \centering
+      \begin{tabular}{cc}
+        \includegraphics[width=0.4\linewidth]{figures/results/h_met_SR_tcwz.pdf} &
+        \includegraphics[width=0.4\linewidth]{figures/results/h_met_SR_tchz.pdf} \\
+      \end{tabular}
+      \caption{\todo{identical cap to AN}
+        The \MET\ distribution is shown for data vs. the data-driven predictions in the TChiWZ/ZZ (left), and TChiHZ (right) signal regions. Note that the 50-100 MET bin agrees perfectly by construction as it is used to normalize the DY prediction. See table~\ref{tab:results_SR_ewk}~for yields.
+        \label{fig:results_SR_ewk}
+      }
+    \end{figure}
+
+    \begin{table}[!htb]
+      \scriptsize
+      \centering
+      \caption{\label{tab:results_SR_ewk} \todo{identical cap to AN}
+      Results are shown for the electroweak signal regions.
+      The uncertainties shown include both statistical and systematic errors. Note that the 50-100 \MET bin agrees perfectly by construction as it is used to normalize the DY prediction. See figure~\ref{fig:results_SR_ewk}~for the corresponding plots.
+      }
+      \begin{center}
+        \begin{tabular} {l | l | l | l | l | l | l }
+          TChiWZ & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250-350 & 350+ \\ \hline 
+          & Template  & 773.2$\pm$31.9 & 29.3$\pm$4.4 & 2.9$\pm$2.1 & 1.0$\pm$0.7 & 0.3$\pm$0.3 \\
+          & FS  & $9.4^{+3.0}_{-3.0}$  & $11.1^{+3.6}_{-3.6}$  & $3.2^{+1.1}_{-1.1}$  & $0.1^{+0.2}_{-0.1}$  & $0.1^{+0.2}_{-0.1}$  \\
+          & Rares  & 10.4$\pm$2.6 & 14.5$\pm$4.0 & 15.5$\pm$5.1 & 5.0$\pm$1.8 & 2.2$\pm$0.9 \\ 
+          & Sum  & $793.0^{+32.2}_{-32.2}$  & $54.9^{+7.0}_{-7.0}$  & $21.6^{+5.6}_{-5.6}$  & $6.0^{+1.9}_{-1.9}$  & $2.5^{+0.9}_{-0.9}$ \\ 
+          & Data  & 793 & 57 & 29 & 2 & 0 \\ \hline 
+
+
+          TChiHZ & \MET [GeV]  &  50-100 &  100-150 &  150-250 & \multicolumn{2}{l}{ 250+ } \\ \hline 
+          & Template  &  76.7$\pm$9.4 &  2.9$\pm$2.4 &  0.3$\pm$0.2 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
+          & FS  &  $4.2^{+1.4}_{-1.4}$  &  $4.0^{+1.4}_{-1.4}$  &  $4.7^{+1.6}_{-1.6}$  & \multicolumn{2}{l}{ $0.9^{+0.4}_{-0.4}$  } \\ 
+          & Rares  &  1.1$\pm$0.3 &  0.7$\pm$0.2 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.3$\pm$0.1 } \\ 
+          & Sum  &  $82.0^{+9.5}_{-9.5}$  &  $7.6^{+2.8}_{-2.8}$  &  $5.6^{+1.6}_{-1.6}$  & \multicolumn{2}{l}{ $1.3^{+0.4}_{-0.4}$ } \\ 
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+
+    \clearpage
 
 \section{Signal Interpretations} 
+
+  \subsection{Systematics in Signal Yield}
+    In order to interpret these results in the context of electroweak scale SUSY, the simplified SUSY models in figure \ref{fig:feynman_str} and \ref{fig:feynman_ewk} are simulated using the madgraph package as explained in sec \ref{sec:susy_simulation}. The simulated events are then run through the same software used to count real data events. Due to unique differences between data and simulation in 
+
+    \begin{table}[htb]
+      \begin{center}
+        \footnotesize
+        \caption{\label{tab:syst} Systematic uncertainties of the expected signal yield. }
+        \begin{tabular}{l|c}
+          \hline
+          \hline
+          Source                     & Value (\%) \\
+          \hline
+          MC Statistics              & $\pm$1--60 \\
+          B-tag eff, heavy flavor    & $\pm$3    \\
+          B-tag eff, light flavor    & $\pm$2    \\
+          Jet Energy Scale           & $\pm$1--15  \\
+          Lepton Trigger Efficiency  & $\pm$3    \\
+          Lepton ID/Iso Efficiency   & $\pm$7    \\
+          ISR Modeling               & $\pm$0--7  \\
+          Luminosity                 & $\pm$2.6  \\
+          Fastsim MET Modeling       & $\pm$1--60    \\
+          Generator Scale variations & $\pm$3   \\
+          PU reweighting             & $\pm$3    \\
+          \hline
+          Total uncertainty on signal& $\pm$10--60 \\
+          \hline
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    As with all simulated events, there are various ways in which the 
+
+  \subsection{Higgs Combine Tool}
+
+  \subsection{Exclusion Limits}
+
+    In this section, the results in \ref{sec:results} are interpreted in the context of the simplified supersymmetric models described in \ref{sec:susy_models}. For the sake of convenience the Feynman diagrams for these models are reproduced in figure \ref{fig:SUSY_diagrams_interpretation_sec}.
+
+    \begin{figure}[!h]
+      \centering
+      \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/diagrams/T5ZZ.pdf} 
+        \caption{Strong GMSB SUSY}
+        \label{fig:t5zz_diagram_interpretations}
+      \end{subfigure}
+      \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/diagrams/TChiWZ.pdf}
+        \caption{EWK SUSY With WZ Production}
+        \label{fig:tchiwz_diagram_interpretations}
+      \end{subfigure} \\
+      \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/diagrams/TChiZZ.pdf}
+        \caption{EWK SUSY With ZZ Production}
+        \label{fig:tchizz_diagram_interpretations}
+      \end{subfigure}
+      \begin{subfigure}[b]{0.49\textwidth}
+        \includegraphics[width=\textwidth]{figures/diagrams/TChiHZ.pdf}
+        \caption{EWK SUSY With HZ Production}
+        \label{fig:tchihz_diagram_interpretations}
+      \end{subfigure}
+      \caption{ \label{fig:SUSY_diagrams_interpretation_sec}
+        Feynman diagrams for the SUSY models used in interpreting the results of this analysis. More exposition on the properties of these models is found in sec \ref{sec:susy_models}.}
+    \end{figure}
+
+    For the strong production model, \ref{fig:t5zz_diagram_interpretations}, the bulk of the sensitivity comes from the high jet multiplicity and high \MET search regions, SRB(b) and SRC(b). In a previous CMS result probing similar final states, this simplified model was excluded at the 95\% CL for gluino masses roughly below 1.2 TeV \cite{paper_2015}. This analysis pushes the limits for the same model by roughly 500 GeV as can be seen in figure \ref{fig:t5zz_interpretation}.
+
+    \begin{figure}[!h]
+      \centering
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_2015}
+          \includegraphics[width=\textwidth]{figures/interpretations/t5zz_2015_exclusion.pdf}
+          \caption{Previous best limits on this model}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_current}
+          \includegraphics[width=\textwidth]{figures/interpretations/T5ZZ_Exclusion_13TeV.pdf}
+          \caption{Limits set by this analysis}
+        \end{subfigure}
+      \caption{ \label{fig:t5zz_interpretation}
+        The limits set on the strong GMSB SUSY model are shown to the right. To the left, we show the previous best limit on this model set by CMS in 2016. This model is excluded at the 95\% CL for gluino masses below 1450 GeV for low LSP masses, and below 1750 GeV for large LSP masses. \todo{check this description: }In the compressed spectrum (where the LSP mass is close to the gluino mass), the LSP is expected to carry away more energy from the gluino than the quarks. In the extremely compressed regions where the LSP and gluino are only separated by a 100 GeV or so of mass, it's possible that one of the jets can be missed. The data shows a downward fluctuation in most of the high \MET bins, except in SRCb, which because of the high jet multiplicity is more sensitive to the uncompressed spectrum. Basically in the high LSP cases, there's some chance for the jets to be lost and that's why the downward fluctuations in SRA and SRB are reflected by creating a better observed limit than the expected one. \todo{ All signal points should all end up in the high MET bin, right? We expect 6 jets normally here because the second Z normally goes to jets. This means that SRC is the most important, yet there is not really a downward fluctuation there. It seems that SRC is related more to the large splitting points and SRA/B are more related to the compressed spectrum... but does the jet argument hold? It seems like in the intermediate mass points we should still expect mostly 6 jet events, yet we already see great space there between the expected and observed limits..}
+      }
+    \end{figure}
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=\textwidth]{figures/interpretations/TChiWZ_Exclusion_13TeV.pdf}
+      \caption{ \label{fig:tchiwz_interpretation}
+        The limits set for the EWK WZ model.
+      }
+    \end{figure}
+
+
+    Prior Best T5ZZ Model   -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-15-011/
+    Prior Best TChiWZ Model -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-13-006/
+    Prior Best TChiZZ Model -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-14-002/
+    I think the HZ model is the same as the ZZ model.
+
+\clearpage
 
 \section{The Electroweak Combination}
 

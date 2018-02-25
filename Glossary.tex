@@ -12,4 +12,13 @@
 \item{OCDF} Opposite charge, different flavor. Used in the context of events with two light leptons, meaning either $e^+\mu^-$ or $\mu^+ e^-$.
 
 \item{prompt} A particle is called prompt if it was generated at the primary interaction vertex. A particle is called non-prompt if it was created in the decay of another particle further down the decay chain. 
+
+\item{FromPV} From: https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD2015 The meaning of fromPV() results are unchanged, fromPV() returns a number between 3 and 0 to define how tight the association with the PV is: 
+the tighest, 3 (PVUsedInFit), is if the track is used in the PV fit;
+2 (PVTight) is if the track is not used in the fit of any of the other PVs, and is closest in z to the PV,
+1 (PVLoose) is if the track is closest in z to a PV other then the PV.
+0 (NoPV) is returned if the track is used in the fit of another PV.
+
+\item{PVTight} See FromPV
+
 \end{itemize}
