@@ -548,8 +548,89 @@
 
 \section{Signal Interpretations} 
 
-  \subsection{Systematics in Signal Yield}
-    In order to interpret these results in the context of electroweak scale SUSY, the simplified SUSY models in figure \ref{fig:feynman_str} and \ref{fig:feynman_ewk} are simulated using the madgraph package as explained in sec \ref{sec:susy_simulation}. The simulated events are then run through the same software used to count real data events. Due to unique differences between data and simulation in 
+  In any given search bin, a prediction is made for the expected standard model background as described in \ref{sec:background_estimation_methods}. Each prediction method is characterized by several largely uncorrelated sources of uncertainty whose one $\sigma$ uncertainty bands are combined in quadrature to give a one $\sigma$ band for the background prediction. Each of these uncorrelated sources of uncertainty is called a nuisance parameters, the set of all such parameters is denoted by $\vec{\theta}$. Each prediction method has its own systematic nuisance parameters, the uncertainty sources considered for the background predictions were outlined in \ref{sec:background_estimation_methods}, and for the signal model prediction in \ref{sec:systematics_in_signal_yield}.
+
+  \subsection{Higgs Combine Tool}
+    This analysis uses the CMS Higgs Combine Tool \cite{higgs_combine} to produce our confidence intervals. A brief description of the statistical methods used are presented in this section, more detail can be found in \cite{Likelihood_Cowen_Cranmer}. 
+
+    The data in any signal bin can be seen as being sampled from a Poisson distribution. Since each search region is independent, the likelihood of observing the results we've seen in data is the product of the likelihoods to see the outcome in each search bin:
+
+    \begin{align} 
+      \mathcal{L}(\text{data}) = \prod_{i \in \text{Search Bin}} \frac{\lambda_i^{n_i} e^{-\lambda_i}}{n_i !}. \label{eq:niave_likelihood}
+    \end{align}
+
+    where each $\lambda_i$ and $n_i$ are the expected and observed number of events in search bin $i$ respectively. If the signal does not exists in nature (the background only hypothesis), then $\lambda_i = b$, the background prediction for the bin. If the signal does exist in nature then $\lambda_i = s + b$, the sum of the signal and background predictions. However, due to the probabilistic nature of the background and signal predictions, $\lambda$ itself must be modeled by a distribution of possible values. 
+
+    \[
+      \lambda_i(\vec{\theta}, \mu) = \mu s(\vec{\theta}) + b\vec{\theta}.
+    \]
+
+    We distinguish $\vec{\theta}_0$ as the set of nuisance parameters that give the central value predictions for the background and signal counts. Each nuisance is modeled as a random variable that multiplies the relevant prediction. The distribution from which this random variable is sampled is shown in table \ref{tab:systematic_shapes} for every nuisance in this analysis.
+
+    Taking into account the probabilistic nature of $\lambda(\vec{\theta}, \mu)$, the likelihood in eq \ref{eq:niave_likelihood} is updated to
+
+
+    \[
+      \mathcal{L}(\vec{\theta}, \mu | \text{data} ) = P(\vec{\theta}) \left( \prod_{i \in \text{Search Bin}} \frac{\lambda_i(\vec{\theta}, \mu)^{n_i} e^{-\lambda_i(\vec{\theta}, \mu)}}{n_i !} \right),
+    \]
+
+    where $P(\vec{a})$ is the probability that the nuisance vector has the value $\vec{a}$. The combine tool uses the fact that certain nuisance parameters are perfectly correlated across different observations, for instance the uncertainty in luminosity. Given the correlations, a best-fit value for the nuisance parameters can be set at a signal strength $\mu$, denoted by a hat $\hat{\theta}_\mu$.
+
+    all of the information is combined by constructing the so-called ``test statistic":
+
+    \[
+      q_\mu = -2 \ln \left( \frac{\mathcal{L}(\vec{\theta}, \mu | \text{data} )}{\mathcal{L}(\vec{\theta}, \mu | \text{data} )} \right).
+    \]
+
+
+
+    \todo{the reference cited above is completely incomprehensible. It tries to call $P(\vec{\theta})$ $p(\widetilde{\theta}| \theta) = \frac{p(\theta | \widetilde{\theta})}{\pi_\theta(\theta)}$, but absolutely no definition of those terms is given sans some hand wavy bullshit about it having to do with the probability of having a particular $\theta$ value given the "default value" $\widetilde{\theta}$. It calls $\pi_\theta(\theta)$ hyper-priors as if any motherfucker I have ever met in my 10 years of mathematical interest knows what that means. But what they do not explain at all is how the function is fit to the datacards. The fucking basic idea is that the stupid fucking machine somehow tries to guess what the values of }
+
+
+    \begin{table}[!h]
+      \begin{center}
+        \footnotesize
+        \caption{\label{tab:systematic_shapes} Systematic Uncertainty Assumed Shapes. }
+        \begin{tabular}{l | l | l}
+          \hline
+          \hline
+          Prediction  & Nuisance  & Distribution \\
+          \hline
+          \textbf{Z + Hadronic}     & Closure                    & log Normal \\
+                                    & EWK Subtraction            & log Normal \\
+                                    & $\gamma$ Normalization     & log Normal \\
+                                    & $\gamma$ Statistics        & log Normal \\
+          \hline
+          \textbf{Flavor Symmetric} & $\kappa$ Value             & log Normal \\
+                                    & \rsfof Value               & log Normal \\
+                                    & Same Sign Statistics       & $\Gamma$   \\
+          \hline
+          \textbf{Z + $\nu$}        & Closure                    & log Normal \\
+                                    & MC Statistics              & log Normal \\
+          \hline
+          \textbf{Signal}           & MC Statistics              & log Normal \\
+                                    & B-tag eff, heavy flavor    & log Normal \\
+                                    & B-tag eff, light flavor    & log Normal \\
+                                    & Jet Energy Scale           & log Normal \\
+                                    & Lepton Trigger Efficiency  & log Normal \\
+                                    & Lepton ID/Iso Efficiency   & log Normal \\
+                                    & ISR Modeling               & log Normal \\
+                                    & Luminosity                 & log Normal \\
+                                    & Fastsim MET Modeling       & log Normal \\
+                                    & Generator Scale variations & log Normal \\
+                                    & PU reweighting             & log Normal \\
+          \hline
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+  \subsection{Systematics in Signal Yield} \label{sec:systematics_in_signal_yield}
+    In order to interpret these results in the context of electroweak scale SUSY, the simplified SUSY models in figure \ref{fig:feynman_str} and \ref{fig:feynman_ewk} are simulated using the madgraph package as explained in sec \ref{sec:susy_simulation}. The simulated events are then run through the same software used to count real data events. 
+
+    The models are 
+
+    The following are the list of nuisance parameters for the expected yields of used when computing the liklihood of the data given the hypothesis that the signal exists. For background we could use these but instead just went with the closure test, also fast-sim shit doesn't exist for the other MC.
 
     \begin{table}[htb]
       \begin{center}
@@ -580,8 +661,6 @@
     \end{table}
 
     As with all simulated events, there are various ways in which the 
-
-  \subsection{Higgs Combine Tool}
 
   \subsection{Exclusion Limits}
 

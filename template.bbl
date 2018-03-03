@@ -1,25 +1,38 @@
-\begin{thebibliography}{Col15b}
+\begin{thebibliography}{1}
 
-\bibitem[Col15a]{muon_POG}
+\bibitem{higgs_combine}
+The ATLAS, CMS Collaborations, and The LHC Higgs~Combination Group.
+\newblock {Procedure for the LHC Higgs boson search combination in Summer
+  2011}.
+\newblock Technical Report CMS-NOTE-2011-005. ATL-PHYS-PUB-2011-11, CERN,
+  Geneva, Aug 2011.
+
+\bibitem{muon_POG}
 CMS Collaboration.
 \newblock Baseline muon selections.
 \newblock https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonIdRun2, 2015.
 
-\bibitem[Col15b]{cms_electron_photon_performance}
+\bibitem{JERC}
+CMS Collaboration.
+\newblock Recommended jet energy corrections and uncertainties for data and mc.
+\newblock https://twiki.cern.ch/twiki/bin/view/CMS/JECDataMC, 2015.
+
+\bibitem{cms_electron_photon_performance}
 The~CMS Collaboration.
 \newblock Performance of electron reconstruction and selection with the {CMS}
   detector in proton-proton collisions at √s= 8 {TeV}.
 \newblock {\em Journal of Instrumentation}, 10(06):P06005--P06005, jun 2015.
 
-\bibitem[Mar83]{Martin_1983}
-Robert~D. Martin.
-\newblock {\em Human Brain Evolution in an Ecological Context}.
-\newblock American Museum of Natural History, 1983.
+\bibitem{Likelihood_Cowen_Cranmer}
+Glen Cowan, Kyle Cranmer, Eilam Gross, and Ofer Vitells.
+\newblock Asymptotic formulae for likelihood-based tests of new physics.
+\newblock {\em The European Physical Journal C}, 71(2):1554, Feb 2011.
 
-\bibitem[RI99]{Rilling_Insel_1999}
-James~K. Rilling and Thomas~R. Insel.
-\newblock The primate neocortex in comparative perspective using magnetic
-  resonance imaging.
-\newblock {\em Journal of Human Evolution}, 37(2):191--223, 1999.
+\bibitem{paper_2015}
+Vardan Khachatryan et~al.
+\newblock {Search for new physics in final states with two opposite-sign,
+  same-flavor leptons, jets, and missing transverse momentum in pp collisions
+  at $\sqrt{s}$ = 13 TeV}.
+\newblock {\em Submitted to: JHEP}, 2016.
 
 \end{thebibliography}
