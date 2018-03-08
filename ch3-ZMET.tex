@@ -17,20 +17,20 @@
   \end{figure}
 
   \begin{figure}
-  \begin{center}
-    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiWZ.pdf} 
-    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiZZ.pdf} 
-    \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiHZ.pdf} 
-  \end{center}
-  \caption{
-    \label{sig:feynman_ewk} \todo{same cap as AN}
-    Diagrams for models with electroweak production.
-    The left shows chargino-neutralino production decaying to WZ+\MET (TChiWZ).
-    The middle shows neutralino-neutralino production decaying to ZZ+\MET (TChiZZ),
-    while the right shows the same production decaying to HZ+\MET (TChiHZ).
-    The TChiZZ and TChiHZ diagrams containing a massless gravitino ($\tilde{\mathrm{G}}$) represent gauge mediated SUSY breaking (GMSB) models.
-  }
-\end{figure}
+    \begin{center}
+      \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiWZ.pdf} 
+      \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiZZ.pdf} 
+      \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiHZ.pdf} 
+    \end{center}
+    \caption{
+      \label{sig:feynman_ewk} \todo{same cap as AN}
+      Diagrams for models with electroweak production.
+      The left shows chargino-neutralino production decaying to WZ+\MET (TChiWZ).
+      The middle shows neutralino-neutralino production decaying to ZZ+\MET (TChiZZ),
+      while the right shows the same production decaying to HZ+\MET (TChiHZ).
+      The TChiZZ and TChiHZ diagrams containing a massless gravitino ($\tilde{\mathrm{G}}$) represent gauge mediated SUSY breaking (GMSB) models.
+    }
+  \end{figure}
 
   1. Show the models Strong and EWK SUSY model diagrams we use here.
   2. Discuss why they are useful tools (i.e. give an idea of SMS)
@@ -40,7 +40,7 @@
 
 \section{Analysis Strategy}
 
-  \subsection{Background Considerations}
+  \subsection{Background Considerations} \label{sec:background_considerations}
 
     \subsubsection{Leptonic Final States} \label{sec:leptonic_final_states}
       The Z boson can decay to any fermion. In theory, one could perform this analysis in an all hadronic final state, which might seem advantageous as the Z will decay to hadrons approximately 10 times as often as it will decay to light leptons. \todo{Add some figure for the Z decay rates, probably can site the PDG}. However, there are several reasons leptonic final states are highly advantageous.
@@ -253,7 +253,7 @@
 
     \todo{brief blurb on global/tracker muons.}
 
-\newpage
+  \newpage
 
   \subsection{Photon Selection} \label{sec:photon_selection}
 
@@ -389,6 +389,9 @@
         \bitem{Extra Lepton Veto} There is an additional loose or tighter lepton in the event. In other words, event with three or more loose IDed leptons are vetoed. IDs are defined in \ref{sec:electron_id_and_isolation} and \ref{sec:muon_id_and_isolation}. 
       \end{description}
 
+
+    \todo{For the signal regions, we select events with opposite charge and same flavor dilepton pairs, for the flavor-symmetric background prediction, we select events with same sign and same flavor dilepton pairs, for the \MET templates prediction, we select from single photon events which are seeded by an entirely different dataset.}
+
   \subsection{Search Regions}
     Electroweak search regions and strong search regions
 
@@ -399,22 +402,85 @@
 
   \subsection{EWK Subtraction Closure Region} \label{sec:ewk_subtraction_closure_region}
 
-
-
 \section{Background Estimation Methods} \label{sec:background_estimation_methods}
-  Fakes are taken care of by the flavor symmetric BG.
+  
+  As discussed in \ref{sec:background_considerations}, after the \Mll and jet selections, the main backgrounds for this search can be broken into three categories, each with their own prediction methods. For any lepton which comes from a flavor symmetric process (i.e. the path from colored particles to an analysis lepton went through a W boson), there should be a kinematically equivalent event in the same region of phase space but with the same flavor requirement flipped to requiring different flavor leptons. For any event where the dilepton pair comes from a Z boson, e.g. Drell-Yan or WZ (with W$\to q\bar{q}$) production, all of the \MET in the event will be due to mismeasurements as there are no neutrinos in this population. As will be discussed, the \MET profile in events with a Z and jets should be well modeled by the \MET profile in events with a single photon and an equal number of jets. To predict the count of these types of events we extrapolate from $\gamma+$jets events with a few corrections examined below in \ref{sec:z_+_hadronic}. Finally, the last possible source of dilepton pairs are events where the pair comes from a Z decay, but a neutrino is produced so that there is genuine \MET, e.g. ZZ (with one Z$\to\nu\nu$) or WZ (with W$\to l \nu$ and a lost lepton). This final source typically has much lower cross sections due to the fact that there must be at least two electroweak bosons produced to have a dilepton pair and a neutrino and often times a lepton must be lost due to the strong extra lepton vetos we impose.
 
-  For the signal regions, we select events with opposite charge and same flavor dilepton pairs, for the flavor-symmetric background prediction, we select events with same sign and same flavor dilepton pairs, for the \MET templates prediction, we select from single photon events which are seeded by an entirely different dataset.
+  \subsection{Data-Driven Predictions}
+    Every background prediction we make is based on countless assumptions. Our assumptions come in two forms:
+
+    \begin{enumerate}
+      \item Assumptions grounded in established physics, e.g. the kinematics of same flavor dilepton pairs should be drawn from the same distributions as the kinematics of opposite flavor pairs if the leptons came from W bosons.
+
+      \item Assumptions about our tools, e.g. our simulated data is actually representative of the physics it's trying to simulate.
+    \end{enumerate}
+
+    The point of our endeavor is to test and propose new assumptions of the first kind and mitigate the effect of assumptions of the second kind.
+
+    This analysis bins in \MET, the only signature we expect from a theoretical dark particle. As described in ref \ref{sec:MET}, \MET comes in two forms, genuine and artificial. Every event has contributions from both of these sources. However, Z+jets events are dominated by artificial \MET, Z+$\nu$ should be dominated by genuine \MET, and the flavor symmetric background is somewhere in between since the primary contributor to that background has both many jets and multiple $\nu$s.
+
+    Artificial \MET has been a historically difficult thing to simulate correctly. Although all simulated events are run through a full GEANT simulation of the CMS detector, the response of the detector changes slightly over time and less systematic issues often arise which can not be modeled, for instance issues with the beam can cause higher rates of pile-up than expected. \todo{Is there a source for why \MET is hard to model.} Due to these issues, it is more optimal to have a data-driven prediction method for sources that might be dominated by artificial \MET. In other words, we'd like to have prediction methods that don't rely on detector simulation, even better if they don't rely on physics simulation. 
+
+    In this analysis, the two major background contributions have such data-driven methods.
 
   \subsection{Z + Hadronic} \label{sec:z_+_hadronic}
-  \pt of the Z greater than 25 GeV for photon trigger.
+    The Z+Hadronic prediction is based on the observation that the \MET profile in events with only hadronic activity (jets) accompanied by a dilepton pair coming from a Z boson will have \MET almost entirely due to mismeasurements of the jets. Figure \ref{fig:met_templates_idea} represents the central idea behind the method. In an event with only a leptonically decaying Z and jets, the \MET should come almost entirely from jet energy mismeasurements. If each jet in an event has a true amount of energy $\hat{E}_{x,y,z}$ in the $x,y,$ or $z$ direction, and a measured amount of energy $E_{x,y,z}$, the \MET in an event will be: 
+
+    \begin{align}
+      \MET = \sqrt{\left(\sum_{\text{jets}} \hat{E}_{x} - E_{x} \right)^2 + \left(\sum_{\text{jets}} \hat{E}_{y} - E_{y} \right)^2} \label{eq:met_reco}
+    \end{align}
+
+    Given the probabilistic nature of mismeasurements, each terms in the sums of eq \ref{eq:met_reco} can be modeled as a random variable sampled from a Gaussian. The central value of that Gaussian, i.e. how much each jet is mismeasured, is to first order well correlated with the true jet energy which is in turn well correlated with the measured jet energy as explained in sec \ref{sec:jets}. Further, if jets tend to clump up in a single hemisphere of the detector, the error in over(under)measurements add, while if they are spread about the detector geometry, those errors will tend to cancel.
+
+    Therefore, the number of jets, their relative orientations, and their absolute energy scale will change the \MET spectrum. The upshot of these points is that we should not expect that the \MET profile in $\gamma$+jets events to be precisely the same as in Z+jets events unless these parameters, at least, are nearly identical between the populations. 
+
+    There is no ideal way to correct for these differences. When this method was incepted\cite{MET_templates}, the original author constructed fine-grained bins based on the number of jets within particular \pt windows. In our updated method, we found that simply correcting the \pt distribution of the $\gamma$+jets events gave a \MET profile with good enough agreement to the Z+jets sample. This is attained by deriving a weight for each photon event used in the prediction such that the \pt distribution of the $\gamma+$jets events is identical to the Z+jets data. The precise algorithm for this is described further below, but one other complication needs to be addressed before we can get there.
     
     \subsubsection{Contamination From Events With Real \MET (Electroweak Subtraction)} \label{sec:ewk_subtraction}
-      Explain the EWK subtraction method here.
+      This method is based on the idea that the \MET profile in $\gamma$+jets events will be identical to the \MET profile in Z+jets events due to an identical mechanism for generating artificial \MET in both populations. 
 
-    \subsubsection{Electroweak Subtraction Control Region} \ref{sec:ewk_subtraction_control_region}
+    \subsubsection{Algorithm For The Prediction}
+
+      Now that we have addressed the fundamental premise of this method and all the complications 
+
+    \begin{enumerate}
+      \item We take a population of single photon + jets events which roughly pass the same criteria passed by the dilepton events, but with the requirement for two leptons replaces by the requirement for one photon.\footnote{precise definition in sec \ref{sec:met_templates_control_region}} 
+
+      \item Simulate $\gamma+\nu$ events in MC, create a 'clean' population of only $\gamma+$jets events by subtracting the kinematic distributions of the $\gamma+\nu$ sample from any distribution of interest (in this case \pt).
+
+      \item Take the clean photon sample and bin events by \pt in the intervals between (GeV): [25, 33, 40, 55, 85, 105, 135, 180, 250, $\infty$]. These are chosen to be just wide enough that there a high number of photon events in each bin, but fine enough to capture the \pt dependence of the jet configurations. 
+
+      \item Create a 'clean' Z+jets sample by taking the dilepton data and subtracting the other background predictions from any distribution of interest (in this case \pt).
+
+      \item Normalize the area of the clean Z+jets \pt distribution and clean $\gamma+$jets to unity
+
+      \item Assign a weight to each photon event such that the bin has the same area as the corresponding Z+jets \pt bin
+
+    \end{enumerate}
+
+    The important takeaway is that corrections
+
+    The leading confounding factors are the jet energies themselves as well as their orientation. For instance
+
+    The ECAL provides a good measurement of photon energy, so given events with just  We correct for the number of jets in the event, up to a
+
+    The jet mismeasurements are oriented along the axis of the jet for each 
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=\textwidth]{figures/MET_templates_idea.pdf}
+      \caption{The central idea behind the Z+Hadronic background prediction. A well measured photon acts as a proxy for a well-measured Z boson (reconstructed by its leptonic decay products), then the \MET distribution for the events is a function of }
+      \label{fig:met_templates_idea}
+    \end{figure}
+
+
+  \pt of the Z greater than 25 GeV for photon trigger.
+  Generally, there is an expectation that the leptons, and therefore the reconstructed Z, will have much better energy resolution than the jets, and so the Therefore, we expect the \MET distribution for these types of events to be well modeled by the \MET distribution in events with a single photon
+
+    \subsubsection{Electroweak Subtraction Closure Test} \ref{sec:ewk_subtraction_closure_test}
 
   \subsection{Flavor Symmetric Background} \label{sec:flavor_symmetric_background}
+    Fakes are taken care of by the flavor symmetric BG.
 
   \subsection{Z + $\nu$} \label{sec:z_+_neutrino}
 
@@ -677,9 +743,7 @@
   \subsection{Systematics in Signal Yield} \label{sec:systematics_in_signal_yield}
     In order to interpret these results in the context of electroweak scale SUSY, the simplified SUSY models in figure \ref{fig:feynman_str} and \ref{fig:feynman_ewk} are simulated using the madgraph package as explained in sec \ref{sec:susy_simulation}. The simulated events are then run through the same software used to count real data events. 
 
-    The models are 
-
-    The following are the list of nuisance parameters for the expected yields of used when computing the liklihood of the data given the hypothesis that the signal exists. For background we could use these but instead just went with the closure test, also fast-sim shit doesn't exist for the other MC.
+    The following are the list of nuisance parameters for the expected yields of used when computing the likelihood of the data given the hypothesis that the signal exists. For background we could use these but instead just went with the closure test, also fast-sim shit doesn't exist for the other MC.
 
     \begin{table}[htb]
       \begin{center}
@@ -708,8 +772,6 @@
         \end{tabular}
       \end{center}
     \end{table}
-
-    As with all simulated events, there are various ways in which the 
 
   \subsection{Exclusion Limits}
 
