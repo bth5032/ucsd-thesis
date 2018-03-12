@@ -57,6 +57,45 @@
 
 \section{Monte Carlo}
   \subsection{SUSY Simulation} \label{sec:susy_simulation}
+  \subsection{Monte Carlo}
+    
+    In this section we list all the Monte Carlo (MC) samples used for this analysis.
+
+    \subsubsection{Z+Hadronic \pt Reweighting Closure Test}
+
+      In this section we list the MC samples used for the \pt reweighting closure test.
+      \begin{table}[htb]
+        \begin{center}
+          \scriptsize
+          \caption{\label{tab:closuremc} List of MC samples used for the closure test.}
+          \begin{tabular}{l|l|c}  
+            \hline
+            \hline
+            Process & Dataset Name                                                             & Cross Section [pb]\\
+            \hline
+            \gjets   & \verb=/GJets_DR-0p4_HT-40To100_TuneCUETP8M1_13TeV-*-v1=                & 18560    \\
+                     & \verb=/GJets_DR-0p4_HT-100To200_TuneCUETP8M1_13TeV-*-v1=               &  5000    \\
+                     & \verb=/GJets_DR-0p4_HT-200To400_TuneCUETP8M1_13TeV-*-v1=               &  1079    \\
+                     & \verb=/GJets_DR-0p4_HT-400To600_TuneCUETP8M1_13TeV-*-v1=               &   125.9  \\
+                     & \verb=/GJets_DR-0p4_HT-600ToInf_TuneCUETP8M1_13TeV-*-v1=               &    43.36 \\
+            \hline   
+            \zjets   & \verb=/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-*_ext1-v2=                     &  6021    \\
+                     & \verb=/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-*_ext1-v1= &   181.3   \\
+                     & \verb=/DYJetsToLL_M-50_HT-200to400_TuneCUETP8M1_13TeV-*_ext1-v1= &    50.42  \\
+                     & \verb=/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-*_ext1-v1= &     6.984 \\
+                     & \verb=/DYJetsToLL_M-50_HT-600to800_TuneCUETP8M1_13TeV-*-v2= &     1.681 \\
+                     & \verb=/DYJetsToLL_M-50_HT-800to1200_TuneCUETP8M1_13TeV-*-v1= &    0.7754  \\
+                     & \verb=/DYJetsToLL_M-50_HT-1200to2500_TuneCUETP8M1_13TeV-*-v1= &   0.1862  \\
+                     & \verb=/DYJetsToLL_M-50_HT-2500toInf_TuneCUETP8M1_13TeV-*-v1= &    0.004385  \\
+            \hline
+            Campaign & \verb=*madgraphMLM-pythia8/RunIISummer16MiniAODv2=                       & \\
+                     & \verb=-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6*/MINIAODSIM= & \\
+
+            \hline
+            \hline
+          \end{tabular}
+          \end{center}
+      \end{table}
 
 \section{Datasets} \label{sec:datasets}
 We use dilepton trigger events, as will be described in section \ref{sec:leptonic_final_states}
