@@ -2,17 +2,22 @@
 
 \section{Motivations}
 
-  This is some great motivation!
+  This search for new physics is motivated by observations of dark matter in astrophysical and cosmological data as well as the hierarchy problem. Supersymmetry provides a solution to these two problems at once in theories with `R-parity' conservation due to the existence of a lightest supersymmetric particle (LSP) which can not decay to standard model particles. If the LSP is not charged, then it is a natural candidate for dark matter. 
+
+  The hard part of searching for dark matter is that it is known to not interact via the strong or electromagnetic forces with any non-trivial cross section. Therefore, the only signature dark particles will leave in a detector like CMS is transverse momentum imbalance, which is the central variable we use in this search.
 
   \subsection{Motivating Models} \label{sec:susy_models}
 
-  GMSB: https://arxiv.org/pdf/hep-ph/9707450.pdf
-  https://arxiv.org/pdf/hep-ph/9801271.pdf
+  We use several simplified SUSY models to motivate our search regions and interpret our results. Feynman diagrams of the additional operators in these models are shown in figures \ref{fig:feynman_str} and \ref{fig:feynman_ewk}. In each model, one or more of the new particle masses are free parameters. Setting maximal masses for these particles that are compatible with our observations is the intent of this style of SUSY search. These models are simulated with different values for the free mass parameters using the madgraph package as discussed in sec. \ref{sec:summary_of_simulated_samples}. A scan is then done over the simulated mass points to check whether the expected signature for any mass point describes the data better than the background only hypothesis, this is the content of section \ref{sec:exclusion_limits}.
+
+  In fig. \ref{fig:feynman_str} we have a model of gauge mediated SUSY breaking (GMSB) where the LSP is a gravitino and is assumed to have the arbitrary low mass of 1 GeV. The gluino and neutralino masses are free parameters. We refer to this model as ``strong SUSY" because two gluinos are produced which cause the initial cascade of particles. The production of gluinos in this model tends to lead to many hadronic jets in the final state. The ``strong signal regions", defined in sec \ref{sec:search_regions}, are built to target this model.
+
+  In fig. \ref{fig:feynman_ewk}, we have three models which we refer to as ``electroweak SUSY". In these models, electroweak superpartners are created in the collision without associated jets. The free parameters in these models are the masses of the electroweak superpartners. Due to the different branching ratios for Higgs and W/Z decays, two different signal regions are defined to target the left two diagrams (the VZ region) and right diagram (the HZ region). In models with a gravitino, it is again assumed to have a mass of 1 GeV.
 
   \begin{figure}[h!]
     \centering
     \includegraphics[width=.5\textwidth]{figures/diagrams/T5ZZ.pdf}
-    \caption{The Feynman diagram for the additional term added to The Standard Model lagrangian to produce the simplified supersymmetric model used to interpret this in analysis in the context of ``strong SUSY". In this model, SUSY is broken by the Gauge sector (wtf is GMSB) }
+    \caption{The Feynman diagram for the additional term added to The Standard Model lagrangian to produce the simplified supersymmetric model used to interpret this in analysis in the context of ``strong SUSY". In this model of GSMB, the gravitino is the LSP with an assumed mass of 1 GeV. Two gluinos are produced in the collision which decay to neutral electroweak superpartners that couple to the Z boson. Because the model assumes the production of gluinos, large amounts of hadronic activity is expected.}
     \label{fig:feynman_str}
   \end{figure}
 
@@ -23,50 +28,45 @@
       \includegraphics[width=0.3\textwidth]{figures/diagrams/TChiHZ.pdf} 
     \end{center}
     \caption{
-      \label{fig:feynman_ewk} \todo{same cap as AN}
-      Diagrams for models with electroweak production.
-      The left shows chargino-neutralino production decaying to WZ+\MET (TChiWZ).
-      The middle shows neutralino-neutralino production decaying to ZZ+\MET (TChiZZ),
-      while the right shows the same production decaying to HZ+\MET (TChiHZ).
-      The TChiZZ and TChiHZ diagrams containing a massless gravitino ($\tilde{\mathrm{G}}$) represent gauge mediated SUSY breaking (GMSB) models.
+      \label{fig:feynman_ewk} The Feynman diagrams for the electroweak SUSY models. In each diagram, electroweak superpartners are created in the collision and decay to either electroweak or Higgs bosons. The right two models again represent GMSB with a gravitino that is assigned a mass of 1 GeV.
     }
   \end{figure}
 
-  1. Show the models Strong and EWK SUSY model diagrams we use here.
-  2. Discuss why they are useful tools (i.e. give an idea of SMS)
-
-  \subsection{SUSY Simulation} \label{sec:susy_simulation}
-    Explain how madgraph is used here, what crap we assume, ect...
+  \clearpage
 
 \section{Analysis Strategy}
 
   \subsection{Background Considerations} \label{sec:background_considerations}
 
     \subsubsection{Leptonic Final States} \label{sec:leptonic_final_states}
-      The Z boson can decay to any fermion. In theory, one could perform this analysis in an all hadronic final state, which might seem advantageous as the Z will decay to hadrons approximately 10 times as often as it will decay to light leptons. \todo{Add some figure for the Z decay rates, probably can site the PDG}. However, there are several reasons leptonic final states are highly advantageous.
+      The Z boson can decay to any fermion. In theory, one could perform this analysis in an all hadronic final state, which might seem advantageous as the Z will decay to hadrons approximately 10 times as often as it will decay to light leptons.\cite{PDG} However, there are several reasons leptonic final states are highly advantageous.
 
       In hadron colliders, the most common types of final states are those with only hadronic activity, as can be seen in figure \ref{fig:lhc_decay_modes}; leptonic final states provide a much cleaner population in which to search for Z bosons. Additionally, as referenced in \ref{sec:electron_measurement_pipeline}, \ref{sec:muon_measurement_pipeline}, and \ref{sec:MET_reco}, the fidelity of energy measurements for the light leptons is much better than for jets at CMS. This provides great advantage for background discrimination; leptons from Z boson decays will tend to have a very specific dilepton mass, a quantity reconstructed from the momentum measurements.
 
-      The decays of the Z produce two opposite sign, same flavor fermions. A further benefit of the leptonic channel is that flavor and charge identification is fairly easy for the light leptons but nearly impossible to identify for jets at the current state of the art (for instance, one can not say with high confidence that a jet was produced by a positively charged charm quark). Finally, the energy and momentum measurements for the light leptons are much better than for jets because of the complexity involved in making good energy measurements for jets. \todo{Point to some discussion about hadron calorimetry, the basic idea here is just that jets have neutral particles and their contribution to the energy measurement needs to be implied by the reconstruction algorithm} 
+      The decays of the Z produce two opposite sign, same flavor fermions. A further benefit of the leptonic channel is that flavor and charge identification is fairly easy for the light leptons but nearly impossible to identify for jets at the current state of the art (for instance, one can not say with high confidence that a jet was produced by a positively charged charm quark).
 
-      Therefore, even though the decay rate to light leptons from Z bosons is lower than the production rate to hadronic final states, the better energy resolution and lower background rate makes the leptonic final state far more powerful.
+      Therefore, even though the branching ratio to light leptons from Z bosons is lower than the branching ratio to hadronic final states, the better energy resolution, lower background rates, and flavor identification make the leptonic final states far more powerful.
 
-      When using the leptonic final states, there are essentially two other background sources of leptons we must consider, these are $\gamma$ and W decays. The W boson will decay into leptons only with a complimentary neutrino, this means that in order to select a pair of opposite charge and same flavor leptons, there must be at least two W bosons in the event. Because the decays of the W will be independent, there is only a 50\% chance that the two leptons in an event where two Ws decay leptonically will have the same flavor. As will be discussed later, this makes the background prediction for these types of events very easy as events with two same flavor leptons can be used to model essentially any kinematical distribution.
+    \subsubsection{Background Sources}
+      When using the leptonic final states, there are essentially two other background sources of leptons we must consider, these are $\gamma$ and W decays. Due to the high mass of the Z boson, any $\gamma \to \ell^\pm \ell^\mp$ events can easily be vetoed since these events should have dilepton mass peaking at 0 GeV. 
 
-      Depending on the source of the Ws, the kinematics of the leptons will differ. However, a general rule is that the total energy in the event will be peaked at some low value, near the threshold to produce the event, essentially the sum of the mass of all the prompt particles, and decay exponentially from there. Many kinematic distributions are highly correlated with the total energy in the event. In the case of the Z decay, we know the dilepton mass distribution will not be correlated
+      The W boson will decay into leptons only with their complimentary neutrino, this means that in order to select a pair of opposite charge and same flavor charged light leptons, there must be at least two W bosons in the event. Because the decays of the W will be independent, there is only a 50\% chance that the two leptons will have the same flavor. As will be discussed later, this makes the background prediction for these types of events straightforward as events with two different flavor leptons can be used to model essentially any kinematical distribution.
 
-      It turns out the most common source of W bosons is through the production of two top quarks, which decay to a bottom quark and a W Boson. To reject these events, we will use B-tagging, described in \todo{add reference to b-tagging section}. Further, the dilepton mass in these events will be essentially random \todo{Add a figure of WW and TTBar production MLL plot for ZMET. Is the distribution flat or falling?} but biased towards lower values. 
-
-      less likely, whereas for Z decay, the breit-wigner distribution predisposes the dilepton mass to be near 91 GeV. 
-
-      The overall dilepton mass distribution will be a falling distribution with a small bump for the Z Boson. 
-
-      \todo{Need to close this off with a discussion about how the backgrounds are mainly DY, TTBar, and VZ}
+      It turns out the most common source of W bosons is through the production of two top quarks which decay to a bottom quark and a W boson. To reject these events, we will use the MT2 variable, described in sec \ref{sec:b-tagging}. Further, the dilepton mass in $t\bar{t}$ events will be distributed essentially flatly across the Z mass window. The overall dilepton mass distribution will be a falling distribution with a small bump for the Z Boson. 
 
       Finally, due to the instability of the $\tau$ lepton, we neglect this channel from the search. $\tau$ leptons are much harder to identify than the light leptons, and further they can decay to light leptons in a flavor symmetric manner, so are predicted by that background channel's prediction method.
 
     \subsubsection{Hadronic Activity Requirements}
-      As mentioned above, the major production mode of opposite sign dilepton pairs with dilepton mass near 91 GeV is from Drell-Yan production of Z. The diagram for this type of process is shown in \ref{fig:DY-diagram}. As can be seen in the figure, the leading order diagram for this process has no free quarks or gluons. That there are no free colored particles means that the vast majority of these events will likewise come without any jets. Diagrams with ISR and FSR which take a cross-section production hit of roughly 1/5 \todo{explain this}, which means that we can suppress the DY background by a factor of 100 by requiring at least 2 jets in an event. This keeps our signal count low. Further, the prediction of 0 or 1 jet bins is a completely different process due to the sources of \MET, and many of our motivating models will have many jets as part of their decay chain. 
+      As mentioned above, the major production mode of opposite sign dilepton pairs with dilepton mass near 91 GeV is from Drell-Yan production of Z bosons. The diagram for this type of process is shown in fig. \ref{fig:DY-diagram}. As can be seen in the figure, the leading order diagram for this process has no free quarks or gluons. That there are no free colored particles means that the vast majority of these events will likewise come without any jets. 
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.5\textwidth]{figures/Drell-Yan_feynman_edit.png}
+        \caption{A diagram showing the Drell-Yan process. A quark and an anti-quark annihilate into an off-shell $\gamma$ or Z boson, which in turn decays to a pair of opposite-charge same-flavor leptons.}
+        \label{fig:DY-diagram}
+      \end{figure}
+
+      Higher order diagrams with ISR or FSR take a cross-section production hit of roughly 1/5 due to the additional factor of the QCD coupling, $\alpha_s$, in the phase space integral. This means that we can suppress the DY background by a factor of almost 100 by requiring at least 2 jets in an event. This requirement is adopted in all search regions to keep our Drell-Yan background count low. Further, the background prediction for 0 or 1 jet events would require a completely different methodology due to different sources of \MET in high jet multiplicity final states. Therefore, this analysis limits itself to final states with at least 2 jets. 
 
       \begin{figure}[h!]
         \centering
@@ -75,65 +75,64 @@
         \label{fig:alpha_s_running}
       \end{figure}
 
-      In fact, strongly produced SUSY models described in \ref{sec:susy_models} anticipate lots of hadronic activity. Therefore, in search regions targeted at those models, we also also ask for lots of hadronic activity by selecting events with high $H_T$, the scalar sum of transverse energy for all jets in an event, above certain thresholds. This further rejects DY events.
+      In addition, the strong SUSY model shown in fig. \ref{fig:feynman_str} anticipates lots of hadronic activity. Therefore, in the strong search regions, we also bin in the number of jets\footnote{This has the added benefit of creating search regions which are dominated by only one of the two dominant backgrounds, $t\bar{t}$ and Drell-Yan.} and require considerable hadronic activity by selecting events with $H_T$\footnote{$H_T$ is the scalar sum of transverse energy for all jets in an event, above certain thresholds.} above 200 or 500 GeV for the regions with and without b-tags respectively. This further rejects Drell-Yan events.
 
-      \begin{figure}[h!]
-        \centering
-        \includegraphics[width=.5\textwidth]{figures/placeholder.png}
-        \caption{\todo{To Be Updated with DY figure.}}
-        \label{fig:DY-diagram}
-      \end{figure}
 
     \subsubsection{\MET Binning}
-      Again, inspecting the diagram above, when the Z decays to charged leptons, no neutrinos are produced. This means that DY has no genuine \MET, any missing energy must come from mismeasurements of the jet energy, misattributions of jets to the DY vertex, or loss of objects out of the detectors fiducial area. These should be relatively small effects and we will discuss how we predict the \MET distribution for this type of event in the following sections. For now, consider that the leading background when searching for Z bosons can be reduced dramatically by considering only events with high \MET. In this analysis, we only look at events with more than 100 GeV of missing energy.
 
-    \subsubsection{B-Tagging}
-      We also like to bin in b-tags. This is because the background composition changes dramatically with b-tagging as the second largest background is TTBar. This allows us to use a slightly higher MT2 cut in regions with a b-tag, as they will be more dominated by TTBar than by DY since DY is likely not going to have a b-tag even though it might.
+      Dark particles are expected to leave no signature in the detector except transverse momentum imbalance. In order to get maximal sensitivity to the different mass points for the SUSY models, we bin the search regions in \MET.
 
-    \subsubsection{MT2}
+    \subsubsection{B-Tagging} \label{sec:b-tagging}
+      We bin search regions in number of b-tags, which are outlined in detail in sec \ref{sec:b-tagging}. For the region targeting the HZ model, this is because the Higgs primarily decays to a pair of b-quarks. For the VZ model, we require there be no b-tags as it suppresses the $t\bar{t}$ background. For the strong search regions, we separate regions based on whether they have any b-tags, this because it causes the background composition to change dramatically; in regions with a b-tag, the dominant background will be $t\bar{t}$, whereas in regions without any b-tags the dominant background will be Z+jets. In turn, this allows us to use a slightly more aggressive MT2 cut in regions with a b-tag.
+
+    \subsubsection{MT2} \label{sec:MT2}
       The MT2 variable is defined as
 
       \[
-      \min\max{whatever}
+      \text{MT2} = \min \limits_{\text{\MET splittings}} \left[ \max \left\{ \MT(p_1, \slashed{p}_1), \MT(p_2, \slashed{p}_2) \right\} \right]
       \]
+
+      where $\slashed{p}_1$ and $\slashed{p}_2$ are decompositions of the \MET vector, and M$_{\text{T}}$ is the transverse mass. 
 
       \begin{figure}[h!]
         \centering
-        \includegraphics[width=.5\textwidth]{figures/placeholder.png}
-        \caption{\todo{To Be Updated with canonical MT2 decay.}}
+        \includegraphics[width=.5\textwidth]{figures/mt2_diagram.pdf}
+        \caption{The canonical picture of a decay with an MT2 endpoint, taken from the original paper\cite{mt2_paper}. }
         \label{fig:MT2_feynman_diagram}
       \end{figure}
 
-      When a pair of W bosons decay into a lepton and a neutrino, we can see that this value should not be able to be larger than the mass of the W boson, since by summing over all possibilities, we will get the true values which makes the outer minimum select at most the mass of the W (there is no lower limit). However, in the case of an arbitrary decay, for instance in DY or in signal models with dark matter, there is no need for this value to be smaller than the mass of the W and generally higher values will be found. Therefore, we can use this quantity as a handle for rejecting events where the leptons come from two W bosons. We require in our signal regions that MT2 be at least greater than 80 GeV, near the mass of the W boson. This mainly rejects the TTBar background. \todo{Why does any TTBar actually get through?}
+      When a pair of W bosons each decay into a lepton and a neutrino, this value should not be able to be larger than the mass of the W boson. We can see this is true because for the correct splitting of the \MET vector into the momenta of the two neutrinos, the \MT for each lepton is bounded by the W mass. Therefore by summing over all possibilities, we will ensure the outer minimum will select at most the mass of the W (there is no lower limit besides 0). 
+
+      However, in the case of an arbitrary decay, for instance in DY or in signal models with dark matter, there is no need for this value to be smaller than the mass of the W and generally higher values will be found. Therefore, we can use this quantity as a handle for rejecting events where the leptons come from two W bosons. We require in our strong search regions that MT2 be at least 80 GeV, just about the mass of the W boson. This mainly rejects the $t\bar{t}$ background. \todo{Why does any TTBar actually get through?}
 
     \subsubsection{MT2b}
 
       \begin{figure}[h!]
         \centering
-        \includegraphics[width=.5\textwidth]{figures/placeholder.png}
-        \caption{\todo{To be updated with TTBar Feynman diagram.}}
-        \label{fig:ttbar_feynman_diagram}
+        \includegraphics[width=.5\textwidth]{figures/ttbar_diagram.png}
+        \caption{Diagram of $t\bar{t}$ production. An MT2-like endpoint can be found at the top mass if the lepton and b-quark momentum vectors are added so that choosing the \MET splitting that corresponds to the actual neutrino momenta will recover the transverse 4-vector of the top at the root of the decay. Figure taken from \cite{TTBar_figure}.}
+        \label{fig:ttbar_diagram}
       \end{figure}
 
-      Another variable used in this analysis is MT2b, or sometimes MT2($\ell b \ell b$), which can only be computed in events with 2 jets that are b-tagged. MT2 can be computed for any pair of 4-vectors along with a \MET vector. In the case of $t\bar{t}$ decays, shown in figure \ref{fig:ttbar_diagram}, one can see that by summing the 4-vectors for the lepton and b-quark, an MT2 end point should be found at the top mass... so long as the correct b-quark can be associated with the correct lepton. 
+      Another variable used in this analysis is MT2b, or sometimes MT2($\ell b \ell b$), which can only be computed in events with 2 jets that are b-tagged. MT2 can be computed for any pair of 4-vectors along with a \MET vector. In the case of $t\bar{t}$ decays, shown in figure \ref{fig:ttbar_diagram}, one can see that by summing the 4-vectors for the lepton and b-quark, an MT2 end point should be found at the top mass, so long as the correct b-quark can be associated with the correct lepton. 
 
-      The same power of MT2 to reject semi-invisibly decaying pair produced particles can be used to reject $t\bar{t}$ events in a population with 2 b-jets by trying the different two combinations of b-jet/lepton pairing and selecting the minimum value out of those two. Again, in the case of $t\bar{t}$ decay, MT2b defined in this way will have the top mass (or lower) as one of the possible combinations, whilst there is no such requirement for a general process. MT2b is used only in the electroweak VZ region.
+      The same power of MT2 to reject semi-invisibly decaying pair produced particles can be used to reject $t\bar{t}$ events in a population with 2 b-jets by trying the two different combinations of b-jet/lepton pairing and selecting the minimum value out of those two. Again, in the case of $t\bar{t}$ decay, MT2b defined in this way will have the mass of the top quark as one of the possible combinations, whilst there is no such requirement for a general process. MT2b is used only in the electroweak VZ region.
 
 \section{Object Selection}
 
-  \todo{Add all the selection variables to the glossary}
+  \todo{Add all the variables in this section to the glossary? Which do I need to explicitly define?}
 
-  After the particle flow algorithm identifies lepton, jet, and photon candidates, and before events can be classified as belonging to the various search, control, and closure regions, an additional set of selections are applied in order to further purify the analysis object collection. The purpose of this section is to define these selections, sometimes called a ``preselection."
+  After the particle flow algorithm identifies lepton, jet, and photon candidates, and before events can be classified as belonging to the various search, control, and closure regions, an additional set of selections are applied in order to further purify the analysis object collection. The purpose of this section is to define these selections.
 
   \subsection{Lepton ID}
-    There are essentially two ways to get ``fake" leptons in the lepton population:
+    There are essentially two ways to get ``fake" leptons in the particle-flow lepton population:
 
     \begin{enumerate}
       \item A set of calorimeter and tracker hits from hadronic activity mimics the geometry expected by an lepton closely enough that a lepton is reconstructed from what should be called a jet.
-      \item An unstable particle, normally a charm or bottom quark, decays via a(n), often virtual, W boson and emits a real lepton and its complimentary neutrino. In physics parlance, this is called \emph{non-prompt} lepton, as it is a secondary decay (\emph{prompt} meaning created at the primary vertex).
+      \item A colored particle, normally a charm or bottom quark, emits an electroweak boson that decays into a real lepton. In physics parlance, this is called \emph{non-prompt} lepton, as it is a secondary decay (\emph{prompt} meaning created at the primary vertex).
     \end{enumerate}
 
-    Although item (2) is a ``real" lepton in the colloquial sense, in the context of most analyses, this one included, we do not want these sorts of objects contaminating our lepton population. To guard against these fake leptons, an additional set of cuts, called an ID is required to be passed by each candidate before it is considered a ``good" lepton.
+    Although item (2) is a ``real" lepton in the colloquial sense, in the context of most analyses, this one included, we do not want these sorts of objects contaminating our lepton population. To guard against these fake leptons, an additional set of cuts, called an ID, is required to be passed by each candidate before it is considered a ``good" lepton.
 
     In this analysis, we identify two ``working points" for leptons, tight and loose. These categories are defined based the lepton flavor and a set of cuts described below. Any lepton which passes the criteria to be classified as tight would necessarily pass the criteria to be classified as loose.
 
@@ -149,15 +148,14 @@
       \end{cases}.
     \]
 
-    The miniRelIso variable is then defined as the energy of all particle flow candidates inside the cone of size $\Delta R$ with effective area corrections applied \todo{cite EA corrections} divided by the \pt of the lepton.
+    The miniRelIso variable is then defined as the energy of all particle flow candidates inside the cone of size $\Delta R$ with effective area\footnote{See sec \ref{sec:jets}} corrections applied divided by the \pt of the lepton.
 
     \[
       \text{miniRelIso} = \frac{\text{E}_\text{cone}}{\pt}.\footnote{The miniRelIso variable is normally defined as just the energy of the cone, but for the sake of simplicity in terms of the use in this analysis, we define it as the ratio of the conventional miniRelIso to the lepton's \pt}
     \]
 
-
   \subsection{Electron ID and Isolation} \label{sec:electron_id_and_isolation}
-    \todo{cite https://arxiv.org/pdf/1502.02701.pdf}
+
     The electron candidates are required to pass the following cuts in addition to the particle flow identification:
 
     \begin{table}[!h]
@@ -437,7 +435,7 @@
           SRB b-tag (SRBb) & 4--5 & $\geq 1$ & $> 200$~GeV & $> 100$~GeV & [100,150,250,$\infty$] \\
           SRC b-tag (SRCb) & $\geq6$ & $\geq 1$ & - & $> 100$~GeV &  [100,150,$\infty$] \\
           \hline
-          Edge baseline  & $\geq2$ & - & - & $> 80$~GeV &  $> 150$~GeV \\
+          Baseline  & $\geq2$ & - & - & $> 80$~GeV &  $> 100$~GeV \\
           \hline                                          
           \hline                                         
           \multicolumn{6}{c}{{\bf Electroweak Search Regions}}  \\
@@ -476,78 +474,131 @@
 
     In addition to these selections, all dilepton selections, outlined above in sec \ref{sec:dilepton_selection}, and extra lepton vetoes, outlined above in sec \ref{sec:event_vetos}, are applied.
 
-    \subsection{Flavor Symmetric Control Region} \label{sec:flavor_symmetric_control_region}     
-   
-      A flavor symmetric control region in constructed for every search region by flipping the requirement for an OCSF dilepton pair to a OCDF dilepton pair and widening the dilepton mass window from $\pm5$ GeV about the Z pole mass to $>20$ GeV. Table \ref{tab:flavor_symmetric_control_regions} summarizes below: 
+  \subsection{Flavor Symmetric Control Region} \label{sec:flavor_symmetric_control_region}     
+ 
+    A flavor symmetric control region in constructed for every search region by flipping the requirement for an OCSF dilepton pair to a OCDF dilepton pair and widening the dilepton mass window from $\pm5$ GeV about the Z pole mass to $>20$ GeV. Table \ref{tab:flavor_symmetric_control_regions} summarizes below: 
 
-      \begin{table}[htb]
+    \begin{table}[htb]
+    \begin{center}
+      \caption{\label{tab:flavor_symmetric_control_regions} 
+        Summary of selections for the flavor symmetric control regions.
+      }
+      \begin{tabular}{l|r}\hline
+      Cut & Value \\
+      \hline 
+      \hline
+      Baseline                      & Start with search regions from tables \ref{tab:selections_sr} and \ref{tab:search_region_additional_selections}  \\
+      Flavor Selection              & Flip same flavor requirement, i.e. select $e^\pm\mu^\mp$ pair \\
+      Dilepton Mass                 & Extend range to $>20$ GeV \\
+      \hline
+      \hline
+      \end{tabular}
+    \end{center}
+  \end{table} 
+
+  \subsection{$\gamma$+Jets Control Region} \label{sec:met_templates_control_region}
+
+    In order to do the Z+jets background prediction, $\gamma$+jets events must be chosen in kinematic regions that mimic the search regions. The photon events must pass precisely the cuts for the signal region, listed in sec \ref{sec:search_regions}, to be used in constructing the prediction for that region, the details of which are described in sec \ref{sec:z_+_hadronic}. In addition to these event level selections, the photons themselves must pass the criteria in ``Photon Selection", sec \ref{sec:photon_selection}.
+
+    One caveat is the MT2 and MT2b variables. In order to construct these in events without leptons, we simulate the decay of a Z boson, with momentum equal to that of the leading photon in the event, to two leptons. Those leptons are then used to construct all MT2-like quantities for this analysis.\footnote{\todo{Should I mention bugs here? We had a bug where we forgot to do this with MT2b, instead all the photon events just passed this cut.}}
+
+    \begin{table}[htb]
+    \begin{center}
+      \caption{\label{tab:flavor_symmetric_control_regions} 
+        Summary of selections for the flavor symmetric control regions.
+      }
+      \begin{tabular}{l|r}\hline
+      Cut & Value \\
+      \hline 
+      \hline
+      Baseline                      & Start with search regions from tables \ref{tab:selections_sr} and \ref{tab:search_region_additional_selections}  \\
+      Flavor Selection              & Flip same flavor requirement, i.e. select $e^\pm\mu^\mp$ pair \\
+      Dilepton Mass                 & Extend range to $>20$ GeV \\
+      \hline
+      \hline
+      \end{tabular}
+    \end{center}
+  \end{table} 
+
+  \subsection{EWK Subtraction Closure Region} \label{sec:ewk_subtraction_closure_region}
+
+    The EWK Subtraction Closure Region is constructed to check the performance of physics simulation at predicting the \MET profile in W$\gamma$ events. The region is defined in table \ref{tab:ewk_sub_closure_region_definiton}.
+
+
+    \begin{table}[htb]
       \begin{center}
-        \caption{\label{tab:flavor_symmetric_control_regions} 
-          Summary of selections for the flavor symmetric control regions.
+        \caption{\label{tab:ewk_sub_closure_region_definiton} 
+          Definition of the Electroweak Subtraction Closure Region
         }
         \begin{tabular}{l|r}\hline
         Cut & Value \\
         \hline 
         \hline
-        Baseline                      & Start with search regions from tables \ref{tab:selections_sr} and \ref{tab:search_region_additional_selections}  \\
-        Flavor Selection              & Flip same flavor requirement, i.e. select $e^\pm\mu^\mp$ pair \\
-        Dilepton Mass                 & Extend range to $>20$ GeV \\
-        \hline
-        \hline
+        $\mu$                         & Exactly one with \pt $> 25$ GeV   \\
+        $\gamma$                      & At least one with \pt $> 25$ GeV  \\
+        \MET                          & $> 50$ GeV                        \\
+        \njets                        & $\ge$ 2                           \\
+        $M_T(\mu, \MET)$              & $> 30$ GeV                        \\
+        $\Delta \phi(\gamma, \MET)$   & $> 0.4$                           \\
+        Vetoes                        & \MET filters                      \\
         \end{tabular}
       \end{center}
     \end{table} 
 
-    \subsection{$\gamma$+Jets Control Region} \label{sec:met_templates_control_region}
+    Here $M_T(\mu, \MET)$ is the transverse mass\footnote{The mass of a 4-vector with the z-component set to 0.} of the $\mu$+\MET system. $\Delta \phi(\gamma, \MET)$ is the angle between the photon and the \MET vector in the x-y plane. 
 
-      In order to do the Z+jets background prediction, $\gamma$+jets events must be chosen in kinematic regions that mimic the search regions. The photon events must pass precisely the cuts for the signal region, listed in sec \ref{sec:search_regions}, to be used in constructing the prediction for that region, the details of which are described in sec \ref{sec:z_+_hadronic}. In addition to these event level selections, the photons themselves must pass the criteria in ``Photon Selection", sec \ref{sec:photon_selection}.
+  \subsection{\rsfof Measurement Region} \label{sec:rsfof_measurement_region}
 
-      One caveat is the MT2 and MT2b variables. In order to construct these in events without leptons, we simulate the decay of a Z boson, with momentum equal to that of the leading photon in the event, to two leptons. Those leptons are then used to construct all MT2-like quantities for this analysis.\footnote{\todo{Should I mention bugs here? We had a bug where we forgot to do this with MT2b, instead all the photon events just passed this cut.}}
+    The \rsfof measurement region is defined in table \ref{tab:rsfof_measurement_region} 
 
-      \begin{table}[htb]
+    \begin{table}[h!]
       \begin{center}
-        \caption{\label{tab:flavor_symmetric_control_regions} 
-          Summary of selections for the flavor symmetric control regions.
+        \caption{Definition of the \rsfof measurement region. \label{tab:rsfof_measurement_region} 
         }
-        \begin{tabular}{l|r}\hline
-        Cut & Value \\
+        \begin{tabular}{l | r}\hline
+        Cut       & Value   \\                          
         \hline 
         \hline
-        Baseline                      & Start with search regions from tables \ref{tab:selections_sr} and \ref{tab:search_region_additional_selections}  \\
-        Flavor Selection              & Flip same flavor requirement, i.e. select $e^\pm\mu^\mp$ pair \\
-        Dilepton Mass                 & Extend range to $>20$ GeV \\
+        Leptons   & Exactly 2 passing selections in sec. \ref{sec:dilepton_selection} on dilepton selection \\
+        \MET      & $\in [100,150]$ GeV                 \\
+        \njets    & $\ge$ 2                             \\
+        \mll      & $\notin [70,110]$ GeV               \\
+        Vetoes    & \MET filters                        \\
+                  & Jet/\MET alignment                  \\
+        \end{tabular}
+      \end{center}
+    \end{table}
+    \FloatBarrier
+
+  \subsection{$\kappa$ Measurement Regions} \label{sec:kappa_measurement_regions}
+
+    The measurement of the $\kappa$ transfer factor is done in several regions. The baseline region, strong regions, HZ, and VZ, regions are defined in table \ref{tab:selections_sr}, for the measurement of $\kappa$ the same-flavor requirement is flipped to require $e\mu$ pairs in each event. The ``strong region with bs" is the sum of all strong search regions that have a b-tag, i.e. SRAb, SRBb, and SRCb, and ``strong region, b-veto" is the sum of strong search regions without a b-tag.
+
+  \subsection{Z+$\nu$ Control Regions} \label{sec:znu_control_regions}
+
+    These regions are used to normalize the MC samples used in the Z+$\nu$ background prediction. Three control regions are constructed for the three different processes. For all these regions, at least two leptons must pass the normal analysis selections listed in sec \ref{sec:dilepton_selection} on dilepton selections and in secs \ref{sec:electron_id_and_isolation} and \ref{sec:muon_id_and_isolation} on electron and muon ID and isolation respectively. Any 3rd or 4th leptons are required to pass the same ID requirements as well as requirements on the pseudorapidity, $\eta$, listed in sec \ref{sec:dilepton_selection} on dilepton selections. However, the isolation points are relaxed to \todo{ask Leonora} for electrons and \todo{ask Leonora} for muons.
+
+    \begin{table}[htb]
+      \begin{center}
+        \scriptsize
+        \caption{Definition of the WZ, ZZ, and TTZ control regions. These regions are used to normalize the MC in the Z+$\nu$ prediction. \label{tab:znu_control_regions_definitons} 
+        }
+        \begin{tabular}{l | r | r | r}\hline
+        Cut       & WZ Value                             & ZZ Value                                &  TTZ Value                           \\
+        \hline 
         \hline
-        \hline
+        Leptons   & Exactly 3 with \pt $> 25,20,20$ GeV  & Exactly 4 with \pt $> 25,20,20,20$ GeV, & Exactly 3 with \pt $> 25,20,20$ GeV  \\
+                  &                                      & second pair must have \mll $> 20$ GeV   &                                      \\
+        $\nb$     & 0                                    & -                                       & Exactly two with \pt $> 25$ GeV      \\
+        \MET      & $< 60$ GeV                           & -                                       & $> 30$ GeV                           \\
+        \njets    & $\ge$ 2                              & $\ge$ 2                                 & $\ge$ 2                              \\
+        Vetoes    & \MET filters                         & \MET filters                            & \MET filters                         \\
+                  & Jet/\MET alignment                   & Jet/\MET alignment                      & Jet/\MET alignment                   \\
         \end{tabular}
       \end{center}
     \end{table} 
 
-    \subsection{EWK Subtraction Closure Region} \label{sec:ewk_subtraction_closure_region}
-
-      The EWK Subtraction Closure Region is constructed to check the performance of physics simulation at predicting the \MET profile in W$\gamma$ events. The region is defined in table \ref{tab:ewk_sub_closure_region_definiton}.
-
-
-      \begin{table}[htb]
-        \begin{center}
-          \caption{\label{tab:ewk_sub_closure_region_definiton} 
-            Definition of the Electroweak Subtraction Closure Region
-          }
-          \begin{tabular}{l|r}\hline
-          Cut & Value \\
-          \hline 
-          \hline
-          $\mu$                         & Exactly one with \pt $> 25$ GeV   \\
-          $\gamma$                      & At least one with \pt $> 25$ GeV  \\
-          \MET                          & $> 50$ GeV                        \\
-          \njets                        & $\ge$ 2                           \\
-          $M_T(\mu, \MET)$              & $> 30$ GeV                        \\
-          $\Delta \phi(\gamma, \MET)$   & $> 0.4$                           \\
-          Vetoes                        & \MET filters                      \\
-          \end{tabular}
-        \end{center}
-      \end{table} 
-
-      Here $M_T(\mu, \MET)$ is the transverse mass\footnote{The mass of a 4-vector with the z-component set to 0.} of the $\mu$+\MET system. $\Delta \phi(\gamma, \MET)$ is the angle between the photon and the \MET vector in the x-y plane. 
+  \FloatBarrier
 
 \section{Background Estimation Methods} \label{sec:background_estimation_methods}
   
@@ -563,11 +614,11 @@
 
     \end{enumerate}
 
-    The point of our endeavor in science is to test and propose new assumptions of the first kind and mitigate the effect of assumptions of the second kind. To that end, I'd like to draw some focus to the notion of a ``data-driven" prediction, which are used for the majority of the background methods in this analysis.
+    The point of our endeavor in science is to leverage, test, and propose new assumptions of the first kind, while mitigating the effects of assumptions of the second kind. To that end, I'd like to draw some focus to the notion of a ``data-driven" prediction, which are used for the majority of the background methods in this analysis.
 
-    We bin in \MET, the only signature we expect from a theoretical dark particle. As described in ref \ref{sec:MET}, \MET comes in two forms, genuine and artificial. Every event has contributions from both of these sources. However, Z+jets events are dominated by artificial \MET, Z+$\nu$ should be dominated by genuine \MET, and the flavor symmetric background is somewhere in between since the primary contributor to that background has both many jets and multiple $\nu$s.
+    We bin in \MET, the only signature we expect from a theoretical dark particle. As described in ref \ref{sec:MET_reco}, \MET comes in two forms, genuine and artificial. Every event has contributions from both of these sources. However, Z+jets events are dominated by artificial \MET, Z+$\nu$ should be dominated by genuine \MET, and the flavor symmetric background is somewhere in between since the primary contributor to that background has both many jets and multiple $\nu$s.
 
-    Artificial \MET has been a historically difficult thing to simulate correctly. Although all simulated events are run through a full GEANT simulation of the CMS detector, the response of the detector changes slightly over time and less systematic issues often arise which can not be modeled, for instance issues with the beam can cause higher rates of pile-up than expected. \todo{Is there a source for why \MET is hard to model.} Due to these issues, it is more optimal to have a data-driven prediction method for sources that might be dominated by artificial \MET. In other words, we'd like to have prediction methods that don't rely on detector simulation, even better if they don't rely on physics simulation. 
+    Artificial \MET has been a historically difficult thing to simulate correctly. Although all simulated events are run through a full GEANT simulation of the CMS detector, the response of the detector changes slightly over time and less systematic issues often arise which can not be modeled, e.g. issues with the beam can cause higher rates of pile-up than expected. \todo{Is there a source for why \MET is hard to model.} Due to these issues, it is more optimal to have a data-driven prediction method for sources that might be dominated by artificial \MET. In other words, we'd like to have prediction methods that don't rely on detector simulation, even better if they don't rely on physics simulation. 
 
   \subsection{Z + Hadronic} \label{sec:z_+_hadronic}
     The Z+Hadronic prediction is based on the observation that the \MET profile in events with only hadronic activity (jets) accompanied by a dilepton pair coming from a Z boson will have \MET almost entirely due to mismeasurements of the jets. Figure \ref{fig:met_templates_idea} represents the central idea behind the method. 
@@ -607,7 +658,7 @@
 
 
     \subsubsection{\pt Reweighting Closure Test} \label{sec:pt_reweighting_closure_test}
-      In this section we show the results of the closure test meant to check how well the \pt reweighting procedure mitigates the differences in jet kinematics and configuration for the Z+hadronic background prediction. For this test, we use the Monte Carlo datasets in \ref{tab:closuremc}. \todo{not sure what to say about MC here} Z+jets MC is compared to $\gamma$+jets MC in each signal region. The procedure enumerated in the previous section is applied to both samples and then the \MET shape is compared. 
+      In this section we show the results of the closure test meant to check how well the \pt reweighting procedure mitigates the differences in jet kinematics and configuration for the Z+hadronic background prediction. For this test, Z+jets MC is compared to $\gamma$+jets MC in each signal region. The procedure enumerated in the previous section is applied to both samples and then the \MET shape is compared. 
 
       We use this test to set the expected fluctuation, or systematic uncertainty, for this method. A percent uncertainty is extracted for the 100-150 \MET bin and bins above 150 GeV by choosing the larger of the following:
 
@@ -814,7 +865,6 @@
 
   \clearpage
 
-
   \subsection{Flavor Symmetric Background} \label{sec:flavor_symmetric_background}
     
     The flavor symmetric background accounts for all cases where even a single lepton in the final dilepton pair was produced through the decay of a W boson. The basic idea is that the W has almost exactly the same decay rate to electrons and muons, therefore any event where a lepton was produced in a W decay should be mirrored by another event where the lepton was produced with the other flavor. In other words, if a physics process where a dilepton pair is produced and \emph{at least} one lepton came from a W boson occurs at some frequency $f$, a process where the dilepton pair has different flavor should occur with the same rate, $f$. The same argument holds for any flavor-symmetric process. For instance, ZZ production with two lost leptons, one from each Z, is also a flavor symmetric background because the chance to lose a muon is no different from the chance to lose an electron.\footnote{This is a rare process and those lost-lepton probabilities are not precisely identical, but the reader should understand that the existence of a W boson is not necessary to make a background process flavor symmetric. It is simply the most likely scenario as $t\bar{t}$ production is the only large cross section flavor-symmetric process in our search space.}
@@ -827,21 +877,137 @@
 
     The second is that with few enough events, the symmetry between same-flavor and different-flavor pairs can be thrown off by statistical fluctuations.\footnote{Tossing a coin should yield as many heads as tails, however it is just as likely to get HH \emph{or} TT in tossing a coin twice as it is to get one of each. To chance to get an uneven percentage of heads or tails in a series of throws decreases with number of throws. The symmetry has more power with more statistics.} For this analysis, the expected number of flavor symmetric events in most search binds is less than 2. In order to ensure we have enough statistics for each prediction, the mass window for the acceptance of different flavor events is enlarged.
 
+    With all corrections applied, the final number of events predicted in a \MET bin is 
+
+    \begin{equation}
+      N_{\text{SF}} = \kappa \cdot \rsfof \cdot N_{\text{DF}}, \label{eq:n_sf}
+    \end{equation}
+
+    where $\kappa$ is a corrective factor associated with the extrapolation from the enlarged mass window into the Z mass window, and \rsfof is a corrective factor associated with the asymmetry in electron and muon efficiencies.
+
     \subsubsection{The \rsfof Factor}
+
+      The factor \rsfof in eq. \ref{eq:n_sf} is a transfer factor which is meant to scale the number of different-flavor events in the flavor symmetric control regions, essentially the search regions with their same flavor requirement inverted, to the number of same-flavor events in associated search bin. This factor is derived through a direct measurement in the \rsfof control region, defined in sec. \ref{sec:rsfof_measurement_region} as $\MET \in [100,150]$, $\njets = 2$, and $\mll \notin [70,110]$. 
+
+      The measurement of this factor is done in both data and $t\bar{t}$ MC, but the value MC is used only as a sanity check on the method. In order to set an uncertainty associated with this method, the \rsfof control region is binned further by various parameters that are used to construct the search regions. The variation in the measured value across these bins is used as the expected fluctuation of the method. These checks are shown in figure \ref{fig:rsfof_unc}.
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{figures/RSFOF_Uncertainty.pdf}
+        \caption{The measurement of \rsfof and its uncertainty. The \rsfof control region is further binned along the variables shown, and \rsfof is measured as they vary. The orange band shows the one-$\sigma$ expected fluctuation set by this method. As can be seen, the majority of data points fall within this orange band. \rsfof is relatively well behaved as a function of these kinematic and event-level variables.}
+        \label{fig:rsfof_unc}
+      \end{figure}
+
+      The final value of \rsfof measured in data is $1.107 \pm 0.046$ (which is the value used in the final prediction), and the cross check in MC gives $1.090 \pm 0.005$.
+
 
     \subsubsection{Enlarging The Mass Window}
 
+      In order to keep the statistical uncertainty reasonable, we enlarge the flavor symmetric control region's \mll window from $\pm 5$ GeV about the Z mass to $> 20$ GeV. Then we must apply a transfer factor, denoted by $\kappa$, which gives the ratio of number of events expected in this enlarged window, to the number of events expected in the Z mass window. 
+
+      \[
+        \kappa = \frac{\text{Num Different Flavor Events in Z Mass Window}}{\text{Num Different Flavor Events with \mll } > 20 \text{ GeV}}
+      \]
+
+      Furthermore, although \mll was chosen precisely because it is a relatively flat variable for $t\bar{t}$ events near the search regions, there are going to be some kinematic differences introduced by this asymmetry. In order to set an uncertainty associated with this method, we measure $\kappa$ in several control, search, and amalgamated search regions, defined in sec. \ref{sec:kappa_measurement_regions}. Simulated $t\bar{t}$ events are also used to measure $\kappa$ in these regions as a sanity check on the method to ensure there is little to no background contamination in the flavor symmetric control region. 
+
+      The measured value of $\kappa$ is $0.065 \pm 0.02$ The $\kappa$ central value is then chosen to fit the various measured values. The one-$\sigma$ expected fluctuation is chosen such most values measured in data and all values measured in MC are within the band. Figure \ref{fig:kappa} summarized the measurements of $\kappa$ across all search and control regions in both data and MC. 
+
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\textwidth]{figures/datavsmc/data_summary_kfactors.pdf}
+        \caption{The measurement of $\kappa$ across various search and control regions. The value measured in data and MC agree within uncertainty for all regions. The solid line is the central value chosen for $\kappa$ and the dashed lines represent the one-$\sigma$ expected fluctuations.}
+        \label{fig:kappa}
+      \end{figure}
+
+      \clearpage
+
+    \subsubsection{Systematics}
+
+      The total uncertainty for this prediction is broken into 3 uncorrelated sources.
+
+      \[
+        \sigma^2_{\text{net}} = \sigma^2_{\text{\rsfof}} +  \sigma^2_{\kappa} + \sigma^2_{\text{Statistical}}
+      \]
+
+      The quantities $\sigma_{\text{\rsfof}}$ and $\sigma_{\kappa}$ are derived by taking the difference in the prediction when varying \rsfof and $\kappa$ between the two ends of their measured windows reported above. $\sigma_{\text{Statistical}}$ is the Poisson uncertainty on the number of events in the flavor symmetric control region associated the search bin scaled by the product of \rsfof and $\kappa$.
+
   \subsection{Z + $\nu$} \label{sec:z_+_neutrino}
 
-    Finally, we turn the Z+$\nu$ background. In order to get both a dilepton pair from a Z boson and a neutrino in a single final state, at least two electroweak bosons must have been produced and both must have decayed leptonically. That is to say that these processes are expected to have a rather low cross section compared to Z+hadronic and $t\bar{t}$, the two leading processes controlled for by the two other background prediction methods respectively.
-
-    Table \ref{tab:znu_processes} summarizes the non-negligible background processes considered that can produce the Z+$\nu$ signature.
-
-    %%%PUT TABLE HERE
-    %%%PUT TABLE HERE
-    %%%PUT TABLE HERE
+    Table \ref{tab:znu_processes} summarizes the non-negligible background processes considered that can produce the Z+$\nu$ signature. The simulated events are only accepted when the dilepton pair can be matched back to a pair that came from a Z boson and there is a neutrino in the final state. This selection ensures there is no double counting background events that should be predicted by the flavor symmetric or Z+hadronic predictions.
 
 
+    \begin{table}[!h]
+      \centering
+      \caption{\label{tab:znu_processes}
+      A summary of the Z+$\nu$ background sources. These processes are simulated as described in sec \ref{sec:monte_carlo}. Only events which have a prompt neutrino and where the pair of selected leptons can be matched to a Z boson are considered to ensure orthogonality with the Z+jets and flavor symmetric background predictions.
+      }
+      \begin{center}
+        \begin{tabular} {l | l}
+        \hline
+        \hline
+        Category & Processes \\
+        \hline
+        WZ     & WZ$\to 3\ell + \nu$           \\
+        ZZ     & 2$\ell + 2\nu$                \\
+        TTZ    & Z$\to 2\ell$ and Z$\to 2\nu$  \\
+        VVV    & ZZZ (inclusive decays)        \\
+               & WZZ (inclusive decays)        \\
+               & WWZ (inclusive decays)        \\
+        \hline
+        \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+
+    \subsubsection{Normalization Factors}
+      Monte Carlo cross section are notoriously unreliable for low cross-section physics, especially in extreme regions of phase space used for new physics searches. In order to check the cross sections in the simulated events, the ZZ, WZ, and TTZ simulation are compared against data in specific control regions constructed to be sensitive to these processes. The full definitions of these control regions are given in sec \ref{sec:znu_control_regions}. Figure \ref{fig:rare_xsec_check} summarizes the results of these comparisons. 
+
+      \begin{figure}[!h]
+        \begin{center}
+          \begin{tabular}{ccc}
+            \begin{overpic}[width=0.3\textwidth]{figures/datavsmc/rare_xsec/WZ.pdf}    \put(30,68){\parbox{.5in}{\color{black} \small WZ Control Region}}     \end{overpic} &
+            \begin{overpic}[width=0.3\textwidth]{figures/datavsmc/rare_xsec/ZZ.pdf}   \put(18,68){\parbox{.5in}{\color{black} \small ZZ \\ Control Region}}    \end{overpic} &
+            \begin{overpic}[width=0.3\textwidth]{figures/datavsmc/rare_xsec/TTZ.pdf}    \put(18,68){\parbox{.5in}{\color{black} \small TTZ Control Region}}     \end{overpic} \\
+          \end{tabular}
+          \caption{ \normalsize Data and MC are compared in WZ, ZZ, and TTZ control regions in order to check whether the cross section in MC is compatible with what we see in data. The simulation is normalized such that the number of events in the control region in data and MC agree. \todo{Leonora made these, do I need to redo? Please god no...} \label{fig:rare_xsec_check}
+          }
+        \end{center}
+      \end{figure}
+
+      Due to the low cross section, difficulty of isolation, and low impact on the results, a rigorous analysis on the performance of simulation for these processes is not undertaken. Rather, a large conservative uncertainty is chosen based on the historical performance of simulating these models. \todo{How can I write this without saying we guess based on some heuristic crap.} A summary of derived normalization factors and the associated uncertainty in MC modeling is given in table \ref{tab:znu_norm_factors}.
+
+      \begin{table}[!h]
+      \centering
+      \caption{\label{tab:znu_norm_factors}
+      A summary of the Z+$\nu$ background sources' normalization factors and uncertainties. For the WZ, ZZ, and TTZ processes, normalization factors were found to correct the MC cross section, the VVV processes have low enough cross section that this is neglected. Due to the difficulty of isolating these processes and their low impact on search results, flat uncertainties are taken based on our level of confidence in MC performance.
+      }
+      \begin{center}
+        \begin{tabular} {l | l | l}
+        \hline
+        \hline
+        Sample & Normalization Factor & Percent Uncertainty \\
+        \hline
+        WZ     & 1.06                 & 30\%                \\
+        ZZ     & 1.71                 & 50\%                \\
+        TTZ    & 1.36                 & 30\%                \\
+        VVV    & 1                    & 50\%                \\
+        \hline
+        \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+  \subsubsection{Systematics}
+
+      The total uncertainty for this prediction is broken into 2 uncorrelated sources.
+
+      \[
+        \sigma^2_{\text{net}} = \sigma^2_{\text{MC Performance}} + \sigma^2_{\text{Statistical}}
+      \]
+
+      The statistical uncertainty is taken from the MC, the ``MC Performance" uncertainty is given in table \ref{tab:znu_norm_factors} above.
 
 \section{Results} \label{sec:results}
   \subsection{Strong Search Regions} \label{sec:strong_search_regions}
@@ -857,49 +1023,49 @@
       \begin{center}
         \begin{tabular} {l | l | l | l | l | l }
           SRA & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
-          & Template  & 208.5$\pm$16.1 & 13.6$\pm$3.1 & 2.5$\pm$0.9 & 3.3$\pm$2.4 \\
+          & Z+jets  & 208.5$\pm$16.1 & 13.6$\pm$3.1 & 2.5$\pm$0.9 & 3.3$\pm$2.4 \\
           & FS  & $0.4^{+0.3}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.2^{+0.2}_{-0.1}$  & $0.2^{+0.2}_{-0.1}$  \\
-          & Rares  & 1.1$\pm$0.4 & 0.8$\pm$0.3 & 1.4$\pm$0.4 & 2.4$\pm$0.8 \\ 
+          & Z+$\nu$  & 1.1$\pm$0.4 & 0.8$\pm$0.3 & 1.4$\pm$0.4 & 2.4$\pm$0.8 \\ 
           & Sum  & $210.0^{+16.1}_{-16.1}$  & $14.8^{+3.2}_{-3.2}$  & $4.0^{+1.0}_{-1.0}$  & $5.9^{+2.5}_{-2.5}$ \\ 
           & Data  & 210 & 23 & 5 & 4 \\ \hline 
 
 
           SRAb & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
-          & Template  & 92.2$\pm$10.4 & 8.2$\pm$2.1 & 1.2$\pm$0.5 & 0.5$\pm$0.3 \\
+          & Z+jets  & 92.2$\pm$10.4 & 8.2$\pm$2.1 & 1.2$\pm$0.5 & 0.5$\pm$0.3 \\
           & FS  & $1.9^{+0.7}_{-0.7}$  & $2.3^{+0.8}_{-0.8}$  & $1.7^{+0.7}_{-0.6}$  & $0.1^{+0.2}_{-0.1}$  \\
-          & Rares  & 1.9$\pm$0.4 & 1.9$\pm$0.4 & 2.0$\pm$0.5 & 1.8$\pm$0.6 \\ 
+          & Z+$\nu$  & 1.9$\pm$0.4 & 1.9$\pm$0.4 & 2.0$\pm$0.5 & 1.8$\pm$0.6 \\ 
           & Sum  & $96.0^{+10.4}_{-10.4}$  & $12.4^{+2.3}_{-2.3}$  & $4.9^{+1.0}_{-1.0}$  & $2.5^{+0.7}_{-0.7}$ \\ 
           & Data  & 96 & 14 & 7 & 1 \\ \hline 
 
 
           SRB & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
-          & Template  & 130.1$\pm$12.8 & 12.8$\pm$2.3 & 0.9$\pm$0.3 & 0.4$\pm$0.2 \\
+          & Z+jets  & 130.1$\pm$12.8 & 12.8$\pm$2.3 & 0.9$\pm$0.3 & 0.4$\pm$0.2 \\
           & FS  & $0.3^{+0.2}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.4^{+0.3}_{-0.2}$  & $0.1^{+0.2}_{-0.1}$  \\
-          & Rares  & 0.6$\pm$0.2 & 0.3$\pm$0.1 & 0.7$\pm$0.2 & 1.2$\pm$0.4 \\ 
+          & Z+$\nu$  & 0.6$\pm$0.2 & 0.3$\pm$0.1 & 0.7$\pm$0.2 & 1.2$\pm$0.4 \\ 
           & Sum  & $131.0^{+12.8}_{-12.8}$  & $13.6^{+2.4}_{-2.4}$  & $2.0^{+0.5}_{-0.5}$  & $1.6^{+0.5}_{-0.4}$ \\ 
           & Data  & 131 & 10 & 4 & 0 \\ \hline 
 
 
           SRBb & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250+ \\ \hline 
-          & Template  & 37.9$\pm$6.7 & 7.7$\pm$3.1 & 4.0$\pm$3.3 & 0.1$\pm$0.1 \\
+          & Z+jets  & 37.9$\pm$6.7 & 7.7$\pm$3.1 & 4.0$\pm$3.3 & 0.1$\pm$0.1 \\
           & FS  & $0.7^{+0.4}_{-0.3}$  & $1.4^{+0.6}_{-0.5}$  & $1.1^{+0.5}_{-0.4}$  & $0.2^{+0.2}_{-0.1}$  \\
-          & Rares  & 1.3$\pm$0.4 & 2.0$\pm$0.5 & 2.3$\pm$0.6 & 1.0$\pm$0.3 \\ 
+          & Z+$\nu$  & 1.3$\pm$0.4 & 2.0$\pm$0.5 & 2.3$\pm$0.6 & 1.0$\pm$0.3 \\ 
           & Sum  & $40.0^{+6.8}_{-6.8}$  & $11.1^{+3.2}_{-3.2}$  & $7.4^{+3.4}_{-3.4}$  & $1.3^{+0.4}_{-0.3}$ \\ 
           & Data  & 40 & 10 & 5 & 0 \\ \hline 
 
 
           SRC & \MET [GeV]  &  50-100 &  100-150 & \multicolumn{2}{l}{ 150+ } \\ \hline 
-          & Template  &  23.8$\pm$5.5 &  1.2$\pm$0.4 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
+          & Z+jets  &  23.8$\pm$5.5 &  1.2$\pm$0.4 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
           & FS  &  $0.1^{+0.2}_{-0.1}$  &  $0.4^{+0.3}_{-0.2}$  & \multicolumn{2}{l}{ $0.1^{+0.2}_{-0.1}$  } \\ 
-          & Rares  &  0.2$\pm$0.1 &  0.1$\pm$0.1 & \multicolumn{2}{l}{ 0.5$\pm$0.2 } \\ 
+          & Z+$\nu$  &  0.2$\pm$0.1 &  0.1$\pm$0.1 & \multicolumn{2}{l}{ 0.5$\pm$0.2 } \\ 
           & Sum  &  $24.0^{+5.5}_{-5.5}$  &  $1.7^{+0.5}_{-0.5}$  & \multicolumn{2}{l}{ $0.7^{+0.3}_{-0.2}$ } \\ 
           & Data  &  24 &  4 & \multicolumn{2}{l}{ 0 } \\ \hline 
 
 
           SRCb & \MET [GeV]  &  50-100 &  100-150 & \multicolumn{2}{l}{ 150+ } \\ \hline 
-          & Template  &  9.9$\pm$3.7 &  0.1$\pm$0.5 & \multicolumn{2}{l}{ 0.0$\pm$0.3 } \\ 
+          & Z+jets  &  9.9$\pm$3.7 &  0.1$\pm$0.5 & \multicolumn{2}{l}{ 0.0$\pm$0.3 } \\ 
           & FS  &  $0.1^{+0.2}_{-0.1}$  &  $0.0^{+0.1}_{-0.0}$  & \multicolumn{2}{l}{ $0.3^{+0.2}_{-0.2}$  } \\ 
-          & Rares  &  0.0$\pm$0.1 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.6$\pm$0.2 } \\ 
+          & Z+$\nu$  &  0.0$\pm$0.1 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.6$\pm$0.2 } \\ 
           & Sum  &  $10.0^{+3.7}_{-3.7}$  &  $0.8^{+0.5}_{-0.5}$  & \multicolumn{2}{l}{ $0.9^{+0.5}_{-0.4}$ } \\ 
           & Data  &  10 &  2 & \multicolumn{2}{l}{ 2 } \\ \hline 
 
@@ -951,19 +1117,20 @@
       }
       \begin{center}
         \begin{tabular} {l | l | l | l | l | l | l }
-          TChiWZ & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250-350 & 350+ \\ \hline 
-          & Template  & 773.2$\pm$31.9 & 29.3$\pm$4.4 & 2.9$\pm$2.1 & 1.0$\pm$0.7 & 0.3$\pm$0.3 \\
+          VZ & \MET [GeV]  & 50-100 & 100-150 & 150-250 & 250-350 & 350+ \\ \hline 
+          & Z+jets  & 773.2$\pm$31.9 & 29.3$\pm$4.4 & 2.9$\pm$2.1 & 1.0$\pm$0.7 & 0.3$\pm$0.3 \\
           & FS  & $9.4^{+3.0}_{-3.0}$  & $11.1^{+3.6}_{-3.6}$  & $3.2^{+1.1}_{-1.1}$  & $0.1^{+0.2}_{-0.1}$  & $0.1^{+0.2}_{-0.1}$  \\
-          & Rares  & 10.4$\pm$2.6 & 14.5$\pm$4.0 & 15.5$\pm$5.1 & 5.0$\pm$1.8 & 2.2$\pm$0.9 \\ 
+          & Z+$\nu$  & 10.4$\pm$2.6 & 14.5$\pm$4.0 & 15.5$\pm$5.1 & 5.0$\pm$1.8 & 2.2$\pm$0.9 \\ 
           & Sum  & $793.0^{+32.2}_{-32.2}$  & $54.9^{+7.0}_{-7.0}$  & $21.6^{+5.6}_{-5.6}$  & $6.0^{+1.9}_{-1.9}$  & $2.5^{+0.9}_{-0.9}$ \\ 
           & Data  & 793 & 57 & 29 & 2 & 0 \\ \hline 
 
 
-          TChiHZ & \MET [GeV]  &  50-100 &  100-150 &  150-250 & \multicolumn{2}{l}{ 250+ } \\ \hline 
-          & Template  &  76.7$\pm$9.4 &  2.9$\pm$2.4 &  0.3$\pm$0.2 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
+          HZ & \MET [GeV]  &  50-100 &  100-150 &  150-250 & \multicolumn{2}{l}{ 250+ } \\ \hline 
+          & Z+jets  &  76.7$\pm$9.4 &  2.9$\pm$2.4 &  0.3$\pm$0.2 & \multicolumn{2}{l}{ 0.1$\pm$0.1 } \\ 
           & FS  &  $4.2^{+1.4}_{-1.4}$  &  $4.0^{+1.4}_{-1.4}$  &  $4.7^{+1.6}_{-1.6}$  & \multicolumn{2}{l}{ $0.9^{+0.4}_{-0.4}$  } \\ 
-          & Rares  &  1.1$\pm$0.3 &  0.7$\pm$0.2 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.3$\pm$0.1 } \\ 
+          & Z+$\nu$  &  1.1$\pm$0.3 &  0.7$\pm$0.2 &  0.6$\pm$0.2 & \multicolumn{2}{l}{ 0.3$\pm$0.1 } \\ 
           & Sum  &  $82.0^{+9.5}_{-9.5}$  &  $7.6^{+2.8}_{-2.8}$  &  $5.6^{+1.6}_{-1.6}$  & \multicolumn{2}{l}{ $1.3^{+0.4}_{-0.4}$ } \\ 
+          & Data  &  82 &  9 &  5 & \multicolumn{2}{l}{ 1 } \\ \hline 
         \end{tabular}
       \end{center}
     \end{table}
@@ -1059,7 +1226,7 @@
           \end{tabular}
         \end{center}
       \end{table}
-    \subsubsection{Setting Exclusion Limits}
+    \subsubsection{Setting Exclusion Limits} \label{sec:setting_exclusion_limits}
 
       In order to exclude a mass point for a signal model, we adopt the CL$_s$ method. The basic premise is that in order for a mass point to be excluded at the 95\% confidence level, we require that, under some metric of probability, the background only hypothesis is 20 times more likely than the signal+background hypothesis\footnote{$\frac{1}{20}$ being the left of 5\% from 95\%}.
 
@@ -1095,6 +1262,7 @@
 
        is called the exclusion limit for the mass point. If the value of $\mu$ for which this condition is met is 1 or more, the mass point can not be excluded at the 95\% level. If the value of $\mu$ is less than 1, then we call the mass point excluded.
 
+       In the final exclusion plots, an ``expected limit" is normally drawn as well. To construct this limit, we follow the same limit setting procedure described above, but replace $q^\text{obs}_\mu$ with the $q$ value for a simulated result of our experiment assuming the background only hypothesis. This process is then repeated to produce a distribution of excluded $\mu$ values. The central value and one-$\sigma$ expected limits are then taken from this distribution.
 
   \subsection{Systematics in Signal Yield} \label{sec:systematics_in_signal_yield}
     In order to interpret these results in the context of electroweak scale SUSY, the simplified SUSY models in figure \ref{fig:feynman_str} and \ref{fig:feynman_ewk} are simulated using the madgraph package as explained in sec \ref{sec:susy_simulation}. The simulated events are then run through the same software used to reconstruct and select real data events. 
@@ -1117,7 +1285,7 @@
           Lepton Trigger Efficiency  & $\pm$3    \\
           Lepton ID/Iso Efficiency   & $\pm$7    \\
           ISR Modeling               & $\pm$0--7  \\
-          Luminosity                 & $\pm$2.6  \\
+          Luminosity \cite{Lumi_unc} & $\pm$2.6  \\
           Fastsim MET Modeling       & $\pm$1--60    \\
           Generator Scale variations & $\pm$3   \\
           PU reweighting             & $\pm$3    \\
@@ -1129,7 +1297,7 @@
       \end{center}
     \end{table}
 
-  \subsection{Exclusion Limits}
+  \subsection{Exclusion Limits} \label{sec:exclusion_limits}
 
     In this section, the results in \ref{sec:results} are interpreted in the context of the simplified supersymmetric models described in \ref{sec:susy_models}. For the sake of convenience, the Feynman diagrams for these models are reproduced in figure \ref{fig:SUSY_diagrams_interpretation_sec}.
 
@@ -1159,7 +1327,9 @@
         Feynman diagrams for the SUSY models used in interpreting the results of this analysis. More exposition on the properties of these models is found in sec \ref{sec:susy_models}.}
     \end{figure}
 
-    For the strong production model, \ref{fig:t5zz_diagram_interpretations}, the bulk of the sensitivity comes from the high jet multiplicity and high \MET search regions, SRB(b) and SRC(b). In a previous CMS result probing similar final states, this simplified model was excluded at the 95\% CL for gluino masses roughly below 1.2 TeV \cite{paper_2015}. This analysis pushes the limits for the same model by roughly 500 GeV as can be seen in figure \ref{fig:t5zz_interpretation}.
+    For the strong production model, shown in fig. \ref{fig:t5zz_diagram_interpretations}, the exclusion limits are shown in figure \ref{fig:t5zz_interpretation}, which combines data from all the strong search regions in the likelihood function. The free parameters in this model are the gluino and $\widetilde{\chi}^0_1$ masses, the gravitino mass is set to 1 GeV. The bulk of the sensitivity comes from the high jet multiplicity and high \MET search regions, SRB(b) and SRC(b). Due to the downward fluctuations in most of the high \MET bins, our observed limit is slightly better than the expected limit. In a previous CMS result probing similar final states,\cite{paper_2015} this simplified model was excluded at the 95\% CL for gluino masses roughly below 1.2-1.3 TeV for $\widetilde{\chi}^0_1$ masses below 1 TeV. This analysis advances the limits significantly, by roughly 400 GeV in gluino mass for similar $\widetilde{\chi}^0_1$ masses, as can be seen in figure \ref{fig:t5zz_interpretation}. 
+
+    \todo{check this description: }In the compressed spectrum (where the $\widetilde{\chi}^0_1$ mass is close to the gluino mass), the neutralino is expected to carry away more energy from the gluino than the quarks. In the extremely compressed regions where the $\widetilde{\chi}^0_1$ and gluino masses are only separated by about 100 GeV, it's possible that one of the jets can be missed. This makes SRB/SRBb more important regions at the top of the plot. The data shows a downward fluctuation in the high \MET bins of those regions, and so the observed limits tend to move towards higher masses than the expected limits. At large mass splittings, i.e. points near the x axis, SRC and SRCb are the most important regions due to the high jet multiplicity. There is a small upwards fluctuation in SRCb which offsets the downward fluctuations in SRB, SRBb, and SRC; this causes the observed limit to be closer to the expected limit in the bottom of the plot.
 
     \begin{figure}[!h]
       \centering
@@ -1174,25 +1344,69 @@
           \caption{Limits set by this analysis}
         \end{subfigure}
       \caption{ \label{fig:t5zz_interpretation}
-        The limits set on the strong GMSB SUSY model are shown to the right. To the left, we show the previous best limit on this model set by CMS in 2016. This model is excluded at the 95\% CL for gluino masses below 1450 GeV for low LSP masses, and below 1750 GeV for large LSP masses. \todo{check this description: }In the compressed spectrum (where the LSP mass is close to the gluino mass), the LSP is expected to carry away more energy from the gluino than the quarks. In the extremely compressed regions where the LSP and gluino are only separated by a 100 GeV or so of mass, it's possible that one of the jets can be missed. The data shows a downward fluctuation in most of the high \MET bins, except in SRCb, which because of the high jet multiplicity is more sensitive to the uncompressed spectrum. Basically in the high LSP cases, there's some chance for the jets to be lost and that's why the downward fluctuations in SRA and SRB are reflected by creating a better observed limit than the expected one. \todo{ All signal points should all end up in the high MET bin, right? We expect 6 jets normally here because the second Z normally goes to jets. This means that SRC is the most important, yet there is not really a downward fluctuation there. It seems that SRC is related more to the large splitting points and SRA/B are more related to the compressed spectrum... but does the jet argument hold? It seems like in the intermediate mass points we should still expect mostly 6 jet events, yet we already see great space there between the expected and observed limits..}
+        The limits set on the strong GMSB SUSY model from fig. \ref{fig:t5zz_diagram_interpretations} are shown to the right. To the left, we show the previous best limit on this model set by CMS in 2016.\cite{paper_2015} The solid black and bold dotted red lines trace out the largest masses where the signal strength $\mu$ is less than 1 at 95\% confidence for observed and expected data respectively as described in section \ref{sec:setting_exclusion_limits}, mass points to the left of these line are excluded. The data excludes this model at the 95\% CL for gluino masses below 1450 GeV for low LSP masses, and below 1750 GeV for large LSP masses.
       }
     \end{figure}
+
+    Figure \ref{fig:tchiwz_interpretation} shows the exclusion limits for the electroweak WZ model in fig. \ref{fig:tchiwz_diagram_interpretations}. For this model, data from the electroweak regions are used in the likelihood, however almost all the discriminatory power comes from the VZ region. The free parameters in this model are the mass of the $\widetilde{\chi}^0_1$ and $\widetilde{\chi}^{\pm}_1$, the $\widetilde{\chi}^0_2$ mass is set equal to that of the $\widetilde{\chi}^{\pm}_1$. Downward fluctuations in the high \MET bins for that region again make the observed limits stronger than the expected limits. For light LSP mass points, the model is excluded for $\widetilde{\chi}^{\pm}_1$ and $\widetilde{\chi}^0_2$ masses up to 600 GeV, better than double the previous limits. In the high $\widetilde{\chi}^{\pm}_1$ and $\widetilde{\chi}^0_2$ mass range, the excluded LSP mass range extends to around 250 GeV. 
 
     \begin{figure}[!h]
       \centering
-      \includegraphics[width=\textwidth]{figures/interpretations/TChiWZ_Exclusion_13TeV.pdf}
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_2015}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiWZ_previous_best.pdf}
+          \caption{Previous best limits on this model}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_current}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiWZ_Exclusion_13TeV.pdf}
+          \caption{Limits set by this analysis}
+        \end{subfigure}
       \caption{ \label{fig:tchiwz_interpretation}
-        The limits set for the EWK WZ model.
+        The limits set on the electroweak WZ model in fig. \ref{fig:tchiwz_diagram_interpretations}. In this limit, data from the electroweak VZ and HZ search regions are utilized, though the VZ region has by far the larger sensitivity to this model. The solid back and thick dashed red lines show the observed and expected limits respectively as described in section \ref{sec:setting_exclusion_limits}, mass points below these lines are excluded. These results push the excluded $\widetilde{\chi}^{\pm}_1$ and $\widetilde{\chi}^0_2$ masses to 600 GeV from 275 GeV for low mass LSPs, and excludes LSP mass points for up to about 250 GeV for high $\widetilde{\chi}^{\pm}_1$ and $\widetilde{\chi}^0_2$ masses, up from about 60.
       }
     \end{figure}
 
+    Figure \ref{fig:tchizz_interpretation}, shows the exclusion limits for the electroweak ZZ model shown in fig. \ref{fig:tchizz_diagram_interpretations}. In this model, the only free parameter is the mass of the $\widetilde{\chi}^0_1$, the gravitino mass is assumed to be 1 GeV. The thick pink line is the theoretical cross section for this model as a function of the free mass parameter, it's thickness shows the uncertainty on the theory calculation. The solid black and dotted black lines show the observed and expected limits respectively. The point where the pink line and the solid black line cross is the observed exclusion limit for the $\widetilde{\chi}^0_1$ mass at 95\% confidence. This result pushed the previous limits on the $\widetilde{\chi}^0_1$ mass from about 375 GeV to about 675 GeV.
 
-    Prior Best T5ZZ Model   -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-15-011/
-    Prior Best TChiWZ Model -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-13-006/
-    Prior Best TChiZZ Model -- http://cms-results.web.cern.ch/cms-results/public-results/publications/SUS-14-002/
-    I think the HZ model is the same as the ZZ model.
 
-\clearpage
+    \begin{figure}[!h]
+      \centering
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_2015}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiZZ_previous_best.pdf}
+          \caption{Previous best limits on this model}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_current}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiZZ_Exclusion_13TeV.pdf}
+          \caption{Limits set by this analysis}
+        \end{subfigure}
+      \caption{ \label{fig:tchizz_interpretation}
+        The limits set on the Electroweak ZZ model shown in fig. \ref{fig:tchizz_diagram_interpretations}. In this limit, data from the electroweak VZ search region is utilized and the $\widetilde{\chi}^0_1$ is assumed to decay 100\% to the Z. On the right, the point where the pink line crosses the solid black line marks the highest mass excluded. Where the pink line crosses the dotted line marks the expected limit. The downward fluctuation in the VZ region high \MET bin again caused the observed limit to be better than the expected limit. The limit set on the $\widetilde{\chi}^0_1$ mass increased by about 300 GeV from the previous result on the left.
+      }
+    \end{figure}
+
+    Finally, figure \ref{fig:tchihz_interpretation}, shows the exclusion limits for the electroweak HZ model shown in fig. \ref{fig:tchihz_diagram_interpretations}. The only free parameter in this model is the $\widetilde{\chi}^0_1$ mass. This model assumes a 50\% branching ratio of the $\widetilde{\chi}^0_1$ to higgs and Z bosons. The likelihood for this model is constructed using data from the VZ and HZ regions. The likelihood also takes into account that the signature of the ZZ model above should be produced with $\frac{1}{2}$ the frequency as that of the HZ model since the 50\% branching ratio to Z bosons means that the ZZ final state should be produced as well. Points to the left of the crossing point between the pink and solid black line are excluded at the 95\% level. This analysis pushed the limits for the $\widetilde{\chi}^0_1$ mass in this model from 250 GeV to about 500 GeV.
+
+    \begin{figure}[!h]
+      \centering
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_2015}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiHZ_previous_best.pdf}
+          \caption{Previous best limits on this model}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\textwidth}
+          \label{fig:t5zz_interpretations_current}
+          \includegraphics[width=\textwidth]{figures/interpretations/TChiHZ_0p25ZZ_Exclusion_13TeV.pdf}
+          \caption{Limits set by this analysis}
+        \end{subfigure}
+      \caption{ \label{fig:tchihz_interpretation}
+        The limits set on the Electroweak HZ model shown in fig. \ref{fig:tchihz_diagram_interpretations}. In this limit, data from the electroweak VZ and HZ search regions are combined and the branching ratios for $\widetilde{\chi}^0_1$ are assumed to be 50/50 between the Higgs and Z.
+      }
+    \end{figure}
+
+  \clearpage
 
 \section{The Electroweak Combination}
 
