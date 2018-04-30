@@ -120,21 +120,115 @@
       \label{fig:strip_tracker_geometry}
     \end{figure}
 
-    Because one of the goals of the tracking system is to obtain a measure of momentum by tracking the natural motion of particles through space in a magnetic field, it is important that the interactions between charged particles and the tracking system do not change the motion of the particles dramatically. It is typical to look at the number of radiation lengths\footnote{taken to be the distance at which a high energy electron is expected to lose $\frac{1}{e}$ of its energy \cite[sec 34.4.2]{PDG}, $\frac{7}{9}$ the mean free path for a high energy photon.} "material budget" of the tracker as a measure of the expected 
+    Because one of the goals of the tracking system is to obtain a measure of momentum by tracking the natural motion of particles through space in a magnetic field, it is important that the interactions between charged particles and the tracking system do not change the motion, and likewise the energy, of the particles dramatically. For particles other than the electron and photon, the silicon tracker has mostly negligible effects on the energy as the amount of bremsstrahlung is inversely proportional to the mass of the particle to approximately the 6th power;\footnote{This can be seen in the classical theory of bremsstrahlung radiation as described in \cite[pg. 464, eq. 11.75]{griffiths_em} by replacing the Lorentz factor $\gamma$ with $\frac{E}{mc^2}$. In the case of an acceleration in an orthogonal direction, $\gamma^6 \to \gamma^4$.} their main energy loss mechanism is through ionization.\cite[sec. 33.2]{PDG} However, for the electron and the photon, interaction with the tracker can cause bremsstrahlung radiation and pair production respectively.
 
-    sagitta thing
+    To understand the magnitude of these effects, it is typical to look at the number of radiation lengths\footnote{taken to be the distance at which a high energy electron is expected to lose $\frac{1}{e}$ of its energy \cite[sec 34.4.2]{PDG}, or $\frac{7}{9}$ the mean free path for a high energy photon.} of material in the tracker. The ``material budget" of the tracker is shown in figure \ref{fig:tracker_material_budget}. Due to the large amount of non-sensitive material in the range $\abs{\eta} \in [1.4,1.6]$, leptons for this analysis are not considered in that range, as is explained in section \ref{sec:dilepton_selection}. As can be seen in the figure, many $\eta$ values correspond to high probability of radiation and pair production for electrons and photons respectively. We will explain in section \ref{sec:particle_flow} how the momentum of these types of particles is reconstructed given these issues.
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.9\textwidth]{figures/cms_tracker_material_budget.pdf}
+      \caption{The material budget of the tracking system in radiation lengths. On the left, the material is broken down by tracker subsystem, on the right it is broken down by the type of component. As can be seen on the right plot, a large amount in non-sensitive material, like cables and support structure, is found near $\abs{\eta}=1.5$. For this reason, leptons in this analysis are not used if they are found in the window $\abs{\eta} \in [1.4,1.6]$. Taken from \cite{cms_jinst}.}
+      \label{fig:tracker_material_budget}
+    \end{figure}
 
   \subsection{The Electromagnetic Calorimeter} \label{sec:ECAL}
-    Need to put in the deadzone here.
+    The CMS Electromagentic Calorimeter (ECAL) is a nearly hermetic and homogeneous cylinder made of lead tungstate (PbWO$_4$) crystals with attached light measuring devices. The crystals are ``truncated pyramids", roughly rectangles of approximately 23 centimeters in length that taper slightly, from 26x26 mm$^2$ to 22x22 mm$^2$ in the barrel\cite[pg. 4]{cms_ecal}, to accommodate the curved shape of the ECAL in the $\phi$ direction and the angle at which the crystals are oriented to face the interaction point.\footnote{the crystals have a 3$^\circ$ angle with respect to the line that connects their incident face to interaction point in both the $\eta$ and $\phi$ directions to allow for better coverage of the fiducial volume.} Schematic views of the ECAL can be seen in figures \ref{fig:ecal_xsec} and \ref{fig:ecal_cutaway}. As can be seen in the figures, the calorimeter is broken into two physical sections, the barrel region (EB) and the endcap region (EE). The preshower disk in front of the endcap region is immaterial for this search, but is there to help distinguish between neutral pions converting to a di-photon pair with small angle separation from a single high energy photon. 
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.9\textwidth]{figures/cms_ecal_xsec.pdf}
+      \caption{A cross sectional view of the electromagnetic calorimeter on the CMS detector. Notice the geometry of the crystals the transition region near $\abs{\eta} = 1.5$. Taken from \cite{cms_tdr}.}
+      \label{fig:ecal_xsec}
+    \end{figure}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.9\textwidth]{figures/cms_ecal.pdf}
+      \caption{A cutaway of the electromagnetic calorimeter on the CMS detector. Taken from \cite{cms_jinst}.}
+      \label{fig:ecal_cutaway}
+    \end{figure}
+
+    The purpose of the ECAL is essentially to give the most important measure of energy for electrons and photons. As explained in the previous section, the dynamics of electrons in material are quite distinct from heavier charged particles in material, the next lightest being a muon. Typical muon deposits in the ECAL are roughly 300 MeV\cite{muon_stopping_power}, whereas electrons under 500 GeV tend to have almost all of their energy absorbed by the ECAL\cite[sec. 4.10]{cms_jinst}. This is to say that charged particles heavier than an electron tend to pass right through the ECAL with little disturbance. \todo{Is this actually correct? Should I have a section somewhere where I describe charged particle interactions with matter?}
+
+    The ECAL operates on the principle of scintillation\cite[ch. 7]{leo_detectors}, and makes use of the fast scintillation time (80\% of light emitted within 25 ns), high stopping power, and consequently small Moli\`ere radius of lead tungstate. The lead tungstate crystals have a length which corresponds to approximately 25 radiation lengths, this ensures that almost all of the energy carried by a high energy photon or electron will be radiated. The small Moli\`ere radius allows for good spacial resolution of energy deposits. \cite[pg. 90]{cms_jinst} Two things happen when an electron or photon is incident on one of the crystals:
+
+    \begin{enumerate}
+      \item A cascade of electrons, positrons, and photons is created. This is due to the effects discussed in the previous section, photons will pair produce electron-positron pairs. Electrons and positrons undergo bremsstrahlung radiation in material creating high energy photons. The result is that these processes feedback on each other and the multiplicity of particles explodes in the material creating an ``electromagnetic shower". A hypothetical shower imposed on an ECAL crystal is shown in figure \ref{fig:ecal_crystal}.
+
+      \item Scintillation light is emitted by the lead tungstate due to interactions with charged particles and the light captured by the photo detectors attached to the crystal.
+    \end{enumerate}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.5\textwidth]{figures/cms_ecal_crystal_shower.png}
+      \caption{A lead tungstate crystal from the CMS ECAL endcap region with a vacuum phototriode attached. A hypothetical shower from an electron is superimposed on the image. Taken from \cite{ecal_crystal}.}
+      \label{fig:ecal_crystal}
+    \end{figure}
+
+    From the amount of scintillation light, the energy of the incident particle can be reconstructed with high resolution. Figure \ref{fig:ecal_resolution} shows the energy measured using a 5x5 grid of ECAL crystals for 120 GeV electrons. From the figure, we can see that the ECAL energy resolution is excellent for electrons in this range, the standard deviation of the energy measurement being 1-2\% of the energy.
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.7\textwidth]{figures/ecal_resolution.pdf}
+      \caption{The energy measured from 120 GeV electrons taken from a 5x5 grid of ECAL crystals. Taken from \cite{cms_jinst}.}
+      \label{fig:ecal_resolution}
+    \end{figure}
+
+    \todo{What happens to the light that that doesn't pair produce? Is that also picked up by the photo diode? Also, why does the light always go forward, momentum only?}
+
   \subsection{The Hadronic Calorimeter}
-    The HCAL is made up of a sampling system
+    The CMS Hadronic Calorimeter (HCAL) is a sampling calorimeter made of interleaved layers of dense absorber metals with plastic scintillator material. The purpose of this subsystem is to measure the energy of the hadrons and massive charged particles that make up jets. The measurement of these objects are of particular importance for the reconstruction of \MET, which is a central event-level object in this analysis.
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.45\textwidth]{figures/hcal_wedge.pdf}
+      \includegraphics[width=.45\textwidth]{figures/hcal_scintillator.pdf}
+      \caption{Shown on the left, a wedge of the HCAL in the barrel. The interior of the wedge is brass, and the shown slots have the scintillator modules (shown to the right) inserted so that secondary particles made in interactions with the brass will pass through them and have their energy measured. To the right, a scintillator module is shown, when a charged particle passes through the scintillator, light is generated and collected by the wavelength shifting fiber shown in green. When scintillation light is collected by the fiber, it releases green light that travels down to the clear fiber via total internal reflection and sent to be collected by photo sensors. Taken from \cite{cms_hcal_wedge}.}
+      \label{fig:hcal_wedge}
+    \end{figure}
+
+    Figure \ref{fig:hcal_wedge} shows the general design of an HCAL wedge in the barrel region. Layers of brass are interspersed with scintillator strips that read out the energy of secondary particles created in the hadronic interaction. In terms of nuclear interaction lengths, the HCAL goes from about 5 nuclear interaction lengths at $\eta = 0$ up to about 10 at $\eta \ge 1.3$. Due to the shallow depth in the barrel, an outer layer of scintillator is added outside the magnet, essentially using the magnet as an absorber layer. This outer layer is called the HO and runs in the range $\eta \in [0, 1.3]$. Figure \ref{fig:hcal_layout} shows a cross-section of the HCAL including the HB, HE, and HO. With the HO in place, the minimum number of interaction lengths across the HCAL is increased to almost 12 except in the transition region between the endcap and barrel.\cite[pg. 138]{cms_jinst}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.9\textwidth]{figures/cms_hcal_layout.pdf}
+      \caption{The a cross-sectional view of the CMS hadronic calorimeter. Taken from \cite{cms_jinst}.}
+      \label{fig:hcal_layout}
+    \end{figure}
+
+    Sampling calorimeters again work on the principle of scintillation, however, HCALs are meant to measure energy from neutral particles as well as charged hadrons. The strategy used in sampling calorimeters is to place dense material with many nuclei in front of the incident particles. Hadronic interactions are much more complicated than the photon and electron interactions in the ECAL because the initial state particles can vary, but in general the expected product of inelastic collisions are charged pions, which create electromagnetic cascades, and neutral particles like the $\eta$ and $\pi^0$ which quickly decay to photons. \cite[sec 35.9.2]{PDG} \cite{green_detectors} Neutron capture can also occur which makes photons that are typically out of the electronics detection capability.\todo{This is so confusing, how the hell can you say you get almost always pions for any hadronic particle?} The hadronic cascade of particles then leads into the scintillating material where scintillation light is generated and collected. Again, the amount of light collected is proportional to the energy of the charged particle \todo{why? also is the light from the $\eta$ and $\pi^0$ absorbable by the WSF?}.
+
+    In the CMS HCAL, the absorber layers are made of brass, and the scintillator material is a proprietary plastic material, Kuraray SCSN81\footnote{excluding the very first layer where the absorber metal is stainless steel and the plastic scintillator is Bicron BC408. The very last layer also has stainless steel as the absorber metal.}. The HCAL is broken into three physical sections: the barrel (HB) extending to $\abs{\eta} \le 1.4$, the slightly overlapping endcap (HE) extending between $\abs{\eta} \in (1.3,3)$, and the slightly overlapping forward detector (HF) covering the range $\abs{\eta} \in (2.9,5)$. In this analysis, we do not use jets with energy measurements from the forward detector, that is we veto jets with $\eta > 3$.
+
+
   \subsection{The Muon System}
+    The outer-most detection subsystem on CMS are the muon chamber. Muons literally put the ``M" in CMS, they are an extremely important particle for LHC physics for several reasons. \cite[sec 1.2]{muon_tdr}
+
+    \begin{enumerate}
+     \item Their production is associated with the electroweak sector, which includes the Higgs boson.
+     \item They have a long enough lifetime that they can make it through the entire detector, making them easily identifiable and allowing for good momentum resolution due to their long track.
+     \item Their radiative losses in the tracking system and ECAL are much smaller than electrons due to their heavier mass. They also don't deposit much energy in the HCAL because they don't interact via the strong force.
+    \end{enumerate}
+
+    The muon system on CMS is made up of three different types of detectors, all based on gas ionization.
+    \begin{enumerate}
+     \item{Drift Tubes} Tubes of 
+     \item{Cathode Strip Chambers}
+     \item{Resistive Plate Chambers}
+    \end{enumerate}
+
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.9\textwidth]{figures/muon_system.pdf}
+      \caption{A cross-sectional view of the CMS muon system. In the barrel, with $\abs{\eta}<1.2$, drift tubes (DTs) and resistive plate chambers (RPCs) are used. In the end cap, $\abs{\eta} \in (1.2,2.4)$, RPCs and cathode strip chambers (CSCs) are used. Taken from \cite{cms_tdr}.}
+      \label{fig:muon_system}
+    \end{figure}
+
   \subsection{Fiducial Area} \label{sec:fiducial_area}
-    the wierd eta deadzone, very forward stuff.
+    the weird eta deadzone really effects electrons and we want symmetry between electrons and muon \ref{sec:inner_tracker}. very forward stuff, $\abs{\eta}<2.4$. 
   \subsection{Event Triggering} \label{sec:event_triggering}
-    trigger turn ons, list the triggers we use, Level 1 and HLTs? Trigger efficiency  
-
-
+    trigger turn ons, list the triggers we use, Level 1 and HLTs? Trigger efficiency 
 \section{Physics Objects}
   \subsection{Particle flow and jet clustering} \label{sec:particle_flow}
     reconstruction efficiency

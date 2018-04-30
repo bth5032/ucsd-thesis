@@ -6,6 +6,21 @@ Cms y totem estudiarán la resonancia a 750 gev vía ct-pps.
   \url{http://francis.naukas.com/2016/05/16/cms-y-totem-estudiaran-la-resonancia-a-750-gev-gracias-a-ct-pps/}.
 \newblock Accessed: 2018-04-17.
 
+\bibitem{ecal_crystal}
+Electromagnetic calorimeter.
+\newblock
+  \url{https://cms-docdb.cern.ch/cgi-bin/PublicDocDB/ShowDocument?docid=12030}.
+\newblock Accessed: 2018-04-23.
+
+\bibitem{muon_tdr}
+{\em {The CMS muon project: Technical Design Report}}.
+\newblock Technical Design Report CMS. CERN, Geneva, 1997.
+
+\bibitem{cms_ecal}
+Energy calibration and resolution of the cms electromagnetic calorimeter in pp
+  collisions at â s = 7 tev.
+\newblock {\em Journal of Instrumentation}, 8(09):P09009, 2013.
+
 \bibitem{Electron_reco}
 Performance of electron reconstruction and selection with the cms detector in
   proton-proton collisions at $\sqrt{s}$ = 8 tev.
@@ -26,6 +41,12 @@ S~Abdullin, P~Azzi, F~Beaudette, P~Janot, A~Perrotta, and the
   CMS~Collaboration.
 \newblock The fast simulation of the cms detector at lhc.
 \newblock {\em Journal of Physics: Conference Series}, 331(3):032049, 2011.
+
+\bibitem{cms_hcal_wedge}
+S.~Abdullin and {etal}.
+\newblock Design, performance, and calibration of cms hadron-barrel calorimeter
+  wedges.
+\newblock {\em The European Physical Journal C}, 55(1):159--171, May 2008.
 
 \bibitem{higgs_combine}
 The ATLAS, CMS Collaborations, and The LHC Higgs~Combination Group.
@@ -52,6 +73,11 @@ S~Chatrchyan and {etal}.
   experiment}.
 \newblock {\em JINST}, 3:S08004. 361 p, 2008.
 \newblock Also published by CERN Geneva in 2010.
+
+\bibitem{muon_stopping_power}
+CMS Collaboration.
+\newblock Measurement of the muon stopping power in lead tungstate.
+\newblock {\em Journal of Instrumentation}, 5(03):P03007, 2010.
 
 \bibitem{muon_POG}
 CMS Collaboration.
@@ -105,6 +131,16 @@ Lyndon~R Evans and Philip Bryant.
 \newblock This report is an abridged version of the LHC Design Report
   (CERN-2004-003).
 
+\bibitem{green_detectors}
+Dan Green.
+\newblock {\em The physics of particle detectors}.
+\newblock Cambridge University Press, 2010.
+
+\bibitem{griffiths_em}
+David~J. Griffiths.
+\newblock {\em Introduction to Electrodynamics}.
+\newblock Prentice Hall, 3rd edition, 1999.
+
 \bibitem{JEC_2016}
 V.~Khachatryan and {etal}.
 \newblock Jet energy scale and resolution in the {CMS} experiment in pp
@@ -117,6 +153,11 @@ Vardan Khachatryan et~al.
   same-flavor leptons, jets, and missing transverse momentum in pp collisions
   at $\sqrt{s}$ = 13 TeV}.
 \newblock {\em Submitted to: JHEP}, 2016.
+
+\bibitem{leo_detectors}
+William~R. Leo.
+\newblock {\em Techniques for Nuclear and Particle Physics Experiments}.
+\newblock Springer-Verlag, 1987.
 
 \bibitem{mt2_paper}
 C.G Lester and D.J Summers.
