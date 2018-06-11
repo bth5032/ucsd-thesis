@@ -1,4 +1,9 @@
 %% ========================================================================================================
+%% Chapter 1 -- Introduction
+%% ========================================================================================================
+
+
+%% ========================================================================================================
 %% Chapter 2 -- Data Acquisition
 %% ========================================================================================================
 
@@ -65,7 +70,7 @@
 
     
 @article{cms_electrons,
-  author={},
+  author={The CMS Collaboration},
   title={Performance of electron reconstruction and selection with the CMS detector in proton-proton collisions atâ sÂ =Â 8Â TeV},
   journal={Journal of Instrumentation},
   volume={10},
@@ -76,8 +81,6 @@
   abstract={The performance and strategies used in electron reconstruction and selection at CMS are presented based on data corresponding to an integrated luminosity of 19.7 fb â1 , collected in proton-proton collisions at â sÂ =Â 8Â TeV at the CERN LHC. The paper focuses on prompt isolated electrons with transverse momenta ranging from about 5 to a few 100 GeV. A detailed description is given of the algorithms used to cluster energy in the electromagnetic calorimeter and to reconstruct electron trajectories in the tracker. The electron momentum is estimated by combining the energy measurement in the calorimeter with the momentum measurement in the tracker. Benchmark selection criteria are presented, and their performances assessed using Z, ##IMG## [http://ej.iop.org/icons/Entities/Upsilon.gif] {Upsilon} , and J/Ï decays into e + + e â pairs. The spectra of the observables relevant to electron reconstruction and selection as well as their global efficiencies are well reproduced by Monte Carlo simulations. The momentum scale is calibrated with an uncertainty smaller than 0.3%. The momentum resolution for electrons produced in Z boson decays ranges from 1.7 to 4.5%, depending on electron pseudorapidity and energy loss through bremsstrahlung in the detector material.}
 }
 
-
-    
 @article{cms_muons,
   author={The CMS collaboration},
   title={Performance of CMS muon reconstruction in pp collision events at âs = 7 TeV},
@@ -104,7 +107,7 @@
 
 @article{cms_ecal,
   author={},
-  title={Energy calibration and resolution of the CMS electromagnetic calorimeter in pp collisions at â s = 7 TeV},
+  title={Energy calibration and resolution of the CMS electromagnetic calorimeter in pp collisions at sqrt(s) = 7 TeV},
   journal={Journal of Instrumentation},
   volume={8},
   number={09},
@@ -117,7 +120,7 @@
 
     
 @article{cms_particleflow,
-  author={A.M. Sirunyan, and {etal}},
+  author={A.M. Sirunyan and {etal}},
   title={Particle-flow reconstruction and global event description with the CMS detector},
   journal={Journal of Instrumentation},
   volume={12},
@@ -182,6 +185,15 @@
   url={http://stacks.iop.org/0954-3899/34/i=7/a=S04},
   year={2007},
   abstract={A concise review of the experimental and phenomenological progress in high-energy heavy-ion physics over the past few years is presented. Emphasis is put on measurements at BNL-RHIC and CERN-SPS which provide information on fundamental properties of QCD matter at extreme values of temperature, density and low- x . The new opportunities accessible at the LHC, which may help clarify some of the current open issues, are also outlined.}
+}
+
+@article{muon_reco_AN,
+  author={The CMS Collaboration},
+  title={Muon Reconstruction in the CMS Detector},
+  journal={CMS Internal Analysis Note (available to CMS members only)},
+  url={http://cms.cern.ch/iCMS/jsp/db_notes/noteInfo.jsp?cmsnoteid=CMS%20AN-2008/097},
+  year={2009},
+  note={CMS AN-2008/97}
 }
 
 @article{cms_jinst,
@@ -276,6 +288,112 @@ url="https://doi.org/10.1140/epjc/s10052-008-0573-y"
       year          = "1997",
       url           = "https://cds.cern.ch/record/343814",
 }
+
+@book{trigger_tdr,
+      author        = "Cittolin, Sergio and Rácz, Attila and Sphicas, Paris",
+      title         = "{CMS The TriDAS Project: Technical Design Report, Volume
+                       2: Data Acquisition and High-Level Trigger. CMS trigger and
+                       data-acquisition project}",
+      publisher     = "CERN",
+      collaboration = "CMS Collaboration",
+      address       = "Geneva",
+      series        = "Technical Design Report CMS",
+      year          = "2002",
+      url           = "https://cds.cern.ch/record/578006",
+}
+
+@unpublished{mu_l1_twiki,
+      AUTHOR      = "CMS Collaboration",
+      title       = "Level-1 muon trigger performance with the 2017 data",
+      year        = "2018",
+      URL         = "https://twiki.cern.ch/twiki/bin/view/CMSPublic/Level1TriggerMuonPerformance2017FullStats",
+      note        = "Private Twiki -- Revision 3"
+}
+
+@article{cms_track_vertex,
+  author={The CMS Collaboration},
+  title={Description and performance of track and primary-vertex reconstruction with the CMS tracker},
+  journal={Journal of Instrumentation},
+  volume={9},
+  number={10},
+  pages={P10009},
+  url={http://stacks.iop.org/1748-0221/9/i=10/a=P10009},
+  year={2014},
+  abstract={A description is provided of the software algorithms developed for the CMS tracker both for reconstructing charged-particle trajectories in proton-proton interactions and for using the resulting tracks to estimate the positions of the LHC luminous region and individual primary-interaction vertices. Despite the very hostile environment at the LHC, the performance obtained with these algorithms is found to be excellent. For t ##IMG## [http://ej.iop.org/icons/Entities/bart.gif] {bar t} events under typical 2011 pileup conditions, the average track-reconstruction efficiency for promptly-produced charged particles with transverse momenta of p TÂ >Â 0.9GeV is 94% for pseudorapidities of |Î·|Â <Â 0.9 and 85% for 0.9Â <Â |Î·|Â <Â 2.5. The inefficiency is caused mainly by hadrons that undergo nuclear interactions in the tracker material. For isolated muons, the corresponding efficiencies are essentially 100%. For isolated muons of p T Â =Â 100GeV emitted at |Î·|Â <Â 1.4, the resolutions are approximately 2.8% in p T , and respectively, 10ÎŒm and 30ÎŒm in the transverse and longitudinal impact parameters. The position resolution achieved for reconstructed primary vertices that correspond to interesting pp collisions is 10â12ÎŒm in each of the three spatial dimensions. The tracking and vertexing software is fast and flexible, and easily adaptable to other functions, such as fast tracking for the trigger, or dedicated tracking for electrons that takes into account bremsstrahlung.}
+}
+
+@article{kalman_filter,
+title = "Application of Kalman filtering to track and vertex fitting",
+journal = "Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment",
+volume = "262",
+number = "2",
+pages = "444 - 450",
+year = "1987",
+issn = "0168-9002",
+doi = "https://doi.org/10.1016/0168-9002(87)90887-4",
+url = "http://www.sciencedirect.com/science/article/pii/0168900287908874",
+author = "R. FrÃŒhwirth"
+}
+
+@article{track_uncertainty,
+      author         = "Strandlie, A. and Wittek, W.",
+      title          = "{Propagation of covariance matrices of track parameters
+                        in homogeneous magnetic fields in CMS}",
+      year           = "2006",
+      reportNumber   = "CERN-CMS-NOTE-2006-001",
+      SLACcitation   = "%%CITATION = CERN-CMS-NOTE-2006-001;%%"
+}
+
+@article{adaptive_vertex_fitter,
+      author         = "Fruhwirth, R. and Waltenberger, W. and Vanlaer, P.",
+      title          = "{Adaptive vertex fitting}",
+      journal        = "J. Phys.",
+      volume         = "G34",
+      year           = "2007",
+      pages          = "N343",
+      doi            = "10.1088/0954-3899/34/12/N01",
+      reportNumber   = "CERN-CMS-NOTE-2007-008, CMS-NOTE-2007-008",
+      SLACcitation   = "%%CITATION = JPAGA,G34,N343;%%"
+}
+
+@article{photon_conversion_finder,
+  author={The CMS Collaboration},
+  title={Performance of photon reconstruction and identification with the CMS detector in proton-proton collisions at â sÂ =Â 8Â TeV},
+  journal={Journal of Instrumentation},
+  volume={10},
+  number={08},
+  pages={P08010},
+  url={http://stacks.iop.org/1748-0221/10/i=08/a=P08010},
+  year={2015},
+  abstract={A description is provided of the performance of the CMS detector for photon reconstruction and identification in proton-proton collisions at a centre-of-mass energy of 8 TeV at the CERN LHC. Details are given on the reconstruction of photons from energy deposits in the electromagnetic calorimeter (ECAL) and the extraction of photon energy estimates. The reconstruction of electron tracks from photons that convert to electrons in the CMS tracker is also described, as is the optimization of the photon energy reconstruction and its accurate modelling in simulation, in the analysis of the Higgs boson decay into two photons. In the barrel section of the ECAL, an energy resolution of about 1% is achieved for unconverted or late-converting photons from HâÎ³Î³ decays. Different photon identification methods are discussed and their corresponding selection efficiencies in data are compared with those found in simulated events.}
+}
+
+
+    
+@article{cms_gsf,
+  author={W Adam and R FrÃŒhwirth and A Strandlie and T Todorov},
+  title={Reconstruction of electrons with the Gaussian-sum filter in the CMS tracker at the LHC},
+  journal={Journal of Physics G: Nuclear and Particle Physics},
+  volume={31},
+  number={9},
+  pages={N9},
+  url={http://stacks.iop.org/0954-3899/31/i=9/a=N01},
+  year={2005},
+  abstract={The bremsstrahlung energy loss distribution of electrons propagating in matter is highly non-Gaussian. Because the Kalman filter relies solely on Gaussian probability density functions, it is not necessarily the optimal reconstruction algorithm for electron tracks. A Gaussian-sum filter (GSF) algorithm for electron reconstruction in the CMS tracker has therefore been developed and implemented. The basic idea is to model the bremsstrahlung energy loss distribution by a Gaussian mixture rather than by a single Gaussian. It is shown that the GSF is able to improve the momentum resolution of electrons compared to the standard Kalman filter. The momentum resolution and the quality of the error estimate are studied both with a fast simulation, modelling the radiative energy loss in a simplified detector, and the full CMS tracker simulation.}
+}
+  
+@article{cms_jet_performance,
+  author={Matthias Schröder and the CMS collaboration},
+  title={Performance of jets at CMS},
+  journal={Journal of Physics: Conference Series},
+  volume={587},
+  number={1},
+  pages={012004},
+  url={http://stacks.iop.org/1742-6596/587/i=1/a=012004},
+  year={2015},
+  abstract={The calibration and reconstruction of jets critically relies on the performance of the calorimeters. Extending out to large pseudorapidities, the measurements depend on the interplay between forward calorimeters, central calorimeters, and the tracking system. The high number of additional pile-up interactions poses further complications. In CMS, these difficulties are overcome using the 'particle-flow' approach, which aims at reconstructing individually each particle in the event prior to the jet clustering. Measurements of the jet energy scale and the procedure for jet energy calibration in CMS are reviewed, which are performed with dijet, photon + jet, and Z+jet data collected in proton-proton collisions at a centre-of-mass energy of 8 TeV, corresponding to an integrated luminosity of 19.6 fb â1 . The effect of pile-up interactions and the state of the art mitigation techniques used in CMS as well as the main sources of uncertainty of the jet energy calibration are also presented.}
+}
+  
 
 %% ========================================================================================================
 %% Chapter 3 -- ZMET 
@@ -503,10 +621,30 @@ abstract = "We introduce a variable useful for measuring masses of particles whi
   volume={10},
   number={06},
   pages={P06005},
-  url={http://stacks.iop.org/1748-0221/10/i=06/a=P06005},
+  url={http://iopscience.iop.org/article/10.1088/1748-0221/10/06/P06005/meta},
   year={2015},
   abstract={The performance and strategies used in electron reconstruction and selection at CMS are presented based on data corresponding to an integrated luminosity of 19.7 fb â1 , collected in proton-proton collisions at â sÂ =Â 8Â TeV at the CERN LHC. The paper focuses on prompt isolated electrons with transverse momenta ranging from about 5 to a few 100 GeV. A detailed description is given of the algorithms used to cluster energy in the electromagnetic calorimeter and to reconstruct electron trajectories in the tracker. The electron momentum is estimated by combining the energy measurement in the calorimeter with the momentum measurement in the tracker. Benchmark selection criteria are presented, and their performances assessed using Z, ##IMG## [http://ej.iop.org/icons/Entities/Upsilon.gif] {Upsilon} , and J/Ï decays into e + + e â pairs. The spectra of the observables relevant to electron reconstruction and selection as well as their global efficiencies are well reproduced by Monte Carlo simulations. The momentum scale is calibrated with an uncertainty smaller than 0.3%. The momentum resolution for electrons produced in Z boson decays ranges from 1.7 to 4.5%, depending on electron pseudorapidity and energy loss through bremsstrahlung in the detector material.}
 }
+
+@article{ecal_energy_reco,
+      author         = "Chatrchyan, Serguei and others",
+      title          = "{Energy Calibration and Resolution of the CMS
+                        Electromagnetic Calorimeter in $pp$ Collisions at
+                        $\sqrt{s} = 7$ TeV}",
+      collaboration  = "CMS",
+      journal        = "JINST",
+      volume         = "8",
+      year           = "2013",
+      pages          = "P09009",
+      doi            = "10.1088/1748-0221/8/09/P09009",
+      note           = "[JINST8,9009(2013)]",
+      eprint         = "1306.2016",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-EGM-11-001, CERN-PH-EP-2013-097",
+      SLACcitation   = "%%CITATION = ARXIV:1306.2016;%%"
+}
+
 
 @Article{TChiWZ_2013,
 author="Khachatryan, V.

@@ -49,10 +49,13 @@
 \usepackage{doi}
 \usepackage{float}
 \usepackage{overpic}
-
-
+\usepackage{lineno}
+\usepackage[title]{appendix}
+\usepackage{glossaries}
+\makeglossaries
 
 \begin{document}
+  \linenumbers
 
   \include{template_frontmatter}
 
@@ -60,6 +63,8 @@
   \include{ch2-DAQ}
   \include{ch3-ZMET}
   \include{ch4-Conclusion}
+  \include{Appendicies}
+  \printglossary
   \include{Glossary}
 
 

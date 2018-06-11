@@ -1,0 +1,120 @@
+\ifglsentryexists{HT}{}%
+{%
+\gls@defglossaryentry{HT}%
+{%
+name={$H_T$},%
+sort={$H_T$},%
+type={main},%
+first={$H_T$},%
+firstplural={$H_T$s},%
+text={$H_T$},%
+plural={$H_T$s},%
+description={The scalar sum of the momentum in the transverse plane over all jets in an event. If there are two jets pointing at arbitrary angles with total energy $E_a=\sqrt {p_{a,x}^2 + p_{a,y}^2}$ and $E_b=\sqrt {p_{b,x}^2 + p_{b,y}^2}$ respectively, the $H_T$ for that event would be simply $E_a + E_B$},%
+descriptionplural={The scalar sum of the momentum in the transverse plane over all jets in an event. If there are two jets pointing at arbitrary angles with total energy $E_a=\sqrt {p_{a,x}^2 + p_{a,y}^2}$ and $E_b=\sqrt {p_{b,x}^2 + p_{b,y}^2}$ respectively, the $H_T$ for that event would be simply $E_a + E_B$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ISR_FSR}{}%
+{%
+\gls@defglossaryentry{ISR_FSR}%
+{%
+name={ISR/FSR},%
+sort={ISR/FSR},%
+type={main},%
+first={ISR/FSR},%
+firstplural={ISR/FSRs},%
+text={ISR/FSR},%
+plural={ISR/FSRs},%
+description={Initial and Final State Radiation},%
+descriptionplural={Initial and Final State Radiation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Light_lepton}{}%
+{%
+\gls@defglossaryentry{Light_lepton}%
+{%
+name={Light Lepton},%
+sort={Light Lepton},%
+type={main},%
+first={Light Lepton},%
+firstplural={Light Leptons},%
+text={Light Lepton},%
+plural={Light Leptons},%
+description={An electron or muon or their antiparticle partners.},%
+descriptionplural={An electron or muon or their antiparticle partners.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OCSF}{}%
+{%
+\gls@defglossaryentry{OCSF}%
+{%
+name={OCSF},%
+sort={OCSF},%
+type={main},%
+first={OCSF},%
+firstplural={OCSFs},%
+text={OCSF},%
+plural={OCSFs},%
+description={Opposite charge, same flavor. Used in the context of events with two light leptons, meaning either $e^+e^-$ or $\mu ^+ \mu ^-$.},%
+descriptionplural={Opposite charge, same flavor. Used in the context of events with two light leptons, meaning either $e^+e^-$ or $\mu ^+ \mu ^-$.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

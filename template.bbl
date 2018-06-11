@@ -18,7 +18,7 @@ Electromagnetic calorimeter.
 
 \bibitem{cms_ecal}
 Energy calibration and resolution of the cms electromagnetic calorimeter in pp
-  collisions at â s = 7 tev.
+  collisions at sqrt(s) = 7 tev.
 \newblock {\em Journal of Instrumentation}, 8(09):P09009, 2013.
 
 \bibitem{Electron_reco}
@@ -48,6 +48,13 @@ S.~Abdullin and {etal}.
   wedges.
 \newblock {\em The European Physical Journal C}, 55(1):159--171, May 2008.
 
+\bibitem{cms_gsf}
+W~Adam, R~FrÃŒhwirth, A~Strandlie, and T~Todorov.
+\newblock Reconstruction of electrons with the gaussian-sum filter in the cms
+  tracker at the lhc.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
+  2005.
+
 \bibitem{higgs_combine}
 The ATLAS, CMS Collaborations, and The LHC Higgs~Combination Group.
 \newblock {Procedure for the LHC Higgs boson search combination in Summer
@@ -74,6 +81,20 @@ S~Chatrchyan and {etal}.
 \newblock {\em JINST}, 3:S08004. 361 p, 2008.
 \newblock Also published by CERN Geneva in 2010.
 
+\bibitem{ecal_energy_reco}
+Serguei Chatrchyan et~al.
+\newblock {Energy Calibration and Resolution of the CMS Electromagnetic
+  Calorimeter in $pp$ Collisions at $\sqrt{s} = 7$ TeV}.
+\newblock {\em JINST}, 8:P09009, 2013.
+\newblock [JINST8,9009(2013)].
+
+\bibitem{trigger_tdr}
+Sergio Cittolin, Attila Rácz, and Paris Sphicas.
+\newblock {\em {CMS The TriDAS Project: Technical Design Report, Volume 2: Data
+  Acquisition and High-Level Trigger. CMS trigger and data-acquisition
+  project}}.
+\newblock Technical Design Report CMS. CERN, Geneva, 2002.
+
 \bibitem{muon_stopping_power}
 CMS Collaboration.
 \newblock Measurement of the muon stopping power in lead tungstate.
@@ -89,6 +110,11 @@ CMS Collaboration.
 \newblock Recommended jet energy corrections and uncertainties for data and mc.
 \newblock https://twiki.cern.ch/twiki/bin/view/CMS/JECDataMC, 2015.
 
+\bibitem{mu_l1_twiki}
+CMS Collaboration.
+\newblock Level-1 muon trigger performance with the 2017 data.
+\newblock Private Twiki -- Revision 3, 2018.
+
 \bibitem{cms_results}
 CMS Collaboration.
 \newblock Physics results combined.
@@ -98,6 +124,25 @@ CMS Collaboration.
 CMS Collaboration.
 \newblock Public cms luminosity information.
 \newblock Public Twiki -- Revision 131, 2018.
+
+\bibitem{muon_reco_AN}
+The~CMS Collaboration.
+\newblock Muon reconstruction in the cms detector.
+\newblock {\em CMS Internal Analysis Note (available to CMS members only)},
+  2009.
+\newblock CMS AN-2008/97.
+
+\bibitem{cms_muons}
+The~CMS collaboration.
+\newblock Performance of cms muon reconstruction in pp collision events at
+  âs = 7 tev.
+\newblock {\em Journal of Instrumentation}, 7(10):P10002, 2012.
+
+\bibitem{cms_track_vertex}
+The~CMS Collaboration.
+\newblock Description and performance of track and primary-vertex
+  reconstruction with the cms tracker.
+\newblock {\em Journal of Instrumentation}, 9(10):P10009, 2014.
 
 \bibitem{cms_electron_photon_performance}
 The~CMS Collaboration.
@@ -130,6 +175,18 @@ Lyndon~R Evans and Philip Bryant.
 \newblock {\em JINST}, 3:S08001. 164 p, 2008.
 \newblock This report is an abridged version of the LHC Design Report
   (CERN-2004-003).
+
+\bibitem{adaptive_vertex_fitter}
+R.~Fruhwirth, W.~Waltenberger, and P.~Vanlaer.
+\newblock {Adaptive vertex fitting}.
+\newblock {\em J. Phys.}, G34:N343, 2007.
+
+\bibitem{kalman_filter}
+R.~FrÃŒhwirth.
+\newblock Application of kalman filtering to track and vertex fitting.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 262(2):444
+  -- 450, 1987.
 
 \bibitem{green_detectors}
 Dan Green.
@@ -181,6 +238,23 @@ A~L Read.
 \newblock Presentation of search results: the cl s technique.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics},
   28(10):2693, 2002.
+
+\bibitem{cms_jet_performance}
+Matthias Schröder and the CMS~collaboration.
+\newblock Performance of jets at cms.
+\newblock {\em Journal of Physics: Conference Series}, 587(1):012004, 2015.
+
+\bibitem{cms_particleflow}
+A.M. Sirunyan and {etal}.
+\newblock Particle-flow reconstruction and global event description with the
+  cms detector.
+\newblock {\em Journal of Instrumentation}, 12(10):P10003, 2017.
+
+\bibitem{track_uncertainty}
+A.~Strandlie and W.~Wittek.
+\newblock {Propagation of covariance matrices of track parameters in
+  homogeneous magnetic fields in CMS}.
+\newblock 2006.
 
 \bibitem{LHC_underground}
 AC~Team.

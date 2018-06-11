@@ -873,7 +873,7 @@
 
     In a totally idealized scenario, the flavor symmetric background prediction would be extremely simple. First, we would invert the selection for same flavor lepton pairs to require different flavor pairs in each \MET bin of our search regions. Then the count in each \MET for the different flavor pairs could be taken as the expected count for the search bin. However, as with any background prediction method, there are complications to our idealized scenario. 
 
-    The first is that the \emph{reconstruction efficiency} for electrons and muons is not identical, meaning that there is a slight asymmetry between how likely the CMS detector and software suite are to find a muon vs. how likely they are to find an electron. We correct for this effect with a factor called \rsfof, which is the subject of the next section.
+    The first is that the \emph{reconstruction efficiency} for electrons and muons is not identical, meaning that there is a slight asymmetry between how likely the CMS detector and software suite are to find a muon vs. how likely they are to find an electron at some particular energy. This effect is caused by different detection methods used for electrons and muons. It manifests as different trigger efficiencies for electrons and muons at the same \pt, as briefly explained in sec \ref{sec:trigger_efficiencies}, as well the differences in the electron and muon ID requirements outlined in sections \ref{sec:electron_id_and_isolation} and \ref{sec:muon_id_and_isolation}. We correct for this effect with a factor called \rsfof, which is the subject of the next section.
 
     The second is that with few enough events, the symmetry between same-flavor and different-flavor pairs can be thrown off by statistical fluctuations.\footnote{Tossing a coin should yield as many heads as tails, however it is just as likely to get HH \emph{or} TT in tossing a coin twice as it is to get one of each. To chance to get an uneven percentage of heads or tails in a series of throws decreases with number of throws. The symmetry has more power with more statistics.} For this analysis, the expected number of flavor symmetric events in most search binds is less than 2. In order to ensure we have enough statistics for each prediction, the mass window for the acceptance of different flavor events is enlarged.
 
@@ -885,7 +885,7 @@
 
     where $\kappa$ is a corrective factor associated with the extrapolation from the enlarged mass window into the Z mass window, and \rsfof is a corrective factor associated with the asymmetry in electron and muon efficiencies.
 
-    \subsubsection{The \rsfof Factor}
+    \subsubsection{The \rsfof Factor} \label{sec:rsfof}
 
       The factor \rsfof in eq. \ref{eq:n_sf} is a transfer factor which is meant to scale the number of different-flavor events in the flavor symmetric control regions, essentially the search regions with their same flavor requirement inverted, to the number of same-flavor events in associated search bin. This factor is derived through a direct measurement in the \rsfof control region, defined in sec. \ref{sec:rsfof_measurement_region} as $\MET \in [100,150]$, $\njets = 2$, and $\mll \notin [70,110]$. 
 
@@ -901,7 +901,7 @@
       The final value of \rsfof measured in data is $1.107 \pm 0.046$ (which is the value used in the final prediction), and the cross check in MC gives $1.090 \pm 0.005$.
 
 
-    \subsubsection{Enlarging The Mass Window}
+    \subsubsection{Enlarging The Mass Window} \label{sec:kappa}
 
       In order to keep the statistical uncertainty reasonable, we enlarge the flavor symmetric control region's \mll window from $\pm 5$ GeV about the Z mass to $> 20$ GeV. Then we must apply a transfer factor, denoted by $\kappa$, which gives the ratio of number of events expected in this enlarged window, to the number of events expected in the Z mass window. 
 

@@ -175,6 +175,7 @@
     \end{figure}
 
     \todo{What happens to the light that that doesn't pair produce? Is that also picked up by the photo diode? Also, why does the light always go forward, momentum only?}
+    \todo{If I have time, I should throw in some stuff about the ECAL energy resolution. Specifically how the ECAL crystals are calibrated from \cite{ecal_energy_reco} and \cite[pg.20]{Electron_reco} }
 
   \subsection{The Hadronic Calorimeter}
     The CMS Hadronic Calorimeter (HCAL) is a sampling calorimeter made of interleaved layers of dense absorber metals with plastic scintillator material. The purpose of this subsystem is to measure the energy of the hadrons and massive charged particles that make up jets. The measurement of these objects are of particular importance for the reconstruction of \MET, which is a central event-level object in this analysis.
@@ -212,11 +213,21 @@
 
     The muon system on CMS is made up of three different types of detectors, all based on gas ionization.
     \begin{enumerate}
-     \item{Drift Tubes} Tubes of 
-     \item{Cathode Strip Chambers}
-     \item{Resistive Plate Chambers}
+     \bitem{Drift Tubes (DTs)} Layered thin tubes with conducting cathode walls and a anode wire which runs centrally through the length of the tube. The tube is filled with Argon and CO$_2$ gas. A drift tube is shown to the left in figure \ref{fig:muon_detectors}, the length of the tube is not shown. Due to the extent in one direction, drift tubes can not give spacial resolution in all three dimensions. A typical module of these tubes has 3 layers, oriented such that the middle layer runs perpendicular to the outer layers in order to reconstruct all the position in all three dimensions. 
+     \bitem{Cathode Strip Chambers (CSCs)} Six layers of anode wire planes interleaved with seven layers of cathode strips, arrayed in a cross-hatch pattern filled with gas. This configuration allows for all three dimensions of the muon's position to be reconstructed from a single module by cross referencing the voltage spikes in the strips against the voltage spikes in the wires. A schematic view of this type of detector is shown to the right in figure \ref{fig:muon_detectors}.
+     \bitem{Resistive Plate Chambers (RPCs)} Parallel plate capacitors made of insulating material and filled with gas. When a muon passes through the RPC, the gas is ionized and an electron shower is generated which passes through the capacitor plates and is collected by a set of strips outside the capacitor. These detectors are interspersed throughout the entire system and mostly used to help with triggering as the response time and refractory period of these detectors are very fast compared to the 25 ns bunch crossing time. 
     \end{enumerate}
 
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.45\textwidth]{figures/cms_drifttube.pdf}
+        \includegraphics[width=.45\textwidth]{figures/cms_CSC.pdf}
+        \caption{\textbf{Left:} A cross sectional head on view of a CMS drift tube, the tube is much longer in the omitted direction than is shown. A hypothetical path for a muon is drawn, the particle would ionize the gas in the chamber and create a spike in the potential difference between the anode and cathode as free electrons and charged ions are collected.
+        \textbf{Right:} A top down view of a CSC module. A hypothetical muon hit is shown at the spot labeled ``primary ionization". A CSC module has the ability to reconstruct all three dimensions of the muon's position by cross referencing which strips collected ions and which wires collected free electrons.Taken from \cite{cms_jinst}.}
+        \label{fig:muon_detectors}
+      \end{figure}
+
+      Figure \ref{fig:muon_system} shows the general layout of the muon system. In the barrel region, approximately $\abs{\eta} < 1.2$, the muon system is made up of drift tubes interleaved with RPCs. In the endcap region, approximately $\abs{\eta} \in (1.2,2.4)$, the drift tubes are replaces by CSC modules due to the higher magnetic field in this region.
 
     \begin{figure}[h!]
       \centering
@@ -225,21 +236,184 @@
       \label{fig:muon_system}
     \end{figure}
 
-  \subsection{Fiducial Area} \label{sec:fiducial_area}
-    the weird eta deadzone really effects electrons and we want symmetry between electrons and muon \ref{sec:inner_tracker}. very forward stuff, $\abs{\eta}<2.4$. 
   \subsection{Event Triggering} \label{sec:event_triggering}
-    trigger turn ons, list the triggers we use, Level 1 and HLTs? Trigger efficiency 
+    A raw CMS event takes roughly 1 MB of disk space, given the rate at which bunches are crossed, storing the output from every bunch crossing would require reading out, analyzing, and storing upwards of 40 TB of data per second.\cite{trigger_tdr} The final event readout rate of the CMS detector is designed to be closer to 400 Hz, corresponding to roughly 400 MB of data per second, with the main bottleneck being offline data storage capacity and processing speed.
+
+    In order to reduce the event rate from 40 MHz down to 400 Hz, the CMS detector employs a two-stage trigger system. The first stage, called the level 1 or L1 trigger, takes the rate down to approximately 100 kHz, a process done in hardware using application specific integrated circuits (ASICs) and field programmable gate arrays (FPGAs) for maximum speed. Events selected by the L1 system are then passed to the high level trigger system (HLT) which reconstructs physics objects in software and makes a better determination as to whether the event should be written to disk. The HLT system brings the event rate down to 100s of Hz.
+
+    From the point of view of the L1 system, electrons and photons are identical. Decisions at level 1 for electrons and photons are made by the e/$\gamma$ L1 trigger, which mainly looks for large isolated ECAL energy deposits without a corresponding HCAL deposit. For the muon triggers, information from CSCs, DTs, and RPCs are used. Built in electronics on the detector perform track finding algorithms on hits in the DTs and CSCs independently. ``Track primitives" are created by special track finding hardware newly added for 2016. The track primitives are matched with timing and hit data from the RPCs to make decisions about muon quality and energy at L1. The processed information is sent to the global trigger system to make the final decision as to whether the event will be sent to the HLT farm.
+
+    The HLT system consists of a processing farm with approximately 13,000 CPUs. The turn around rate for event classification is on the order of 100 ms per event. The machines in the HLT perform object identification and energy reconstruction in a way that matches the offline software suite as much as possible, though there are some optimizations made that introduce small differences to accommodate event processing at the 100 kHz rate. The HLT system is organized around the concept of ``trigger paths", which are algorithms that run object reconstruction and makes selections on these objects. A trigger path will evaluate to either true or false on an event by event basis. 
+
+    The full list of CMS HLT trigger paths used in this analysis is presented in table \ref{table:triggers}. 
+
+    \begin{table}[htb]
+      \begin{center}
+      \caption{\label{table:triggers} List of all triggers used in this analysis. }
+        \begin{tabular}{l}
+          \hline
+          \hline
+          trigger name       \\
+          \hline
+          di-muon triggers \\
+          \hline
+          --\verb=HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v*=                \\
+          --\verb=HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v*=                \\
+          --\verb=HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v*=              \\
+          --\verb=HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*=              \\
+          %--\verb=HLT_TkMu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v*=              \\
+          --\verb=HLT_Mu27_TkMu8_v*=                                  \\
+          --\verb=HLT_Mu30_TkMu11_v*=                                  \\
+          %--\verb=HLT_Mu40_TkMu11_v*=                                  \\
+          \hline
+          di-electron triggers \\
+          \hline
+          --\verb=HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*=       \\
+          --\verb=HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*=       \\
+          --\verb=HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_v*=           \\
+          --\verb=HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v*=           \\
+          \hline
+          e$\mu$ triggers \\
+          \hline
+          --\verb=HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*= \\
+          --\verb=HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_v*= \\
+          --\verb=HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v*= \\
+          --\verb=HLT_Mu23_TrkIsoVVL_Ele8_CaloIdL_TrackIdL_IsoVL_DZ_v*= \\
+          --\verb=HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v*= \\
+          --\verb=HLT_Mu8_TrkIsoVVL_Ele17_CaloIdL_TrackIdL_IsoVL_v*=  \\
+          --\verb=HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*=  \\
+          --\verb=HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*=  \\
+          %--\verb=HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v*=  \\
+          %--\verb=HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v*=  \\
+          --\verb=HLT_Mu30_Ele30_CaloIdL_GsfTrkIdVL_v*=               \\
+          --\verb=HLT_Mu33_Ele33_CaloIdL_GsfTrkIdVL_v*=               \\
+          \hline
+          single-$\gamma$ triggers \\
+          \hline
+          --\verb=HLT_Photon22_R9Id90_HE10_IsoM_v*=  \\ 
+          --\verb=HLT_Photon30_R9Id90_HE10_IsoM_v*=  \\
+          --\verb=HLT_Photon36_R9Id90_HE10_IsoM_v*=  \\
+          --\verb=HLT_Photon50_R9Id90_HE10_IsoM_v*=  \\
+          --\verb=HLT_Photon75_R9Id90_HE10_IsoM_v*=  \\
+          --\verb=HLT_Photon90_R9Id90_HE10_IsoM_v*=  \\
+          --\verb=HLT_Photon120_R9Id90_HE10_IsoM_v*= \\
+          --\verb=HLT_Photon165_R9Id90_HE10_IsoM_v*= \\
+          --\verb=HLT_Photon165_HE10_v*=             \\
+          \hline
+          single-$\mu$ triggers \\
+          \hline
+          --\verb=HLT_IsoMu24_v*=  \\ 
+          --\verb=HLT_IsoTkMu24_v*=  \\ 
+          \hline
+          \hline
+        \end{tabular}
+      \end{center}
+    \end{table}
+
+    The high level triggers are generally based on isolation and transverse momentum criteria. For instance, the trigger HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* roughly requires that the event have at least one muon above 17 GeV of \pt and another above 8 GeV. The tags TrkIsoVVL refer to isolation requirements on the muon and DZ refers to a requirement that when their tracks terminate close to one another in the z (beamline) direction traced back to the beamline. The v* at the end of these triggers denotes that we use the latest version of the software that implements the trigger. \todo{if I get more info on the trigger tags, I'll add it here.}
+
+    \subsubsection{Trigger efficiencies} \label{sec:trigger_efficiencies}
+    Due to the low precision in the energy measurements at level 1, and the slight differences in reconstruction at the HLT and offline level \todo{is this right?}, objects near the \pt thresholds of the high level trigger do not always cause the event to be stored, we say that the triggers are not 100\% efficient. In other words, sometimes an event with an electron that is reconstructed to have 17 GeV of \pt offline will not pass the Ele17 trigger because it was either not selected at level 1, or it was reconstructed to have less \pt than 17 GeV by the HLT reconstruction software.
+
+    The rate at which this occurs can be treated statistically. It is mainly a function of the offline reconstructed \pt because all of the triggers used in this analysis are based on the \pt of some object. As an example, figure \ref{fig:mu_l1_eff} shows the L1 trigger efficiency for the single muon L1 25 GeV trigger in the 2017 dataset\footnote{this analysis uses the 2016 dataset, the figure is only for illustration} at the \pt threshold of 25 GeV (the target threshold for the single muon trigger). As can be seen in the figure, muons with \pt $\le 8$ GeV (as reconstructed offline) are almost never selected by the 25 GeV L1 trigger. The trigger never selects 100\% of the muons, even at very high energies. However, after about 30 GeV, the percentage of muons selected plateaus. We say that the trigger is \emph{fully efficient} at 30 GeV to denote this feature, which is common to all trigger turn-on curves.
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.7\textwidth]{figures/muon_l1_eff.png}
+      \caption{The trigger efficiency for the L1 muon 25 GeV trigger. The system attempts to pass all muons with 25 GeV of \pt to the HLT system, though the fast calculation with on-board hardware at L1 does not capture all muons at this threshold. The plot is made by selecting events with two muons reconstructed offline where the leading \pt muon has \pt above 27 GeV and has passed the L1 25 GeV trigger. The second muon is then checked to see whether it also passed the L1 criteria. This method is called tag-and-probe. As can be seen, the trigger is never at 100\% efficiency, but a plateau exists around 30 GeV where we call the trigger \emph{fully efficient}. Taken from \cite{mu_l1_twiki}.}
+      \label{fig:mu_l1_eff}
+    \end{figure}
+
+    Trigger efficiencies enter this analysis in two places. First, MC used in this analysis has the trigger efficiencies built in, that is MC events are tagged as passing for failing triggers at rates equal to the trigger efficiencies. Second, the difference in the efficiencies for the electron and muon trigger paths in this analysis are part of what is corrected by the \rsfof factor, which will be described in section \ref{sec:rsfof}. In short, this analysis uses the symmetry between production rates of electrons and muons in certain physics processes to make certain background predictions. That symmetry is broken by the fact that, along with different offline ID requirements, the trigger efficiencies for electrons and muons at the same \pt will, in all likelihood, not be identical.
+
 \section{Physics Objects}
-  \subsection{Particle flow and jet clustering} \label{sec:particle_flow}
-    reconstruction efficiency
+  After energy deposits are read out from the detector they are used to reconstruct \emph{physics objects} that can then be further analyzed to discover new particles and interactions. The layout of the CMS detector was chosen carefully to allow for the identification of several groups of particles:
+
+  \begin{enumerate}
+    \bitem{Jets} sprays of particles containing mostly hadrons and photons. An ideal jet will leave multiple tracks in the tracker that point back to the same spot on the beamline and deposit a large amount of energy in the HCAL and a smaller amount of energy in the ECAL as well.
+    \bitem{Isolated Photons} single photons that were likely produced in the hard collision, rather than being radiated by a charged particle in the detector. An ideal single photon will leave no tracks and deposit energy in only the ECAL
+    \bitem{Isolated Electrons} single electrons that were likely produced in the hard collision, rather than being produced as a secondary particle in the detector (for instance in pair production). An ideal isolated electron will leave a hit in every layer of the tracker and deposit energy only in the ECAL along the line traced out by the tracker hits. Bremsstrahlung photons are typically radiated from electrons in the tracker, therefore we should also expect kinks in electron tracks accompanied by energy deposits in the ECAL associated with the kinks.
+    \bitem{Muons} expected to leave hits in every layer of the inner tracker. When extrapolated through the detector, the inner tracker hits should match up with standalone muon tracks in muon system. Nearly no energy should be deposited in the ECAL or HCAL
+    \bitem{Tagged Jets} jets that have been tagged as originating from a specific particle, for instance a b-quark or a $\tau$-lepton. These objects typically use information from the jet tracks to give a measure of how likely a specific jet was to represent the decay dynamics of the specific particle in question.
+  \end{enumerate}
+
+  In order to reconstruct these objects from energy deposits in the detector, CMS employs an algorithm called particle flow\cite{cms_particleflow} which will be outlined in section \ref{sec:particle_flow}. However, the first step in object generation is the vertex and track reconstruction.
+
+  \subsection{Track Reconstruction} \label{sec:track_reconstruction}
+    Track reconstruction is the process of turning hits in the tracker into proposed trajectories for charged particles. The track finding software used by CMS is called the Combinatorial Track Finder \cite[pg. 12]{cms_track_vertex}, which is based off of the Kalman filter \cite{kalman_filter} track fitting method. The basic idea is to work iteratively, first building the more ``obvious" tracks for high \pt particles, and then removing their hits from the collection thus making the next track easier to find.
+
+    Each iteration begins with a ``seed track." In the first iteration, the seed tracks are built from collections of 3 hits, one in each layer of the pixel tracker, with curvature tolerance such that the particle \pt is larger than 0.8 GeV. In later iterations, seed tracks are built from hit groups that are missing a layer in the pixel tracker, or even from hit groups solely in the strip tracker to accommodate the possibility of secondary decays.
+
+    The seed tracks are extrapolated into the next layer of the tracker, taking into account the uncertainty in the track's position and momentum, by assuming a constant magnetic field and disregarding the possibility of multiple scattering and energy loss when the particle is not within a tracker layer\footnote{Energy loss is modeled statistically when the particle is in the tracker material, which has the effect of broadening the track uncertainty.}. After the expected trajectory is built, hits within some number of standard deviations of the expected trajectory in the nearest tracker layer are collected into groups of possible energy deposits for the particle\cite{track_uncertainty}. This process can include the possibility of adding a ``ghost hit" if no hit was found in a module along a particular possible trajectory. 
+
+    A $\chi^2$ test is then performed between the expected trajectory and the hit groups, taking into account the hit and trajectory uncertainties. The number of hits in a typical event is enough that most seed trajectories can be associated with multiple paths at each layer. After possible trajectories are built out of the hit groups, only a small number of possible trajectories are extrapolated into the next layer based on their $\chi^2$ values and number of ghost hits. This process is repeated until track quality parameters, for instance too many ghost hits, can no longer be satisfied at the next layer. After the hits in the detector are organized into tracks, another fit is applied to smooth the track trajectory using a Kalman filter fit. During this stage, hits which are outliers can be disassociated with the trajectory and added back the general collection of hits. The smoothing step occurs again until all outliers have been removed\cite[sec 4.3]{cms_track_vertex}.
+
   \subsection{Vertex Selection} \label{sec:vertex_selection}
-    \todo{Rewrite: We require the presence of at least one primary vertex satisfying the standard quality criteria; 176 namely,vertexisnotfake,ndf>4,ρ<2cm,and|z|<24cm.}
+    Each event recorded at CMS has a \emph{primary vertex}, which is roughly defined as the point along the beamline at which the highest energy tracks emerged. This process involves first selecting the highest quality tracks from track reconstruction, then clustering them into sets that seem to originate from roughly the same point along the beamline, and finally fitting the location of the vertex based on the cluster end-points. 
+
+    Tracks are selected based on the impact parameter to the beamline ($<$5), number of hits ($\ge 2$ pixel, $\ge 5$ pixel+strip), and the $\chi^2$ value from the track fit ($<20$). Again the vertex selection is an iterative process, at first all tracks are assumed to come from one vertex, then at each step vertices can be split. In practice this is achieved with a process called \emph{deterministic annealing} (DA) which is based on ideas from thermodynamics of minimizing free energy at some temperature. 
+
+    Once vertices are identified and tracks are assigned to a vertex, vertices with at least two tracks are fitted using an adaptive vertex fitter \cite{adaptive_vertex_fitter} to compute position and quality quantities such as the position of the vertex in space and weights for the likelihood that the tracks associated with the vertex genuinely began there. The weight, $w_i$, of a track $i$ is close to 1 if its position is near the vertex and close to 0 if its position is several standard deviations away. The quantity \ndof is used a quality parameter defined as
+
+    \[
+      \ndof = -3+2 \sum \limits_{i=1}^{\text{\# tracks}} w_i.
+    \]
+
+    When more than one primary vertex can be found in an event, the vertex with the highest scalar sum of \pt for all the tracks associated with the vertex is chosen. In the analysis presented in this thesis, we only select events where the primary vertex has \ndof $>4$, and the vertex is located within 24 cm from the center of the detector along the beamline direction and within 2 cm from the beamline in the transverse plane.
+
+  \subsection{Particle flow} \label{sec:particle_flow}
+    The particle flow algorithm is in charge of turning tracks and energy clusters from the calorimeters into physics objects with energy, momentum, and location information. It achieves this goal through an iterative process of linking energy deposits, much like the tracking algorithm outlined above in sec \ref{sec:track_reconstruction}. Energy deposits in the Calorimeters, tracks in the inner tracker, and tracks in the muon chambers are all linked together pairwise based on various criteria \cite[sec. 4]{cms_particleflow}. The exact criteria for particle flow identification can be found in detail in the previous citation. In broad strokes, the energy deposits in the detector are turned into electrons, photons, muons, charged hadrons, and neutral hadrons based on the following criteria:
+
+    Electrons are identified when tracks in the inner tracker are linked with energy deposits in the ECAL. When such a link is found, a Gaussian Sum Filter (GSF) \cite{cms_gsf} algorithm reconstructs the track because kinks in electron tracks due to bremsstrahlung radiation are not handled well by the standard Kalman Filter tracking as it does not account for momentum changes due to radiation. An energy deposit in the ECAL without a corresponding track is reconstructed as a photon. Muons are reconstructed by comparing tracker muons, tracks in the inner tracker with at least one associated hit in the muon system, with standalone muons, reconstructed tracks in the muon system. Reconstruction of a muon requires a tracker muon and a standalone muon with compatible trajectories and the absence of a large energy deposit in the calorimeters. Finally, energy deposits in the HCAL are considered neutral hadrons, and tracks which leave energy deposits in the HCAL, but not the ECAL, are considered charged hadrons.
+
+    After the energy deposits are clustered into particles, we use the anti-KT algorithm with a radius of $R=0.4$ in $(\eta, \phi)$ space to cluster particles into jets.\cite{cms_jet_performance} 
+
+
   \subsection{Electron Measurement Pipeline} \label{sec:electron_measurement_pipeline}
-    Tracker, ecal, distinguishing between electrons and muons. Cite the CMS paper on electron energy reco.. \cite{Electron_reco}
+    High energy electrons have energy measurements based mainly on their ECAL deposit. When a charged particle moves through the tracker, a momentum measurement can be found due to its curvature. However, due to the likelihood of bremsstrahlung radiation, the sagitta of an electron track has a high chance of being malformed, containing kinks caused when a high energy photon is emitted. Since the sagitta momentum measurement assumes the free motion of a charged particle in a magnetic field with constant energy, the track from an electron that emits a high energy photon can not be used to determine the electron's original momentum.
+
+    When the electron reaches the ECAL, almost all of its energy is deposited within a small region. For instance, a 120 GeV electron typically deposits 95\% of its energy within a 5x5 crystal array. However, when passing through the tracker, an electron will radiate 33\% of its energy an average before it reaches the ECAL, this figure inflates to about 86\% of the energy for electrons that pass through the densest parts of the detector near $\abs{\eta} = 1.4$ (seen in fig. \ref{fig:tracker_material_budget}). Due to the bending of the electron in the magnetic field, bremsstrahlung photons will tend to spread out in the $\phi$ direction, with the spread in the $\eta$ direction being mostly negligible \cite[sec. 4.1]{Electron_reco}.
+
+    In addition to the momentum measurement, the Kalman Filter track building method is poorly suited for electron tracks as it also assumes the motion of constant energy charged particle in a magnetic field. In order to construct electron tracks, CMS also utilizes another track finding algorithm developed specifically for the reconstruction of electron tracks called the Gaussian Sum Filter (GSF)\cite{cms_gsf}, which can be roughly intuited as several Kalman Filters assuming different radiation rates running in parallel. 
+
+    A high energy photon radiated by an electron will leave an energy deposit in the ECAL and change the trajectory curvature for the electron. These deposits can typically be found by tracing tangents from the electron's trajectory to the ECAL due to the high likelihood that bremsstrahlung photons will be emitted along the electrons momentum vector \todo{can I find a source that says how much this is true as a function of energy?}. 
+
+    To measure the total energy of the electron, the energy of the bremsstrahlung photons should be included as well, and so the ECAL clusters energy deposits into \emph{superclusters}. Track reconstruction with the GSF algorithm is similar to that of the Kalman filter described in sec. \ref{sec:track_reconstruction}, but, in addition to seeding tracks from pixel hits, ECAL superclusters are also used as seeds and tracks leading into the end of a supercluster are extrapolated backwards towards the beamline assuming both charge hypotheses. \todo{is there consistency checking that the photons come at places where there are reasonable kinks?} Ultimately, the electron's momentum is reconstructed using a weighted combination of the track momentum and supercluster energy. Electrons with energy less than 15 GeV use almost exclusively the pixel track momentum, while electrons with energy greater than 250 GeV use the supercluster measurement exclusively. 
+
+    A series of corrections are applied to the supercluster energy. These corrections are derived in simulation where true electron energies and momenta are known to perfect precision. They include the effect of deposited energy not being properly associated the supercluster, loss of energy due to gaps in and between detector modules, pileup, and so on.\cite[sec 4.8]{Electron_reco} 
+
+    Differences in data and simulation are due mainly to imperfect modeling of the tracker material. Figure \ref{fig:electron_Z_resolution} shows the dilepton mass of Z$\to$ee events in both data and simulation. The events in data are estimated to have 2\% background contamination\cite[sec. 4.5.1]{ecal_energy_reco} and are selected by requiring two opposite charge electrons with dilepton mass in the range 60-120 GeV, and where each lepton has at least 25 GeV of \pt. These comparisons are made for different ranges of $\eta$ and \pt as well as instantaneous luminosity and ``quality class" based on the scale and number of bremsstrahlung photon deposits found in the electron's supercluster. Although the agreement between data and simulation is excellent, a correction is applied to data so that the overall energy scale matches that seen in simulation, and a correction is applied to simulation so that the energy resolution matches that seen in data. \todo{What does it mean for the simulation correction? Where is that propagated?}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.7\textwidth]{figures/electron_Z_resolution.pdf}
+      \caption{Data and simulation of Z to di-electron events at 8 TeV. On the left, only electrons in the barrel which have not undergone any bremsstrahlung radiation are plotted, these should be the easiest class of electrons to measure. To the right, only electrons in the endcap with multiple subclusters in their ECAL supercluster are plotted, these should be the hardest class to measure. In both cases there is excellent agreement between data and simulation meaning that the corrections applied to data derived from simulation are reasonable. Additionally, the peak Z masses match the established value to approximately the percent level in both cases. Taken from \cite{Electron_reco}.}
+      \label{fig:electron_Z_resolution}
+    \end{figure}
+
   \subsection{Muon Measurement Pipeline} \label{sec:muon_measurement_pipeline}
-    Tracker muons, global muons, muon system
+    Muon reconstruction starts with tracks from the inner and tracker and muon system. Muon identification in particle flow can come from several sources, but in this analysis we only use ``global muons". 
+
+    Tracks found in the muon system are called ``standalone muons." For each standalone muon track, a collection of possible tracks in the inner silicon tracker that could correspond to the standalone muon are identified. These tracks are then propagated forward to a common plane with the standalone muon track which is propigated backwards to the same plane. Position information on that plane, along with momentum measurements and uncertainties are used to select the best match. \cite[sec 3]{cms_muons} \cite[sec 5.1]{muon_reco_AN} After a match is found, the Kalman Filter track fitting method is applied from scratch to the hits in the inner tracker and muon system to smooth the overall combined track, which constitutes the global muon track used in this analysis.
+
+    Muon momenta are computed from the sagitta of the track. At high energies, the segment of the track in the tracker provides the best momentum resolution due to the tighter density of the inner tracker modules. At energies above approximately 200 GeV, the tracks in the muon system provide a better measurement due to their longer lever arm. \todo{Is this correct?} 
+
+    Again, a series of corrections to the muon momentum are derived using simulation. Because the measurement of the momentum is done via the track sagitta, as explained in appendix \ref{sec:sagitta}, the largest source of mismeasurements comes from misalignment of the tracker and muon modules, incorrect modeling of the magnetic field, and mis-modeling of the tracker material.\cite[sec. 6]{cms_muons} In general, the CMS detector is built to ensure that the energy resolution of muons (measured in terms of their \pt) is good to within 1\% for a 100 GeV muon and 10\% for a 1 TeV muon. In other words, CMS was built with the requirement that $\frac{\sigma(\pt)}{\pt} \approx 0.01$ for $\pt \approx 100$ GeV and $\frac{\sigma(\pt)}{\pt} \approx 0.1$ for $\pt \approx 1$ TeV. 
+
+    Figure \ref{fig:muon_Z_resolution} shows the results of the SIDRA study that don't actually tell you anything about the energy resolution.
+
+    \todo{Looks like this isn't what we actually get though, that figure is WAAAYAYYYYYY worse than 1\%. Why does CMS not make a fucking plot that says, here's what the Z peak is supposed to look like, here's what our fucking data says? Why? Probably because it would show that no one knows what the fuck they are doing and all of our analyses are garbage.}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.7\textwidth]{figures/muon_Z_resolution.pdf}
+      \caption{Data and simulation of Z to di-muon events at 7 TeV. The black dots represent data from the detector, while the green line-shape represents the expected line shape for Z$\to\mu\mu$ events using the baseline detector simulation. Corrections are derived from this data and propigated forward Taken from \cite{cms_muons}.}
+      \label{fig:muon_Z_resolution}
+    \end{figure}
+    
   \subsection{Photon Measurement Pipeline}
     ECAL measurements, lepton conversions. Photons probably pair produce in higher eta ranges, how does that work?
+    \todo{plot for photon energy resolution?}
   \subsection{Jets} \label{sec:jets}
     Describe charged hadron subtraction, JECs ~\cite{JERC}, \cite{JEC_2016}
     pfCHSjets with L1FastL2L3 corrections (MC), L1FastL2L3L2L3residual corrections (data).
@@ -254,7 +428,10 @@
     L2L3 Residual -- (Residual Corrections for data) Make MET 0 in dijet/ZJet/GammaJet events.
 
     jet energy mismeasurements are a function of the absolute scale of energy
+
+    \todo{plot for jet energy resolution?}
   \subsection{B-Tagging} \label{sec:b-tagging}
+    What is B-tagging? What do they look at? What's the false positive rate that we use?
 
   \subsection{MET Reconstruction} \label{sec:MET_reco}
     Make sure to add bits about sources of MET and the Type 1 correction
@@ -276,7 +453,7 @@
           \begin{tabular}{l|l|c}  
             \hline
             \hline
-            Process & Dataset Name                                                             & Cross Section [pb]\\
+            Process & Dataset Name                                                            & Cross Section [pb]\\
             \hline
             \gjets   & \verb=/GJets_DR-0p4_HT-40To100_TuneCUETP8M1_13TeV-*-v1=                & 18560    \\
                      & \verb=/GJets_DR-0p4_HT-100To200_TuneCUETP8M1_13TeV-*-v1=               &  5000    \\
