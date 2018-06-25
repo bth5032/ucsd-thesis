@@ -132,7 +132,7 @@
     \end{figure}
 
   \subsection{The Electromagnetic Calorimeter} \label{sec:ECAL}
-    The CMS Electromagentic Calorimeter (ECAL) is a nearly hermetic and homogeneous cylinder made of lead tungstate (PbWO$_4$) crystals with attached light measuring devices. The crystals are ``truncated pyramids", roughly rectangles of approximately 23 centimeters in length that taper slightly, from 26x26 mm$^2$ to 22x22 mm$^2$ in the barrel\cite[pg. 4]{cms_ecal}, to accommodate the curved shape of the ECAL in the $\phi$ direction and the angle at which the crystals are oriented to face the interaction point.\footnote{the crystals have a 3$^\circ$ angle with respect to the line that connects their incident face to interaction point in both the $\eta$ and $\phi$ directions to allow for better coverage of the fiducial volume.} Schematic views of the ECAL can be seen in figures \ref{fig:ecal_xsec} and \ref{fig:ecal_cutaway}. As can be seen in the figures, the calorimeter is broken into two physical sections, the barrel region (EB) and the endcap region (EE). The preshower disk in front of the endcap region is immaterial for this search, but is there to help distinguish between neutral pions converting to a di-photon pair with small angle separation from a single high energy photon. 
+    The CMS Electromagentic Calorimeter (ECAL) is a nearly hermetic and homogeneous cylinder made of lead tungstate (PbWO$_4$) crystals with attached light measuring devices. The crystals are ``truncated pyramids", roughly rectangles of approximately 23 centimeters in length that taper slightly, from 26x26 mm$^2$ to 22x22 mm$^2$ in the barrel\cite[pg. 4]{ecal_energy_reco}, to accommodate the curved shape of the ECAL in the $\phi$ direction and the angle at which the crystals are oriented to face the interaction point.\footnote{the crystals have a 3$^\circ$ angle with respect to the line that connects their incident face to interaction point in both the $\eta$ and $\phi$ directions to allow for better coverage of the fiducial volume.} Schematic views of the ECAL can be seen in figures \ref{fig:ecal_xsec} and \ref{fig:ecal_cutaway}. As can be seen in the figures, the calorimeter is broken into two physical sections, the barrel region (EB) and the endcap region (EE). The preshower disk in front of the endcap region is immaterial for this search, but is there to help distinguish between neutral pions converting to a di-photon pair with small angle separation from a single high energy photon. 
 
     \begin{figure}[h!]
       \centering
@@ -370,15 +370,15 @@
 
 
   \subsection{Electron Measurement Pipeline} \label{sec:electron_measurement_pipeline}
-    High energy electrons have energy measurements based mainly on their ECAL deposit. When a charged particle moves through the tracker, a momentum measurement can be found due to its curvature. However, due to the likelihood of bremsstrahlung radiation, the sagitta of an electron track has a high chance of being malformed, containing kinks caused when a high energy photon is emitted. Since the sagitta momentum measurement assumes the free motion of a charged particle in a magnetic field with constant energy, the track from an electron that emits a high energy photon can not be used to determine the electron's original momentum.
+    High energy electrons have energy measurements based mainly on their ECAL deposit. When a charged particle moves through the tracker, a momentum measurement can be found as a function of its curvature as described in the appendix \ref{sec:sagitta}. However, due to the likelihood of bremsstrahlung radiation, the sagitta of an electron track has a high chance of being malformed, containing kinks caused when a high energy photon is emitted. Since the sagitta momentum measurement assumes the free motion of a charged particle in a magnetic field with constant energy, the track from an electron that emits a high energy photon can not be used to determine the electron's original momentum.
 
-    When the electron reaches the ECAL, almost all of its energy is deposited within a small region. For instance, a 120 GeV electron typically deposits 95\% of its energy within a 5x5 crystal array. However, when passing through the tracker, an electron will radiate 33\% of its energy an average before it reaches the ECAL, this figure inflates to about 86\% of the energy for electrons that pass through the densest parts of the detector near $\abs{\eta} = 1.4$ (seen in fig. \ref{fig:tracker_material_budget}). Due to the bending of the electron in the magnetic field, bremsstrahlung photons will tend to spread out in the $\phi$ direction, with the spread in the $\eta$ direction being mostly negligible \cite[sec. 4.1]{Electron_reco}.
+    When the electron reaches the ECAL, almost all of its energy is deposited within a small region. For instance, a 120 GeV electron typically deposits 95\% of its energy within a 5x5 crystal array. However, when passing through the tracker, an electron will radiate 33\% of its energy on average before it reaches the ECAL, this figure inflates to about 86\% of the energy for electrons that pass through the densest parts of the detector near $\abs{\eta} = 1.4$ (seen in fig. \ref{fig:tracker_material_budget}). Due to the bending of the electron in the magnetic field, bremsstrahlung photons will tend to spread out in the $\phi$ direction, with the spread in the $\eta$ direction being mostly negligible \cite[sec. 4.1]{Electron_reco}.
 
     In addition to the momentum measurement, the Kalman Filter track building method is poorly suited for electron tracks as it also assumes the motion of constant energy charged particle in a magnetic field. In order to construct electron tracks, CMS also utilizes another track finding algorithm developed specifically for the reconstruction of electron tracks called the Gaussian Sum Filter (GSF)\cite{cms_gsf}, which can be roughly intuited as several Kalman Filters assuming different radiation rates running in parallel. 
 
     A high energy photon radiated by an electron will leave an energy deposit in the ECAL and change the trajectory curvature for the electron. These deposits can typically be found by tracing tangents from the electron's trajectory to the ECAL due to the high likelihood that bremsstrahlung photons will be emitted along the electrons momentum vector \todo{can I find a source that says how much this is true as a function of energy?}. 
 
-    To measure the total energy of the electron, the energy of the bremsstrahlung photons should be included as well, and so the ECAL clusters energy deposits into \emph{superclusters}. Track reconstruction with the GSF algorithm is similar to that of the Kalman filter described in sec. \ref{sec:track_reconstruction}, but, in addition to seeding tracks from pixel hits, ECAL superclusters are also used as seeds and tracks leading into the end of a supercluster are extrapolated backwards towards the beamline assuming both charge hypotheses. \todo{is there consistency checking that the photons come at places where there are reasonable kinks?} Ultimately, the electron's momentum is reconstructed using a weighted combination of the track momentum and supercluster energy. Electrons with energy less than 15 GeV use almost exclusively the pixel track momentum, while electrons with energy greater than 250 GeV use the supercluster measurement exclusively. 
+    To measure the total energy of the electron, the energy of the bremsstrahlung photons should be included as well, and so reconstruction software clusters ECAL energy deposits into \emph{superclusters}. Track reconstruction with the GSF algorithm is similar to that of the Kalman filter described in sec. \ref{sec:track_reconstruction}, but, in addition to seeding tracks from pixel hits, ECAL superclusters are also used as seeds and tracks leading into the end of a supercluster are extrapolated backwards towards the beamline assuming both charge hypotheses. \todo{is there consistency checking that the photons come at places where there are reasonable kinks?} Ultimately, the electron's momentum is reconstructed using a weighted combination of the track momentum and supercluster energy. Electrons with energy less than 15 GeV use almost exclusively the pixel track momentum, while electrons with energy greater than 250 GeV use the supercluster measurement exclusively. 
 
     A series of corrections are applied to the supercluster energy. These corrections are derived in simulation where true electron energies and momenta are known to perfect precision. They include the effect of deposited energy not being properly associated the supercluster, loss of energy due to gaps in and between detector modules, pileup, and so on.\cite[sec 4.8]{Electron_reco} 
 
@@ -386,57 +386,184 @@
 
     \begin{figure}[h!]
       \centering
-      \includegraphics[width=.7\textwidth]{figures/electron_Z_resolution.pdf}
+      \includegraphics[width=.9\textwidth]{figures/electron_Z_resolution.pdf}
       \caption{Data and simulation of Z to di-electron events at 8 TeV. On the left, only electrons in the barrel which have not undergone any bremsstrahlung radiation are plotted, these should be the easiest class of electrons to measure. To the right, only electrons in the endcap with multiple subclusters in their ECAL supercluster are plotted, these should be the hardest class to measure. In both cases there is excellent agreement between data and simulation meaning that the corrections applied to data derived from simulation are reasonable. Additionally, the peak Z masses match the established value to approximately the percent level in both cases. Taken from \cite{Electron_reco}.}
       \label{fig:electron_Z_resolution}
+    \end{figure}
+
+    The agreement between data and simulation is important as it shows the detector simulation works well for modeling electrons. Figure \ref{fig:electron_E_resolution} shows the final measured energy resolution for electrons studied at $\sqrt{s} = 7$ TeV. To find the resolution, $Z \to ee$ candidates are chosen and the dilepton mass is compared against the Breit-Wigner distribution expected for the Z mass from theory. The resolution is broken up as a function of \emph{R9}, which is roughly a measure of how concentrated the electron's energy was in the supercluster, with 1 meaning all the energy was in a 3x3 crystal grid. From the figure, we can see that the typical uncertainty for electrons in this analysis is at the few percent level. \todo{If time, plot eta\_sc for electrons... and r9.}
+
+    \begin{figure}[h!]
+      \centering
+      \includegraphics[width=.7\textwidth]{figures/electron_E_resolution.pdf}
+      \caption{The energy resolution on electrons as a function of pseudorapidity. To find the resolution, $Z\to ee$ events are chosen in data and Drell-Yan simulation. The dilepton mass of those events are compared to the theoretical prediction of a Breit-Wigner line-shape for the Z mass peak, convolved with a Gaussian function to absorb the non-Z background tail distribution. Taken from \cite{ecal_energy_reco}.}
+      \label{fig:electron_E_resolution}
     \end{figure}
 
   \subsection{Muon Measurement Pipeline} \label{sec:muon_measurement_pipeline}
     Muon reconstruction starts with tracks from the inner and tracker and muon system. Muon identification in particle flow can come from several sources, but in this analysis we only use ``global muons". 
 
-    Tracks found in the muon system are called ``standalone muons." For each standalone muon track, a collection of possible tracks in the inner silicon tracker that could correspond to the standalone muon are identified. These tracks are then propagated forward to a common plane with the standalone muon track which is propigated backwards to the same plane. Position information on that plane, along with momentum measurements and uncertainties are used to select the best match. \cite[sec 3]{cms_muons} \cite[sec 5.1]{muon_reco_AN} After a match is found, the Kalman Filter track fitting method is applied from scratch to the hits in the inner tracker and muon system to smooth the overall combined track, which constitutes the global muon track used in this analysis.
+    Tracks found in the muon system are called ``standalone muons." For each standalone muon track, a collection of possible tracks in the inner silicon tracker that could correspond to the standalone muon are identified. These tracks are then propagated forward to a common plane with the standalone muon track which is propagated backwards to the same plane. Position information on that plane, along with momentum measurements and uncertainties are used to select the best match. \cite[sec 3]{cms_muons} \cite[sec 5.1]{muon_reco_AN} After a match is found, the Kalman Filter track fitting method is applied from scratch to the hits in the inner tracker and muon system to smooth the overall combined track, this constitutes the global muon track used in this analysis.
 
-    Muon momenta are computed from the sagitta of the track. At high energies, the segment of the track in the tracker provides the best momentum resolution due to the tighter density of the inner tracker modules. At energies above approximately 200 GeV, the tracks in the muon system provide a better measurement due to their longer lever arm. \todo{Is this correct?} 
+    Muon momenta are computed from the track sagitta, as explained in appendix \ref{sec:sagitta}. At high energies, the segment of the track in the tracker provides the best momentum resolution due to the tighter density of the inner tracker modules. At energies above approximately 200 GeV, the tracks in the muon system provide a better measurement due to their longer lever arm. \todo{Is this correct?} 
 
-    Again, a series of corrections to the muon momentum are derived using simulation. Because the measurement of the momentum is done via the track sagitta, as explained in appendix \ref{sec:sagitta}, the largest source of mismeasurements comes from misalignment of the tracker and muon modules, incorrect modeling of the magnetic field, and mis-modeling of the tracker material.\cite[sec. 6]{cms_muons} In general, the CMS detector is built to ensure that the energy resolution of muons (measured in terms of their \pt) is good to within 1\% for a 100 GeV muon and 10\% for a 1 TeV muon. In other words, CMS was built with the requirement that $\frac{\sigma(\pt)}{\pt} \approx 0.01$ for $\pt \approx 100$ GeV and $\frac{\sigma(\pt)}{\pt} \approx 0.1$ for $\pt \approx 1$ TeV. 
+    The largest sources of energy mismeasurement comes from misalignment of the tracker and muon modules, incorrect modeling of the magnetic field, and mis-modeling of the tracker material.\cite[sec. 6]{cms_muons} The muon energy resolution measured during the 7 TeV run can be see in figure \ref{fig:muon_E_resolution}. The solid black line shows the agreement between data the theoretical Breit-Wigner line shape for the muon momentum resolution. Figure \ref{fig:muon_Z_resolution} shows the agreement between data and Drell-Yan simulation. For our analysis, the expected momentum resolution for muons is at the percent level. More detail about the precise methodology can be found in the previous reference.
 
-    Figure \ref{fig:muon_Z_resolution} shows the results of the SIDRA study that don't actually tell you anything about the energy resolution.
+    \begin{figure}[!htb]
+      \centering
+      \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/muon_E_resolution.pdf}
+        \caption{The momentum resolution muons in our expected \pt range measured in the CMS detector at $\sqrt{s} = 7$ TeV. The solid black line, labeled MuScleFit, shows the resolution obtained by fitting a smearing function\cite[sec. 6.1]{cms_muons} to the Breit-Wigner line shape. Taken from \cite{cms_muons}.}
+        \label{fig:muon_E_resolution}
+      \end{subfigure}
+      \quad
+      \begin{subfigure}[t]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{figures/muon_Z_resolution.pdf}
+        \caption{Data and simulation of Z to di-muon events at 7 TeV. The black dots represent data from the detector, while the green line-shape represents the expected line shape for Z$\to\mu\mu$ events using the baseline detector simulation. Corrections are derived from this data and propagated forward Taken from \cite{cms_muons}.}
+        \label{fig:muon_Z_resolution}
+      \end{subfigure}
+    \end{figure}
 
-    \todo{Looks like this isn't what we actually get though, that figure is WAAAYAYYYYYY worse than 1\%. Why does CMS not make a fucking plot that says, here's what the Z peak is supposed to look like, here's what our fucking data says? Why? Probably because it would show that no one knows what the fuck they are doing and all of our analyses are garbage.}
+    \FloatBarrier
+
+  \subsection{Photon Measurement Pipeline} \label{sec:photon_measurement_pipeline}
+    Photons are identified as ECAL deposits that do not have an associated track in the tracker. The main source of contamination in the photon collection comes from the decay of $\pi^0$ mesons to two photons.\cite{cms_photons} Many of the sections \ref{sec:photon_selection} are made to mitigate the likelihood this will occur, for instance the tight photon isolation and the requirement that there not be a relatively non-trivial energy deposit in the HCAL near a photon energy deposit.
+
+    Photons have a sizable chance of converting into an electron-positron pair in the detector as was shown in figure \ref{fig:tracker_material_budget}. Therefore, electron pairs passing certain criteria, e.g. small angular separation, are also considered photons. 
 
     \begin{figure}[h!]
       \centering
-      \includegraphics[width=.7\textwidth]{figures/muon_Z_resolution.pdf}
-      \caption{Data and simulation of Z to di-muon events at 7 TeV. The black dots represent data from the detector, while the green line-shape represents the expected line shape for Z$\to\mu\mu$ events using the baseline detector simulation. Corrections are derived from this data and propagated forward Taken from \cite{cms_muons}.}
-      \label{fig:muon_Z_resolution}
+        \includegraphics[width=.7\textwidth]{figures/photon_E_resolution.pdf}
+        \caption{The energy resolution on photons based on predictions from simulations. Taken from \cite{ecal_energy_reco}.}
+        \label{fig:photon_E_resolution}
     \end{figure}
-    
-  \subsection{Photon Measurement Pipeline}
-    ECAL measurements, lepton conversions. Photons probably pair produce in higher eta ranges, how does that work?
-    \todo{plot for photon energy resolution?}
+
+    Figure \ref{fig:photon_E_resolution} shows the expected energy resolution for photons as predicted by simulation. The resolution for photons is again around the percent level, very similar to the lepton resolutions shown in the previous sections. Without referencing the figure above, the energy resolution of photons could have been anticipated from the figures in section \ref{sec:electron_measurement_pipeline}. This is because most electrons will have some fraction of their energy measured as bremsstrahlung photons. In other words, the energy resolution of electrons is determined, to a moderate degree, by the energy resolution of photons.
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=.5\textwidth]{figures/photon_mumu_Z_peak.pdf}
+      \caption{The mass the $\mu \mu \gamma$ system in $Z \to \mu \mu$ events with $\gamma$ final state radiation. The events are selected by requiring an opposite charge muon pair, each with $\pt > 10$ GeV, $m_{ll} > 35$ GeV, and a photon passing loose selection criteria with $\pt > 10$ GeV. The agreement between data and simulation shows further evidence that the photon energy resolution is in line with that of muons and electrons. Taken from \cite[sec. 5]{cms_photons}.}
+      \label{fig:photon_mumu_Z_peak}
+    \end{figure}
+
+    Figure \ref{fig:photon_mumu_Z_peak} also shows another test of the photon energy resolution. In the figure, Drell-Yan to dimuon events are selected with photon final state radiation. That the mass of the 3-object system matches the Z peak in simulation is another strong indicator that the energy resolution for photons in simulation is well-modeled.
+
+  \FloatBarrier
+
   \subsection{Jets} \label{sec:jets}
-    Describe charged hadron subtraction, JECs ~\cite{JERC}, \cite{JEC_2016}
-    pfCHSjets with L1FastL2L3 corrections (MC), L1FastL2L3L2L3residual corrections (data).
-    \verb=Summer16_23Sep2016V3= JEC payload used to correct jets
-    Need to put in blurbs about L1 Pile Up Corrections, L2L3 MC-Truth Corrections, and L2L3Residual Corrections (data only). Short descriptions here: https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC 
+    The energy measurement pipeline of photons, muons, and electrons were described above. The final particle flow objects to consider are charged hadrons, which are reconstructed from tracks that lead to energy deposits in the HCAL, and neutral hadrons, which are energy deposits in the HCAL that do not have any associated tracks.
 
-    pfjetID
+    After the particle flow algorithm identifies all particle candidates in an event, jets are reconstructed by an algorithms that clusters particle candidates. This analysis uses the anti-$k_T$ algorithm with a radius parameter of $R=0.4$\cite{anti_kt} \cite{jet_reco_algos}. 
 
-    Good info in Vince's Thesis and here: https://arxiv.org/pdf/1607.03663.pdf
-    Roughly: L1 -- (pileup offset correction) pileup correction use QCD MC to get avg energy change to jet with and without pileup overlay. Look in 2D plane of $\eta$ and \pt, get correction.
-    L2L3 -- (simulated response correction) Look at dijet events in MC, see how energy reco is different across \pt and $\eta$, correct for it.
-    L2L3 Residual -- (Residual Corrections for data) Make MET 0 in dijet/ZJet/GammaJet events.
+    Roughly, the algorithm starts with the largest \pt particle in the event and then attempts to add more particles to make a jet. The decision whether to add two particles is based on comparing the number of distance parameters between the particles in $\eta$-$\phi$ space, $\frac{(\delta \eta)^2 + (\delta \phi)^2}{R=0.4}$, to the momentum of the higher \pt particle in the pair. If energy deposits are added together, they are then subsequently treated as a single particle. If no other deposits can be found that are close enough relative to the momentum of a cluster, the cluster is finalized as a jet.
 
-    jet energy mismeasurements are a function of the absolute scale of energy
+    Jet energies are the hardest to get correct, this is due to the general messiness of tracker hits, the HCAL resolution, and inability to do targeted pileup rejection against neutral hadrons that come from auxiliary collisions. To mitigate the effects of pileup energy, charged hadrons not associated with the primary vertex in an event are not used for the anti-$k_T$ clustering. Several other corrections are applied to jet energies, the suite of these corrections are called the JECs (Jet Energy Corrections). 
 
-    \todo{plot for jet energy resolution?}
-  \subsection{B-Tagging} \label{sec:b-tagging}
-    What is B-tagging? What do they look at? What's the false positive rate that we use?
+    Detail about the JECs can be found in references \cite{JEC_2016}, \cite{jetmet_2011}, \cite{JERC}, \cite{jec_summary}, and \cite{intro_jec}. The corrections are organized into several steps defined below:
+
+    \begin{enumerate}
+      \bitem{L1 Pileup} Correct for energy added to jets due to pileup. The rough idea is to find the average amount of energy deposited by pileup collisions as a function of the number of interactions and location in the detector. The measurement is actually performed in simulated QCD multijet events with and without pileup overlay from the zero bias trigger.\footnote{The zero bias trigger is a CMS trigger that stores events at complete random. The idea behind this is that these events will tend to contain only particles that are normally considered pileup. These particles in these events are added to the QCD MC in order to simulate real pileup conditions on top of the simulated event.} The average difference in jet energies with and without the pileup overlay are used as the expected energy deposit per unit area across the detector. The difference between the average energy found in this way and the average energy found in the zero bias events alone are applied as another correction to data (essentially making the energy in the zero bias events the correction applied to data) \todo{Is this correct?}.\cite[sec. 6.2]{jetmet_2011} ~\cite[sec. 4]{JEC_2016}
+
+      \bitem{L2L3 Response} Correct for the response of the detector using MC jets. QCD dijet events are simulated and corrections are derived as a function of the jet \pt and $\eta$ so that the reconstructed jet \pt is equal to the generated \pt and the response of the detector is uniform with respect to \pt and $\eta$.\cite[sec. 6.3]{jetmet_2011} ~\cite[sec. 5]{JEC_2016}
+
+      \bitem{L2L3 Residual} Correct for the difference between the MC and data. All above corrections are applied to events with a photon and jets or a Z boson which decays into a dielectron or dimuon pair. Because the energy resolutions for the electromagnetic objects are much better than the resolution for jets, the jet energies can be corrected such that the total transverse momentum in the event is zero.\cite[sec. 6.3]{jetmet_2011} ~\cite[sec. 6]{JEC_2016}
+    \end{enumerate}
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=.8\textwidth]{figures/jet_resolution.pdf}
+      \caption{The \pt resolution for Anti-$k_T$ jets in different $\eta$ regions of the detector. The black dots represent the typical size of the correction needed to bring dijet events to transverse momentum balance. The red dotted line represents the difference in simulation between the generated jet \pt and the \pt reconstructed after detector simulation. The solid red line represents the same as the dotted red line, except with a small residual correction for the different resolutions found data and MC. Taken from \cite{jetmet_2011}.}
+      \label{fig:jet_resolution}
+    \end{figure}
+
+    After all the corrections are applied, the final jet \pt resolution comes out to be approximately 10\% \cite[sec 7.2]{jetmet_2011}, as can be seen in figure \ref{fig:jet_resolution}. In the figure, the dotted red line represents the \pt resolution measured in simulated dijet events under the hypothesis of transverse momentum balance, and the black dots represent the same for dijet events in data. There is excellent agreement between the resolutions in simulation and data in the barrel, and reasonable agreement in the endcap.
+
+    \todo{How do I resolve this with: https://cds.cern.ch/record/2622157/files/DP2018_028.pdf (page 9) which makes it look like the JES unc is only about 2\%}
 
   \subsection{MET Reconstruction} \label{sec:MET_reco}
-    Make sure to add bits about sources of MET and the Type 1 correction
+    A central object in this analysis is the transverse momentum imbalance, also called \MET for missing transverse energy.\footnote{In particle colliders, the mass energy for particle's of interest is typically much smaller than the kinetic energy. In this limit, the energy and momentum are the same.} The \MET is defined as the negative of the sum of all the transverse momentum of particles associated with the primary vertex:
+
+    \[
+      \vec{E}_{\text{T}}^{\text{miss}} = - \sum \limits_{\text{all objects}} \vec{p}_\text{T}
+    \]
+
+    In other words, the addition of an object with transverse momentum equal to the $\vec{E}_{\text{T}}^{\text{miss}}$ vector would bring any event into transverse momentum balance.
+
+    \MET is generated from three main sources:
+    \begin{enumerate}
+      \bitem{Real \MET} Also called genuine \MET, is \MET that comes from particles which are not detected by the CMS detector. In the case of the standard model, the only particle which is expected to leave no signature in the detector are neutrinos. For the sake of this thesis, real \MET is identical to the energy of neutrinos in the event.
+      \bitem{Fake \MET} Also called artificial \MET, is \MET that comes from mismeasurements of physics objects. Given the percent level energy resolutions on photons and the light leptons, fake \MET in this thesis is assumed to come only from jet mismeasurements.
+      \bitem{Anomalous \MET} This is \MET which comes from various sources of noise in the detector, e.g. a dead cell in the ECAL or when a particle directly interacts with light guides or photomultipliers \cite[sec 5]{cms_met}. A set of \emph{MET filters}, which will be outlined in section \ref{sec:met_filters}, are applied to remove these spurious sources. Figure \ref{fig:met_filters_efficacy} shows the effect of using these filters with the first 12.9 fb$^{-1}$ of the data collected for this analysis.
+    \end{enumerate}
+
+    \subsubsection{The Type 1 Correction} 
+      As has been demonstrated in sections \ref{sec:electron_measurement_pipeline}, \ref{sec:muon_measurement_pipeline}, and \ref{sec:photon_measurement_pipeline}, the momentum resolution of electrons, muons, and photons is at the single digit percent level. In section \ref{sec:jets}, we showed the energy resolution for jets is several times larger, typically in the 10\% range. Therefore, in events with multiple jets and no real or anomalous \MET, it is expected that the bulk of the transverse momentum imbalance will be due to mismeasurements of the jet energies. 
+
+      As was explained in section \ref{sec:jets}, a series of corrections are applied to the jets in order to mitigate the uncertainty associated with jet energies. Roughly, when the corrected jet energies are used to compute the \MET, we call this quantity the \emph{Type 1 Corrected MET}. 
+
+      In practice, the corrections are only applied to jets which deposited less than 90\% of the jet's energy into the ECAL, and muons in jets are subtracted from the jet energy before it is corrected, then added back so that only the energy in the jet not associated with the muon is corrected. The purpose of these two caveats is that the JECs are somewhat dependent on flavor composition. For instance, a spray of pions will have a different detector response than a spray of pions, photons, and muons. The JECs are derived via dijet events, which means they are likely seeded by gluons whose decay chains tend to not include muons.
+
+      \todo{Check description why muons are subtracted... Are dijet events really mostly gluons? Why don't we remove electrons as well? Is that really all there is to type-1 correction?}
+
+    \subsubsection{Agreement Between Data and Simulation}
+
+      The modeling of both real and fake \MET in this analysis is done largely via data driven techniques which are not sensitive to \MET modeling in simulation. However, in some cases, namely the electroweak subtraction in sec \ref{sec:ewk_subtraction}, the Z$+\nu$ background in sec \ref{sec:z_+_neutrino}, and the Z+Hadronic closure test in sec \ref{sec:pt_reweighting_closure_test}, we do rely on simulation for \MET modeling.
+
+      Figure \ref{fig:met_resolution} shows the agreement in the type-1 corrected \MET profile between data and simulation in events with a Z boson that decays to an electron-positron pair (\ref{fig:met_resolution_zee}) and a $\mu^+ \mu^-$ pair (\ref{fig:met_resolution_zmm}). Additionally, figure \ref{fig:met_resolution_gamma} shows the agreement between data and simulation for events with an isolated photon. In general, there is excellent agreement the bulk, while most bins are within one standard deviation.
+
+      \begin{figure}[!htb]
+        \centering
+        \begin{subfigure}[t]{0.31\textwidth}
+          \includegraphics[width=\textwidth]{figures/met_resolution_zee.pdf}
+          \caption{Z$\to e^+ e^-$}
+          \label{fig:met_resolution_zee}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[t]{0.31\textwidth}
+          \includegraphics[width=\textwidth]{figures/met_resolution_zmm.pdf}
+          \caption{Z$\to \mu^+ \mu^-$}
+          \label{fig:met_resolution_zmm}
+        \end{subfigure}
+        \quad
+        \begin{subfigure}[t]{0.31\textwidth}
+          \includegraphics[width=\textwidth]{figures/met_resolution_gamma.pdf}
+          \caption{Isolated photons}
+          \label{fig:met_resolution_gamma}
+        \end{subfigure}
+        \caption{Agreement between data and simulation for (a) Z$\to ee$, (b) Z$\to \mu\mu$, and (c) isolated photon events. The gray bands on the ratio plot show the uncertainty due to the JECs. There is excellent agreement in the bulk, and most bins are within the expected one-$\sigma$ fluctuation in the tails. Taken from \cite{cms_met}.}
+        \label{fig:met_resolution}
+      \end{figure}
+
+  \subsection{B-Tagging} \label{sec:b-tagging}
+    This analysis attempts to tag jets as originating from a b-quark.
+
+
+    What is B-tagging? What do they look at? What's the false positive rate that we use?
+
   \subsection{MET Filters} \label{sec:met_filters} 
-    We apply certain filters that kill events, these are called MET filters but include things like beam halo as well.
+    As explained in sec \ref{sec:MET_reco}, various low probability phenomena can cause large energy mismeasurements leading to large \MET values in events. The following are a list of \emph{MET filters} applied as event level vetos in this analysis, they attempt to tag events with such spurious signals.
+
+    \begin{itemize}
+    \item CSC tight beam halo 2016 filter
+    \item HBHE noise filter
+    \item HBHE iso noise filter
+    \item ee badSC noise filter
+    \item ECAL dead cell trigger primitive filter
+    \item JetMET muon fraction filter
+    \end{itemize}
+
+    \begin{wrapfigure}{r}{0.5\textwidth}
+      \centering
+      \includegraphics[width=.48\textwidth]{figures/met_filter_efficacy.pdf}
+      \caption{The effect of \MET filter application on dijet events in the first good 12.9 fb$^{-1}$ of 2016 data taken by CMS. The filters used in this figure are slightly different that those used in this analysis. Taken from \cite{cms_met}.}
+      \label{fig:met_filters_efficacy}
+      \vspace{-10pt}
+    \end{wrapfigure}
+
+    More detail on these filters can be found in reference \cite[sec 5]{cms_met}. A brief summary follows. Figure \ref{fig:met_filters_efficacy} shows the effects of the applying these met filters to a sample of dijet events.\footnote{A slightly different filter was used to reject events with muons assigned an incorrectly large \pt. But no muons that pass which the filter used in fig \ref{fig:met_filters_efficacy} were found after applying our baseline selections in data}
+
+    The HBHE noise filter looks at timing and pulse shape information as well as geometrical information about the readout boxes and photodiodes to reject noise signals from the HCAL. The HBHE iso noise filter rejects events based on topological information from the tracker, ECAL, and HCAL. The ECAL dead cell trigger primitive and ee badSC noise filters reject events that have extremely large energy contributions from single crystals or small bunches of crystals in the ECAL. The CSC tight beam halo filter removes events with beam halo, a phenomenon where a proton collision occurs before the interaction point, causing particles to travel through the detector collinear to the beam at constant $\phi$, in ``the beams halo." The JetMET muon fraction filter removes events where a jet is found anti-aligned to the \MET vector containing a muon that carries at least 50\% of the energy in the jet. This filter suppresses events with muons that are assigned too large a \pt.
 
 \section{Monte Carlo} \label{sec:monte_carlo}
   Physics generated using Madgraph 5 interfaced with pythia8 for showering. List samples and their generator.

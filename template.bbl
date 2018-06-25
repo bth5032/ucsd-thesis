@@ -16,15 +16,19 @@ Electromagnetic calorimeter.
 {\em {The CMS muon project: Technical Design Report}}.
 \newblock Technical Design Report CMS. CERN, Geneva, 1997.
 
-\bibitem{cms_ecal}
-Energy calibration and resolution of the cms electromagnetic calorimeter in pp
-  collisions at sqrt(s) = 7 tev.
-\newblock {\em Journal of Instrumentation}, 8(09):P09009, 2013.
+\bibitem{jec_summary}
+{CMS JEC Run I legacy performance plots}.
+\newblock Sep 2015.
 
 \bibitem{Electron_reco}
 Performance of electron reconstruction and selection with the cms detector in
   proton-proton collisions at $\sqrt{s}$ = 8 tev.
 \newblock {\em Journal of Instrumentation}, 10(06):P06005, 2015.
+
+\bibitem{cms_met}
+{Performance of missing energy reconstruction in 13 TeV pp collision data using
+  the CMS detector}.
+\newblock Technical Report CMS-PAS-JME-16-004, CERN, Geneva, 2016.
 
 \bibitem{Lumi_unc}
 {CMS Luminosity Measurements for the 2016 Data Taking Period}.
@@ -55,6 +59,11 @@ W~Adam, R~FrÃŒhwirth, A~Strandlie, and T~Todorov.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
   2005.
 
+\bibitem{jet_reco_algos}
+Ryan Atkin.
+\newblock Review of jet reconstruction algorithms.
+\newblock {\em Journal of Physics: Conference Series}, 645(1):012008, 2015.
+
 \bibitem{higgs_combine}
 The ATLAS, CMS Collaborations, and The LHC Higgs~Combination Group.
 \newblock {Procedure for the LHC Higgs boson search combination in Summer
@@ -73,6 +82,11 @@ G~L Bayatian and {etal}.
 Michael Benedikt, Paul Collier, V~Mertens, John Poole, and Karlheinz Schindl.
 \newblock {\em {LHC Design Report}}.
 \newblock CERN Yellow Reports: Monographs. CERN, Geneva, 2004.
+
+\bibitem{anti_kt}
+Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
+\newblock The anti- k t jet clustering algorithm.
+\newblock {\em Journal of High Energy Physics}, 2008(04):063, 2008.
 
 \bibitem{cms_jinst}
 S~Chatrchyan and {etal}.
@@ -110,6 +124,11 @@ CMS Collaboration.
 \newblock Recommended jet energy corrections and uncertainties for data and mc.
 \newblock https://twiki.cern.ch/twiki/bin/view/CMS/JECDataMC, 2015.
 
+\bibitem{intro_jec}
+CMS Collaboration.
+\newblock Introduction to jet energy corrections at cms.
+\newblock Revision 6, 2016.
+
 \bibitem{mu_l1_twiki}
 CMS Collaboration.
 \newblock Level-1 muon trigger performance with the 2017 data.
@@ -132,10 +151,16 @@ The~CMS Collaboration.
   2009.
 \newblock CMS AN-2008/97.
 
+\bibitem{jetmet_2011}
+The~CMS collaboration.
+\newblock Determination of jet energy calibration and transverse momentum
+  resolution in cms.
+\newblock {\em Journal of Instrumentation}, 6(11):P11002, 2011.
+
 \bibitem{cms_muons}
 The~CMS collaboration.
 \newblock Performance of cms muon reconstruction in pp collision events at
-  âs = 7 tev.
+  $\sqrt{s} = 7$ tev.
 \newblock {\em Journal of Instrumentation}, 7(10):P10002, 2012.
 
 \bibitem{cms_track_vertex}
@@ -144,11 +169,11 @@ The~CMS Collaboration.
   reconstruction with the cms tracker.
 \newblock {\em Journal of Instrumentation}, 9(10):P10009, 2014.
 
-\bibitem{cms_electron_photon_performance}
+\bibitem{cms_photons}
 The~CMS Collaboration.
-\newblock Performance of electron reconstruction and selection with the {CMS}
-  detector in proton-proton collisions at √s= 8 {TeV}.
-\newblock {\em Journal of Instrumentation}, 10(06):P06005--P06005, jun 2015.
+\newblock Performance of photon reconstruction and identification with the cms
+  detector in proton-proton collisions at $\sqrt{s} = 8$ tev.
+\newblock {\em Journal of Instrumentation}, 10(08):P08010, 2015.
 
 \bibitem{Likelihood_Cowen_Cranmer}
 Glen Cowan, Kyle Cranmer, Eilam Gross, and Ofer Vitells.
@@ -165,7 +190,7 @@ E.~Daw.
 
 \bibitem{QCD_collider_physics}
 David d'Enterria.
-\newblock Quarkâgluon matter.
+\newblock Quark-gluon matter.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 34(7):S53,
   2007.
 
