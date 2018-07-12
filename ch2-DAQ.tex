@@ -7,7 +7,7 @@
 
   Protons are injected into the LHC in bunches, each containing approximately $10^{12}$ protons \cite{Lumi_unc}, and are accelerated in both clockwise and counterclockwise directions in two separate high vacuum beam pipes. About these beam pipes, superconducting dipole magnets guide the beams around the circular path, and quadrupole and octopole magnets ensure the beams stay focused and collimated.
 
-  The proton bunches extend approximately 55 mm in length and are spaced such that the time between bunch crossings at any particular point in the beam pipe is approximately 25 ns at full energy. The four points, 1, 2, 5, and 8, distinguished in figure \ref{fig:lhc_tunnel}, the beams are crossed and the protons are given a chance to collide. In an average head-on bunch crossing, approximately 20 proton-proton pairs will collide and create deposits of energy in the detectors wrapped around the interaction points. For the analysis presented in this thesis, data was collected during the 2016 LHC run, corresponding to a usable integrated luminosity of 35.9 fb$^{-1}$ collected by the CMS detector. Typical instantaneous luminosities during this time period were on the order of $10^{34}$ cm$^{-2}$ s$^{-1} = 10^7$ Hz fb$^{-1}$, as can be seen in figure \ref{fig:lumi_stats} \cite{lumi_twiki}.
+  The proton bunches extend approximately 55 mm in length and are spaced such that the time between bunch crossings at any particular point in the beam pipe is approximately 25 ns at full energy. At the four points, 1, 2, 5, and 8, distinguished in figure \ref{fig:lhc_tunnel}, the beams are crossed and the protons are given a chance to collide. In an average head-on bunch crossing, approximately 20 proton-proton pairs will collide and create deposits of energy in the detectors wrapped around the interaction points. For the analysis presented in this thesis, data was collected during the 2016 LHC run, corresponding to a usable integrated luminosity of 35.9 fb$^{-1}$ collected by the CMS detector. Typical instantaneous luminosities during this time period were on the order of $10^{34}$ cm$^{-2}$ s$^{-1} = 10^7$ Hz fb$^{-1}$, as can be seen in figure \ref{fig:lumi_stats} \cite{lumi_twiki}.
 
   \begin{figure}[h!]
     \centering
@@ -29,7 +29,7 @@
 
     The analysis presented in this thesis is concerned with the production of Z bosons, whose production cross section is denoted as $\sigma_\text{Z}$ in the figure. Given the instantaneous luminosity of $10^{34}$ cm$^{-2}$ s$^{-1}$, the production cross section corresponds to a rate of 1000 Z bosons produced per second at peak luminosity. Given the total integrated luminosity of 35.9 fb$^{-1}$, the entire CMS dataset during this time period contained approximately 300 million Z bosons.
 
-    Notice that the vast majority of collisions create only colored particles in the prompt process. Therefore, the most likely effect of the extra 20 collisions in a bunch crossing is to produce soft hadronic jets. For instance, the chance to produce another Z boson in an event that already has a Z boson is roughly 20 in a million, or 1 in 50,000. However, it is still important that particles from other collisions do not contaminate an event. As will be discussed more thoroughly in section \ref{sec:vertex_selection}, charged particle tracks can be traced back to the beamline and clustered into points of origin called a verticies. The vertex that is assigned the most total energy in an event is called the primary vertex. The chance that two high energy verticies will exist in a single event is low since the number of collisions per crossing is small compared the ratio of the cross section of interesting physics to the total proton-proton cross section.
+    Notice that the vast majority of collisions create only colored particles in the prompt process. Therefore, the most likely effect of the extra 20 collisions in a bunch crossing is to produce soft hadronic jets. For instance, the chance to produce another Z boson in an event that already has a Z boson is roughly 20 in a million, or 1 in 50,000. However, it is still important that particles from other collisions do not contaminate an event. As will be discussed more thoroughly in section \ref{sec:vertex_selection}, charged particle tracks can be traced back to the beamline and clustered into points of origin called a verticies. The vertex that is assigned the most total transverse energy in an event is called the primary vertex. The chance that two high energy verticies will exist in a single event is low since the number of collisions per crossing is small compared the ratio of the cross section of interesting physics to the total proton-proton cross section.
 
 
     \begin{figure}[h!]
@@ -46,13 +46,9 @@
       \label{fig:cms_cross_sections}
     \end{figure}
 
-    \todo{Point out that there is very low chance for double scattering or two interesting interactions in one bunch crossing. 
-    Point out cross section of Z boson, point out the NJets rule.
-    Consider adding the other figure on my wall at the office. That way I can point out the njets rule and show the background composition with 2 jets.}
-
 \section{The CMS Detector}
   
-  The Compact Muon Solenoid (CMS) is a general purpose detector at the LHC. The detector is shown in figure \ref{fig:cms_detector}. It is the second largest detector at the LHC, weighing just under 15 kilotons. The envelope of the detector is a cylinder of radius 7.3 meters and length of 21.6 meters. The detector subsystems are embedded like an onion, sorted by what a particle produced at the interaction point would encounter traveling away from the beam pipe, the detector subsystems are as follows:
+  The Compact Muon Solenoid (CMS) is a general purpose detector at the LHC. The detector is shown in figure \ref{fig:cms_detector}. It is the second largest detector at the LHC, weighing just under 15 kilotons. The envelope of the detector is a cylinder of radius 7.3 meters and length of 21.6 meters. The detector subsystems are embedded like an onion, sorted by radial distance from the beam pipe they are:
 
   \begin{enumerate}
     \item{Silicon Pixel Tracker}
@@ -72,9 +68,7 @@
     \label{fig:cms_detector}
   \end{figure}
 
-  As was shown in sec \ref{sec:what_gets_made}, most collisions at the LHC produce sprays of hadrons called jets, in fact the bulk of interactions are between gluons. However, more rare electroweak processes, such as the production of the higgs boson, can lead to the creation of leptons. Therefore, measuring the energy spectra of leptons is of central importance for CMS analyses searching for new physics coupled to the electroweak sector; this search is one such analysis. 
-
-  The CMS detector needs to be able to identify charged leptons and distinguish their flavor in order to probe electroweak physics without hadronic backgrounds. The electron is a stable particle, and the muon has a lifetime long enough that it should make it through
+  As was shown in sec \ref{sec:what_gets_made}, most collisions at the LHC produce sprays of hadrons called jets. This reflects the fact that most interactions are between gluons. However, more rare electroweak processes, such as the production of the higgs boson, can lead to the creation of leptons. Therefore, measuring the energy spectra of leptons is of central importance for CMS analyses searching for new physics coupled to the electroweak sector; this thesis contains one such analysis. 
 
   In order to measure the momentum of charged particles, a large magnetic field is applied by a superconducting solenoid that is placed between the hadronic calorimeter and the muon system. The solenoid creates a roughly constant 3.8 Tesla magnetic field parallel to the beam pipe in the region of the detector filled by the tracking system and calorimeters. This magnetic field will bend charged particles in accordance with the Lorentz force law and allow for a measurement of the particles momentum.
 
@@ -82,10 +76,10 @@
 
   \begin{enumerate}
     \item The search for the Higgs boson, specifically in the dimuon and diphoton channel\footnote{the diphoton channel was where it ultimately was found}. This created a need for excellent muon and photon energy resolution and isolation. These requirements justify the advanced muon system and ECAL. Additionally searching for the Higgs in the $b\bar{b}$ and $\tau \bar{\tau}$ channels created the requirement for good offline b-tagging and $\tau$-tagging capabilities, largely regulated by tracker resolution.
-    \item The search for supersymmetric (SUSY) particles. The main motivation for these searches is often in the context of R-parity conserving SUSY due to the natural dark matter candidate they provide as described in section \ref{sec:r-parity}. Dark particles leave momentum imbalance in the detector, so there is 
-    \item The search for new massive vector bosons, typically dubbed a Z' search. Here dilepton (electron and muon) energy resolution are again of the paramount importance.
+    \item The search for supersymmetric (SUSY) particles. The main motivation for these searches is often in the context of R-parity conserving SUSY due to the natural dark matter candidate they provide as described in section \ref{sec:r-parity}. Dark particles are expected to only leave momentum imbalance in the detector, so there is need for good energy resolution for all physics objects. 
+    \item The search for new massive vector bosons, typically dubbed a Z' search. Here dilepton (electron and muon) energy resolution are again of paramount importance.
     \item The search for extra dimensions. The phenomenology of these models is very broad, but signatures can include all massive standard model particles and gravitons which leave a \MET signature.
-    \item Measurements furthering the precision Standard Model parameters. The production of top quarks is enhanced at the LHC compared to any previous colliders due to their large mass, even compared to the TeV scale. Top quarks almost always decay to b-quarks which means the LHC is also a b-factory.
+    \item Measurements furthering the precision Standard Model parameters. The production of top quarks is enhanced at the LHC compared to any previous colliders due to their large mass, which is non-trivial even at the TeV scale. Top quarks almost always decay to b-quarks which means the LHC can be used to study b physics.
     \item In addition to proton-proton collisions, the LHC also collides lead ions which probe the thermodynamic properties of quantum chromodynamics (QCD), the theory of the strong nuclear force. These collisions typically produce hadronic jets and their \pt spectrum is of interest due to observations at RHIC \cite{QCD_collider_physics}.
   \end{enumerate}
 
@@ -102,7 +96,7 @@
     \end{figure}
 
   \subsection{The Inner Tracker} \label{sec:inner_tracker}
-    The inner tracker is the closest part of the CMS detector to LHC beamline and interaction point where protons collide. \cite{cms_jinst} It surrounds the interaction point with a length of 5.8m and radius of 1.25m. The purpose of the system is to track charged particles to their vertex and measure the momentum of charged particles via the saggita in the particle arc due to the magnetic field. The entire active detection area of the inner-tracker system is made of silicon, but can be broken into 2 main subsystems:
+    The inner tracker is the closest part of the CMS detector to LHC beamline and interaction point where protons collide. \cite{cms_jinst} It surrounds the interaction point with a length of 5.8m and radius of 1.25m. The purpose of the system is to track charged particles to their vertex and measure the momentum of charged particles via the saggita in the particle arc due to the magnetic field, as outlined in \ref{sec:sagitta}. The entire active detection area of the inner-tracker system is made of silicon, but can be broken into 2 main subsystems:
 
     \begin{enumerate}
       \bitem{pixel detectors} The innermost part of the tracker system is a pixel-based detector composed of 1,440 thin modules, of cross section $100 \times 150 \mu$m$^2$, capable of measuring hits with fine granularity in 3 dimensions. This subsystem's main purpose is to aid in vertex reconstruction.
@@ -479,7 +473,7 @@
 
     After all the corrections are applied, the final jet \pt resolution comes out to be approximately 10\% \cite[sec 7.2]{jetmet_2011}, as can be seen in figure \ref{fig:jet_resolution}. In the figure, the dotted red line represents the \pt resolution measured in simulated dijet events under the hypothesis of transverse momentum balance, and the black dots represent the same for dijet events in data. There is excellent agreement between the resolutions in simulation and data in the barrel, and reasonable agreement in the endcap.
 
-    \todo{How do I resolve this with: https://cds.cern.ch/record/2622157/files/DP2018_028.pdf (page 9) which makes it look like the JES unc is only about 2\%}
+    \todo{How do I resolve this with \href{https://cds.cern.ch/record/2622157/files/DP2018\_028.pdf}[this] (page 9) which makes it look like the JES unc is only about 2\%}
 
   \subsection{MET Reconstruction} \label{sec:MET_reco}
     A central object in this analysis is the transverse momentum imbalance, also called \MET for missing transverse energy.\footnote{In particle colliders, the mass energy for particle's of interest is typically much smaller than the kinetic energy. In this limit, the energy and momentum are the same.} The \MET is defined as the negative of the sum of all the transverse momentum of particles associated with the primary vertex:
@@ -535,12 +529,6 @@
         \label{fig:met_resolution}
       \end{figure}
 
-  \subsection{B-Tagging} \label{sec:b-tagging}
-    This analysis attempts to tag jets as originating from a b-quark.
-
-
-    What is B-tagging? What do they look at? What's the false positive rate that we use?
-
   \subsection{MET Filters} \label{sec:met_filters} 
     As explained in sec \ref{sec:MET_reco}, various low probability phenomena can cause large energy mismeasurements leading to large \MET values in events. The following are a list of \emph{MET filters} applied as event level vetos in this analysis, they attempt to tag events with such spurious signals.
 
@@ -564,6 +552,20 @@
     More detail on these filters can be found in reference \cite[sec 5]{cms_met}. A brief summary follows. Figure \ref{fig:met_filters_efficacy} shows the effects of the applying these met filters to a sample of dijet events.\footnote{A slightly different filter was used to reject events with muons assigned an incorrectly large \pt. But no muons that pass which the filter used in fig \ref{fig:met_filters_efficacy} were found after applying our baseline selections in data}
 
     The HBHE noise filter looks at timing and pulse shape information as well as geometrical information about the readout boxes and photodiodes to reject noise signals from the HCAL. The HBHE iso noise filter rejects events based on topological information from the tracker, ECAL, and HCAL. The ECAL dead cell trigger primitive and ee badSC noise filters reject events that have extremely large energy contributions from single crystals or small bunches of crystals in the ECAL. The CSC tight beam halo filter removes events with beam halo, a phenomenon where a proton collision occurs before the interaction point, causing particles to travel through the detector collinear to the beam at constant $\phi$, in ``the beams halo." The JetMET muon fraction filter removes events where a jet is found anti-aligned to the \MET vector containing a muon that carries at least 50\% of the energy in the jet. This filter suppresses events with muons that are assigned too large a \pt.
+
+  \subsection{B-Tagging} \label{sec:b-tagging}
+    This analysis attempts to tag jets which contain a b-quark emitted from the primary vertex. The combined secondary vertex, version 2 (CSVv2) algorithm  is used to accomplish this task. It is based off of the CSV algorithm described in reference \cite{btag_csv}. 
+
+    Bottom quarks will generally hadronize into B mesons or B baryons which have a long enough lifetime that they travel a few millimeters from the beamline before decaying, creating a secondary offset vertex. Therefore, b-tagging methods tend to focus on the identification of secondary vertices, as well as several other kinematical conditions on the shape and composition of jets\cite{btag_strassler}. The full implementation of CSVv2 includes machine learning algorithms that take in a suite of variables characterizing a jet's tracks, momentum, impact parameters, etc... and outputs a number, called the discriminator, that characterizes the probability the jet contained a b-quark. These full description is available in reference \cite[section 5.1.2]{cms_heavy_tagging}. 
+
+    Figure \ref{fig:csv_v2_performance} shows the CSVv2 discriminator scores for jets separated by flavor in an inclusive multijet sample. In this analysis, a jet is called a b-jet if it has a discriminator value larger than 0.8484. This corresponds to a false positive rate of approximately 1\%. 
+
+    \begin{figure}[!h]
+      \centering
+      \includegraphics[width=.8\textwidth]{figures/csv_v2_performance.pdf}
+      \caption{The count of jets assigned different CSVv2 discriminator values from an inclusive multijet sample. The value of the discriminator used in this analysis to tag a b-jet is 0.8484, which corresponds to a false positive rate of 1\%. Taken from \cite{csv_v2_performance}.}
+      \label{fig:csv_v2_performance}
+    \end{figure}
 
 \section{Monte Carlo} \label{sec:monte_carlo}
   Physics generated using Madgraph 5 interfaced with pythia8 for showering. List samples and their generator.
