@@ -25,11 +25,6 @@ Performance of electron reconstruction and selection with the cms detector in
   proton-proton collisions at $\sqrt{s}$ = 8 tev.
 \newblock {\em Journal of Instrumentation}, 10(06):P06005, 2015.
 
-\bibitem{csv_v2_performance}
-{Performance of b-Tagging Algorithms in Proton Collisions at 13 TeV using the
-  2016 Data}.
-\newblock Jul 2016.
-
 \bibitem{cms_met}
 {Performance of missing energy reconstruction in 13 TeV pp collision data using
   the CMS detector}.
@@ -64,6 +59,30 @@ W~Adam, R~FrÃŒhwirth, A~Strandlie, and T~Todorov.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics}, 31(9):N9,
   2005.
 
+\bibitem{Planck}
+P.~A.~R. Ade et~al.
+\newblock {Planck 2015 results. XIII. Cosmological parameters}.
+\newblock {\em Astron. Astrophys.}, 594:A13, 2016.
+
+\bibitem{GEANT}
+S.~Agostinelli and {etal}.
+\newblock Geant4 -- a simulation toolkit.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}, 506(3):250
+  -- 303, 2003.
+
+\bibitem{rev_galaxy_clusters}
+Steven~W. Allen, August~E. Evrard, and Adam~B. Mantz.
+\newblock Cosmological parameters from observations of galaxy clusters.
+\newblock {\em Annual Review of Astronomy and Astrophysics}, 49(1):409--470,
+  2011.
+
+\bibitem{SMS}
+Daniele Alves and {etal}.
+\newblock Simplified models for lhc new physics searches.
+\newblock {\em Journal of Physics G: Nuclear and Particle Physics},
+  39(10):105005, 2012.
+
 \bibitem{jet_reco_algos}
 Ryan Atkin.
 \newblock Review of jet reconstruction algorithms.
@@ -76,6 +95,11 @@ The ATLAS, CMS Collaborations, and The LHC Higgs~Combination Group.
 \newblock Technical Report CMS-NOTE-2011-005. ATL-PHYS-PUB-2011-11, CERN,
   Geneva, Aug 2011.
 
+\bibitem{axion}
+Frank~T. Avignone.
+\newblock Viewpoint: Homing in on axions?
+\newblock URL: https://physics.aps.org/articles/v11/34, 2018.
+
 \bibitem{cms_tdr}
 G~L Bayatian and {etal}.
 \newblock {\em {CMS Physics: Technical Design Report Volume 1: Detector
@@ -83,15 +107,31 @@ G~L Bayatian and {etal}.
 \newblock Technical Design Report CMS. CERN, Geneva, 2006.
 \newblock There is an error on cover due to a technical problem for some items.
 
+\bibitem{Unstable_universe}
+A.~V. Bednyakov, B.~A. Kniehl, A.~F. Pikelner, and O.~L. Veretin.
+\newblock Stability of the electroweak vacuum: Gauge independence and advanced
+  precision.
+\newblock {\em Phys. Rev. Lett.}, 115:201802, Nov 2015.
+
 \bibitem{LHC_TDR}
 Michael Benedikt, Paul Collier, V~Mertens, John Poole, and Karlheinz Schindl.
 \newblock {\em {LHC Design Report}}.
 \newblock CERN Yellow Reports: Monographs. CERN, Geneva, 2004.
 
+\bibitem{particle_dm}
+Gianfranco Bertone, Dan Hooper, and Joseph Silk.
+\newblock Particle dark matter: evidence, candidates and constraints.
+\newblock {\em Physics Reports}, 405(5):279 -- 390, 2005.
+
 \bibitem{anti_kt}
 Matteo Cacciari, Gavin~P. Salam, and Gregory Soyez.
 \newblock The anti- k t jet clustering algorithm.
 \newblock {\em Journal of High Energy Physics}, 2008(04):063, 2008.
+
+\bibitem{cosmological_constant}
+Sean~M. Carroll.
+\newblock The cosmological constant.
+\newblock {\em Living Reviews in Relativity}, 4(1):1, Feb 2001.
 
 \bibitem{cms_jinst}
 S~Chatrchyan and {etal}.
@@ -133,6 +173,12 @@ CMS Collaboration.
 CMS Collaboration.
 \newblock Introduction to jet energy corrections at cms.
 \newblock Revision 6, 2016.
+
+\bibitem{csv_v2_performance}
+CMS Collaboration.
+\newblock {Performance of b-Tagging Algorithms in Proton Collisions at 13 TeV
+  using the 2016 Data}.
+\newblock Jul 2016.
 
 \bibitem{cms_heavy_tagging}
 CMS Collaboration.
@@ -191,11 +237,22 @@ The~CMS collaboration.
 \newblock Identification of b-quark jets with the cms experiment.
 \newblock {\em Journal of Instrumentation}, 8(04):P04013, 2013.
 
+\bibitem{cms_sms}
+The~CMS Collaboration.
+\newblock Interpretation of searches for supersymmetry with simplified models.
+\newblock {\em Phys. Rev. D}, 88:052017, Sep 2013.
+
 \bibitem{cms_track_vertex}
 The~CMS Collaboration.
 \newblock Description and performance of track and primary-vertex
   reconstruction with the cms tracker.
 \newblock {\em Journal of Instrumentation}, 9(10):P10009, 2014.
+
+\bibitem{cms_electrons}
+The~CMS Collaboration.
+\newblock Performance of electron reconstruction and selection with the cms
+  detector in proton-proton collisions at $\sqrt{s} = 8$ tev.
+\newblock {\em Journal of Instrumentation}, 10(06):P06005, 2015.
 
 \bibitem{cms_photons}
 The~CMS Collaboration.
@@ -228,12 +285,24 @@ Tommaso Dorigo.
 \newblock
   http://www.science20.com/quantum\_diaries\_survivor/electron\_scattering\_and\_proton\_structure.
 
+\bibitem{ellis_gluon}
+John Ellis.
+\newblock The discovery of the gluon.
+\newblock {\em International Journal of Modern Physics A}, 29(31):1430072,
+  2014.
+
 \bibitem{LHC_JINST}
 Lyndon~R Evans and Philip Bryant.
 \newblock {LHC Machine}.
 \newblock {\em JINST}, 3:S08001. 164 p, 2008.
 \newblock This report is an abridged version of the LHC Design Report
   (CERN-2004-003).
+
+\bibitem{boosting}
+Yoav Freund, Robert Schapire, and Naoki Abe.
+\newblock A short introduction to boosting.
+\newblock {\em Journal-Japanese Society For Artificial Intelligence},
+  14(771-780):1612, 1999.
 
 \bibitem{thomson_electron}
 J.~J. Thomson~M.A. F.R.S.
@@ -253,15 +322,39 @@ R.~FrÃŒhwirth.
   Accelerators, Spectrometers, Detectors and Associated Equipment}, 262(2):444
   -- 450, 1987.
 
+\bibitem{SM_feynman}
+Garyzx.
+\newblock File:standard model feynman diagram vertices.png, 2011.
+\newblock URL:
+  https://commons.wikimedia.org/wiki/File:Standard\_Model\_Feynman\_Diagram\_Vertices.png.
+
+\bibitem{mu_g-2}
+W.~Gohn.
+\newblock {The muon g-2 experiment at Fermilab}.
+\newblock In {\em {18th International Workshop on Neutrino Factories and Future
+  Neutrino Facilities Search (NuFact16) Quy Nhon, Vietnam, August 21-27,
+  2016}}, 2016.
+
 \bibitem{green_detectors}
 Dan Green.
 \newblock {\em The physics of particle detectors}.
 \newblock Cambridge University Press, 2010.
 
+\bibitem{gmsb}
+Michael Grefe.
+\newblock Gauge mediation.
+\newblock \url{http://www.desy.de/~mgrefe/files/Grefe\_GaugeMediation.pdf},
+  2010.
+
 \bibitem{griffiths_em}
 David~J. Griffiths.
 \newblock {\em Introduction to Electrodynamics}.
 \newblock Prentice Hall, 3rd edition, 1999.
+
+\bibitem{thooft_nonabelian}
+G.'t Hooft.
+\newblock Renormalizable lagrangians for massive yang-mills fields.
+\newblock {\em Nuclear Physics B}, 35(1):167 -- 188, 1971.
 
 \bibitem{SUSY_RG}
 D.~I. Kazakov.
@@ -288,6 +381,13 @@ Vardan Khachatryan et~al.
   at $\sqrt{s}$ = 13 TeV}.
 \newblock {\em Submitted to: JHEP}, 2016.
 
+\bibitem{SmodelS}
+Sabine Kraml, Suchita Kulkarni, Ursula Laa, Andre Lessa, Wolfgang Magerl, Doris
+  Proschofsky-Spindler, and Wolfgang Waltenberger.
+\newblock Smodels: a tool for interpreting simplified-model results from the
+  lhc and its application to supersymmetry.
+\newblock {\em The European Physical Journal C}, 74(5):2868, May 2014.
+
 \bibitem{eightfold_way}
 Laurascudder.
 \newblock Eightfold way (physics), 2007.
@@ -305,11 +405,33 @@ C.G Lester and D.J Summers.
   at hadron colliders.
 \newblock {\em Physics Letters B}, 463(1):99 -- 103, 1999.
 
-\bibitem{susy_primer}
+\bibitem{FEWZ}
+Ye~Li and Frank Petriello.
+\newblock Combining qcd and electroweak corrections to dilepton production in
+  the framework of the fewz simulation code.
+\newblock {\em Phys. Rev. D}, 86:094034, Nov 2012.
+
+\bibitem{SUSY_Primer}
 Stephen~P. Martin.
 \newblock {A Supersymmetry primer}.
-\newblock pages 1--98, 1997.
+\newblock 1997.
 \newblock [Adv. Ser. Direct. High Energy Phys.18,1(1998)].
+
+\bibitem{hz_theory}
+Konstantin~T. Matchev and Scott Thomas.
+\newblock Higgs and z-boson signatures of supersymmetry.
+\newblock {\em Phys. Rev. D}, 62:077702, Sep 2000.
+
+\bibitem{neutralino_theory}
+Patrick Meade, Matthew Reece, and David Shih.
+\newblock Prompt decays of general neutralino nlsps at the tevatron.
+\newblock {\em Journal of High Energy Physics}, 2010(5):105, May 2010.
+
+\bibitem{SM_wiki}
+MissMJ.
+\newblock File:standard model of elementary particles.svg, 2006.
+\newblock URL:
+  https://commons.wikimedia.org/wiki/File:Standard\_Model\_of\_Elementary\_Particles.svg.
 
 \bibitem{PDG}
 C.~Patrignani et~al.
@@ -327,6 +449,15 @@ A~L Read.
 \newblock Presentation of search results: the cl s technique.
 \newblock {\em Journal of Physics G: Nuclear and Particle Physics},
   28(10):2693, 2002.
+
+\bibitem{GMSB_theory}
+Joshua~T. Ruderman and David Shih.
+\newblock General neutralino nlsps at the early lhc.
+\newblock {\em Journal of High Energy Physics}, 2012(8):159, Aug 2012.
+
+\bibitem{cc_problem}
+Svend~E. Rugh and Henrik Zinkernagel.
+\newblock The quantum vacuum and the cosmological constant problem, 2001.
 
 \bibitem{paper_2012}
 Et.~Al. S.~Chatrchyan.
@@ -346,6 +477,15 @@ A.M. Sirunyan and {etal}.
   cms detector.
 \newblock {\em Journal of Instrumentation}, 12(10):P10003, 2017.
 
+\bibitem{WMAP}
+D.~N. Spergel, R.~Bean, O.~DorÃ©, M.~R. Nolta, C.~L. Bennett, J.~Dunkley,
+  G.~Hinshaw, N.~Jarosik, E.~Komatsu, L.~Page, H.~V. Peiris, L.~Verde,
+  M.~Halpern, R.~S. Hill, A.~Kogut, M.~Limon, S.~S. Meyer, N.~Odegard, G.~S.
+  Tucker, J.~L. Weiland, E.~Wollack, and E.~L. Wright.
+\newblock Three-year wilkinson microwave anisotropy probe (wmap) observations:
+  Implications for cosmology.
+\newblock {\em The Astrophysical Journal Supplement Series}, 170(2):377, 2007.
+
 \bibitem{track_uncertainty}
 A.~Strandlie and W.~Wittek.
 \newblock {Propagation of covariance matrices of track parameters in
@@ -358,7 +498,12 @@ M~Strassler.
 \newblock
   \url{https://profmattstrassler.com/articles-and-posts/particle-physics-basics/the-known-apparently-elementary-particles/jets-the-manifestation-of-quarks-and-gluons/b-tagging-identifying-jets-from-bottom-quarks/},
   March 2012.
-\newblock Accessed June 2018.
+
+\bibitem{symmetry_breaking}
+F.~Strocchi.
+\newblock {S}pontaneous symmetry breaking in quantum systems.
+\newblock {\em Scholarpedia}, 7(1):11196, 2012.
+\newblock revision \#138826.
 
 \bibitem{LHC_underground}
 AC~Team.
@@ -369,6 +514,11 @@ AC~Team.
 Steven Weinberg.
 \newblock A model of leptons.
 \newblock {\em Phys. Rev. Lett.}, 19:1264--1266, Nov 1967.
+
+\bibitem{weinberg_CC}
+Steven Weinberg.
+\newblock The cosmological constant problem.
+\newblock {\em Rev. Mod. Phys.}, 61:1--23, Jan 1989.
 
 \bibitem{weinberg_SUSY}
 Steven Weinberg.

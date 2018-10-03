@@ -22,7 +22,7 @@
 \degreetitle{Doctor of Philosophy}
 
 \field{Physics}
-\specialization{High Energy Experiment}  % If you have a specialization, add it here
+%\specialization{High Energy Experiment}  % If you have a specialization, add it here
 
 \chair{Professor Frank W\"uerthwein}
 % Uncomment the next line iff you have a Co-Chair
@@ -33,9 +33,9 @@
 
 %  The rest of the committee members  must be alphabetized by last name.
 \othermembers{
+Professor Daniel Arovas\\
 Professor John McGreevy\\
 Professor David Meyer\\
-Professor Daniel Arovas\\
 }
 \numberofmembers{5} % |chair| + |cochair| + |othermembers|
 
@@ -125,7 +125,25 @@ Professor Daniel Arovas\\
 %  the OGS Formatting Manual for more information.
 %
 \begin{acknowledgements}
- 
+Where to start with a project as large as a CMS analysis? The CMS collaboration is a group of thousands of scientists, engineers, technicians, students, and staff from over 200 institutes in over 40 countries. The collaboration built the CMS detector, and now operates and processes the data it delivers, allowing scientists like me to analyze the output of the proton-proton collisions. Without the thousands of people who have spent decades designing, troubleshooting, organizing, fund-raising, ect... the work in this dissertation would not be remotely possible. I thank my co-authors in the collaboration for their essential contributions to this work.
+
+The CMS detector itself is located at CERN near Geneva Switzerland. Again here, we have thousands of people who have worked for decades ensuring that CMS has proton beams colliding in its belly at extremely high energy today. Again here it is impossible to overstate the absolute necessity of the LHC team and CERN staff to this work. 
+
+Within the CMS collaboration, there are several individuals whose contributions to this work are much more direct. Pablo Martinez Ruiz del Arbol, Christian Schomakers, Leonora Vesterbacka, and Sergio Sánchez Cruz all contributed to this analysis, providing numerical factors, cross validations, discussions about methodology, and so on. Here I must also mention the tremendous leadership and mentorship provided to me by Dominick Olivito and Vince Welke, both of whom not only contributed code and man-hours, but also gave me direction, engaged me intellectually, and taught me just about everything I know about this search. These individuals, along with myself, constitute the Edge-Z team within the CMS SUSY group.
+
+Next, I would like to thank the rest of the members of the CMS SUSY group for their important comments, feedback, and peer-review of the search, specifically Cristina Botta and Lesya Shchutska who were the conveners while this search was being executed. In addition to the SUSY group, we received important feedback from many members of CMS at large, and a review committee consisting of Marcello Maggi, Niki Saoulidou, Hongxuan Liu, and Christopher West scrutinized our search more thoroughly and provided crucial comments about the presentation of our methods.
+
+I must also acknowledge SNT, an unofficial group of collaborators working within CMS including: P. Chang, M. Derdzinski, D. Gilbert, D. Klein, V. Krutelyov M. Masciovecchio, S. May, D. Olivito, F. Würthwein, A. Yagil, G. Zevi Della Porta, N. Amin, C. Campagnari, B. Marsh, S. Wang, L. Bauerdick, K. Burkett, O. Gutsche, S. Jindariani, M. Liu, H. Weber, F. Golf, I. Suarez. Almost all of the members of SNT have, to some degree, been important to the success of this project. Whether through discussion, contribution of code, or data processing, being part of the SNT team ensured I never could be stuck for too long on any issue.
+
+One more time I would like to Dominick Olivito who has been both a cherished friend and irreplaceable mentor to me throughout my time at CMS. In addition to Dominick, my co-advisors Frank W\"uerthwein and Avraham Yagil were incredibly patient and good-natured PIs who trained me to be a particle physicist and never let me forget the importance of clear presentation skills, practice, and clear-thinking.
+
+I would also like to thank Dylan Gilbert, Philip Chang, Mark Derdzinski, and Nick Amin for important discussions about physics, software, and work in HEP. Mark and Nick also contributed to this work by processing data from CMS into more accessible data formats for the SNT group at large. 
+
+Finally, I would like to specifically thank the following senior members of SNT who have also been tremendous mentors to me: Giovani Zevi Della Porta, Philip Chang, Mia Liu, Hannsjorg Weber, Claudio Campagnari, Frank Golf, and Indara Suarez.
+
+In chapter 2, I must also specifically thank my co-authors on CMS for contributing figure \ref{fig:csv_v2_performance} showing the B-tag CSV discriminator, figure \ref{fig:met_resolution} showing the MET resolution after the type-1 correction, and figure \ref{fig:met_filters_efficacy} showing the efficacy of the MET filters.
+
+In chapter 3, I must also specifically thank my co-authors on CMS for contributing figure \ref{fig:t5zz_interpretation} (a), showing the previous best limits on the strong GMSB SUSY model.
 \end{acknowledgements}
 
 
@@ -155,7 +173,7 @@ Professor Daniel Arovas\\
 %   The abstract may continue to a second page if necessary.
 %
 \begin{abstract}
-  This thesis presents the results of a search for new physics in proton-proton collisions at the Large Hadron Collider, running at $\sqrt{s} = 13$ TeV using data gathered by the Compact Muon Solenoid. The search uses a final state with two opposite-charge same-flavor light leptons (electrons or muons), at least 2 hadronic jets, and at least 100 GeV of missing transverse momentum. No statitsically significant deviation is found from the expected standard model background. The search results are interpreted in the context of several simplied model spectra (SMS) of supersymmetry, including a model of Gauge Mediated Supersymmetry-Breaking (GSMB) with gluino production and models with Electroweakino production. The limits on these models are advanced by several 100 GeV in mass parameters with respect to previous searches, and this work represents the current state of the art for their exclusion.
+  This thesis presents the results of a search for new physics in proton-proton collisions at the Large Hadron Collider, running with 13 TeV center of mass energy, using data gathered by the Compact Muon Solenoid (CMS). The search targets TeV mass-scale dark matter candidates and uses final states with two opposite-charge and same-flavor light leptons (electrons or muons) having dilepton mass consistent with the Z boson, at least 2 hadronic jets, and at least 100 GeV of transverse momentum imbalance. The thesis contains a historical introduction to particle physics, brief reviews of the standard model and supersymmetry, an in-depth discussion of the acquisition of data by the Large Hadron Collider and CMS detector, and a pedagogical overview of the analysis methods used. No statistically significant deviation is found from the expected standard model background. The search results are presented and interpreted in the context of several simplified models of supersymmetry, including a model of Gauge Mediated Supersymmetry-Breaking (GSMB) with gluino production and models with Electroweakino production. The excluded mass ranges for these models are advanced by approximately 50-100\% with respect to the best previous searches. This work represents the current state of the art for their exclusion.
 \end{abstract}
 
 

@@ -46,6 +46,7 @@
 \usepackage{rotating}  % Enables the sideways environment (NCPW)
 \usepackage{array}  % Enables "m" tabular environment http://ctan.org/pkg/array
 \usepackage{booktabs}  % Enables \toprule  http://ctan.org/pkg/array
+\usepackage[hyphens]{url}
 \usepackage{hyperref}  
 \usepackage{amsmath}
 \usepackage{xspace}
@@ -53,12 +54,12 @@
 \usepackage{float}
 \usepackage{overpic}
 \usepackage{lineno}
-\usepackage[title]{appendix}
-\usepackage{glossaries}
-\makeglossaries
+%\usepackage[toc]{appendix}
+%\usepackage{glossaries}
+%\makeglossaries
 
 \begin{document}
-  \linenumbers
+  %\linenumbers
 
   \include{template_frontmatter}
 
@@ -66,9 +67,9 @@
   \include{ch2-DAQ}
   \include{ch3-ZMET}
   \include{ch4-Conclusion}
-  \include{Appendicies}
-  \printglossary
-  \include{Glossary}
+  \include{Appendix}
+  %\printglossary
+  %\include{Glossary}
 
 
   %% END MATTER

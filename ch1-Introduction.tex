@@ -5,111 +5,115 @@
 
   This thesis presents the search for a dark matter candidate which couples either directly or indirectly to the Z boson. The final states studied include multiple hadronic jets, transverse momentum imbalance, and a pair of opposite-charge same-flavor leptons having dilepton mass consistent with the pole mass of the Z boson. These final states are motivated by the strengths of the CMS detector as well as simplified models of supersymmetry, a systematic framework for extending the standard model. 
 
-\section{The standard model of particle physics}
+\section{Historical Context}
   Nearing the turn of the 20th century, the debate on the existence of elementary particles had still not been completely settled. But in the following 80 years, a wildly rich and successful theory of matter would be developed, culminating in what is called the standard model, which has been called the best tested theory in science.
 
   \subsection{The evolution of particle physics} \label{sec:history}
-   J.J. Thomson is credited with finding the very first elementary particle, \cite{thomson_electron} the electron. Thomson observed that cathode rays, now known to be streams of electrons, would bend under the influence of a magnetic field. This implied that rays were a beam of particles, as opposed to some sort of aether phenomena, the competing theory at the time, because they responded in accordance with the known force law for charged particles. Thomson was able to deduce the charge to mass ratio for the electrons and compared it to the known values for ionic gasses. Thomson found that the electron had a $\frac{q}{m}$ which was strikingly smaller than any ionic gas, 3 orders of magnitude smaller than hydrogen ions.
+   J.J. Thomson is credited with finding the very first elementary particle, \cite{thomson_electron} the electron. Thomson observed that cathode rays, now known to be streams of electrons, would bend under the influence of a magnetic field. This implied that rays were a beam of particles, as opposed to some sort of aether phenomena, the competing theory at the time, because they responded in accordance with the known force law for charged particles. Thomson was able to deduce the charge to mass ratio for the electrons and compared it to the known values for ionic gases. Thomson found that the electron had a $\frac{q}{m}$ which was strikingly smaller than any ionic gas, 3 orders of magnitude smaller than hydrogen ions.
 
-   Thomson's student, Ernest Rutherford pushed the field of particle physics further when he discovered the nucleus, and later the proton. Rutherford famously shot alpha particles (hydrogen nuclei) at a thin sheet of gold. He found that the particles mostly passed through the sheets, which implied the gold was actually a lumpy collection of heavy (when compared to the alpha particles) particles rather than a continuous material. Albert Einstein postulated the photon soon after, due to the photoelectric effect and Max Planck's famous solution to the ultraviolet catastrophe. The Neutron was discovered by James Chadwick in the 1930s after hearing about a series of experiments performed by German and French physicists found that alpha particles striking beryllium would create a penetrating radiation that was not influenced by electric fields. 
+   Thomson's student, Ernest Rutherford pushed the field of particle physics further when he discovered the nucleus, and later the proton. Rutherford famously shot alpha particles (hydrogen nuclei) at a thin sheet of gold. He found that some particles were deflected backwards, though the vast majority passed through the sheet. This implied the gold was actually a lumpy collection of heavy (when compared to the alpha particles) particles, rather than a continuous material. Albert Einstein postulated the photon soon after, due to the photoelectric effect and Max Planck's famous solution to the ultraviolet catastrophe. The Neutron was discovered by James Chadwick in the 1930s after hearing about a series of experiments performed by German and French physicists which found that alpha particles striking beryllium would create a penetrating radiation that was not influenced by electric fields. 
 
-   Also in the 1930s, Hideki Yukawa used the size of the atomic nucleus to predict the existence of pions, now known to be the carriers of the strong force which counteract the repulsion of protons in the nucleus due to their charge. When looking for pions, cosmic ray experiments found muons, and mistakingly believed they had confirmed Yukawa's theory. Muons were eventually shown to not interact much with nuclei, and so they were ruled out as nuclear force carriers. Pions are produced in large numbers in the upper atmosphere, but tend to disintegrate on their way to the ground. They were eventually discovered by comic ray experiments performed in the Andes mountains.
+   Also in the 1930s, Hideki Yukawa used the size of the atomic nucleus to predict the existence of pions, now known to be the carriers of the strong force whose existence counteracts the electromagnetic repulsion of protons in the nucleus. When looking for pions, cosmic ray experiments found muons, and mistakingly believed they had confirmed Yukawa's theory. Muons were eventually shown to not interact much with nuclei, and so they were ruled out as nuclear force carriers. Pions are produced in large numbers in the upper atmosphere, but tend to disintegrate on their way to the ground. They were eventually discovered by comic ray experiments performed in the Andes mountains.
 
-   During the same time period, Dirac predicted the existence of antiparticles using his mathematically correct, but philosophically misguided theory of holes. The positron was discovered by Anderson when he exposed a cloud chamber to a magnetic field and discovered electron/positron pair production. Another bit of elementary particle physics uncovered during this fruitful 1930s era was that of the existence of the neutrino, which was famously theorized by Wolfgang Pauli in order to salvage energy conservation in beta decay. Enrico Fermi unified Pauli's idea with the discovery of the neutron by hypothesizing that beta decay was the decay of a neutron into a proton, an electron, and a neutrino. The electron anti-neutrino was finally discovered by observing reverse beta capture. Further observations showed muons could decay to electrons, but only in association with two neutrinos. This lead to the notion that neutrinos must carry "lepton flavor," in other words, there must be a neutrino for each lepton.
+   During the same time period, Dirac predicted the existence of antiparticles using his mathematically correct, but philosophically misguided, theory of holes. The positron was discovered by Anderson when he exposed a cloud chamber to a magnetic field and discovered electron/positron pair production. Another bit of elementary particle physics uncovered during this fruitful 1930s era was that of the existence of the neutrino, which was famously theorized by Wolfgang Pauli in order to salvage energy conservation in beta decay. Enrico Fermi unified Pauli's idea with the discovery of the neutron by hypothesizing that beta decay was the decay of a neutron into a proton, an electron, and a neutrino. The electron anti-neutrino was finally discovered by observing reverse beta capture. Further observations showed muons could decay to electrons, but only in association with two neutrinos. This lead to the notion that neutrinos must carry "lepton flavor," and that there must be a neutrino for each lepton.
 
-   By the 1950s, particle accelerators began to appear, and so too did the observation of a ``zoo" of new particles. These particles included some mesons which had a \emph{strangely} long lifetime, like the K$^0$, and a slew of other heavy particles. Observations suggested strange particle were always produced with another strange partner, but there was no such restriction on their decays. That fact, in addition to the long lifetime of strange particles hinted that their decays were mediated by a different force than their creation. This lead to the notion of conservation of strangeness whereby each particle was assigned a strangeness of 1, 0, or -1. Along with conservation of baryon number (theorized by Stückelberg to stabilize the proton), conservation of lepton number, and conservation of charge, a series of discrete symmetries began to appear for elementary particles. 
+   By the 1950s, particle accelerators began to appear, and so too did the observation of a ``zoo" of new particles in cloud chamber experiments. These particles included some mesons which had a \emph{strangely} long lifetime, like the K$^0$, and a slew of other heavy particles. Observations suggested strange particle were always produced with another strange partner, but there was no such restriction on their decays. That fact, in addition to the long lifetime of strange particles, hinted that their decays were mediated by a different force than their creation. This lead to the notion of conservation of strangeness whereby each particle was assigned a strangeness of 1, 0, or -1. Along with conservation of baryon number (theorized by Stückelberg to stabilize the proton), conservation of lepton number, and conservation of charge, a series of discrete symmetries began to appear for elementary particle interactions. 
 
    Using charge and strangeness values for particles, Murray Gell-Mann developed the famous ``eightfold way," a scheme for laying out particles in geometrical patterns based on their charge and strangeness values. Arranging the particles in this way inferred the existence of a heavy particle with negative charge and -3 strangeness, now called the $\Omega^-$, which had not been observed. The observation of the $\Omega^-$ ushered in an era of particle physics which was based on symmetry principles, a trend which still dominates the field to this day.
 
   \begin{figure}[h!]
-    \begin{picture}(150, 150)(-100, -30)
-      \put(-25,42){\line(-3,-5){25}}
-      \put(-25, 42){\line(1, 0){50}}
-      \put(25, 42){\line(3,-5){25}}
-      \put(-25, -42){\line(1,0){50}}
-      \put(-25, -42){\line(-3, 5){25}}
-      \put(25, -42){\line(3, 5){25}}
+      \begin{picture}(150, 150)(-120, -30)
+      \scalebox{.9}[.9]{
+        \put(-25,42){\line(-3,-5){25}}
+        \put(-25, 42){\line(1, 0){50}}
+        \put(25, 42){\line(3,-5){25}}
+        \put(-25, -42){\line(1,0){50}}
+        \put(-25, -42){\line(-3, 5){25}}
+        \put(25, -42){\line(3, 5){25}}
 
-      \put(-25, 42){\circle*{3}}
-      \put(-25, -42){\circle*{3}}
-      \put(25, 42){\circle*{3}}
-      \put(25, -42){\circle*{3}}
-      \put(-50, 0){\circle*{3}}
+        \put(-25, 42){\circle*{3}}
+        \put(-25, -42){\circle*{3}}
+        \put(25, 42){\circle*{3}}
+        \put(25, -42){\circle*{3}}
+        \put(-50, 0){\circle*{3}}
 
-      \put(50, 0){\circle*{3}}
-      \put(0, 3){\circle*{3}}
-      \put(0, -3){\circle*{3}}
+        \put(50, 0){\circle*{3}}
+        \put(0, 3){\circle*{3}}
+        \put(0, -3){\circle*{3}}
 
-      \put(-28, 47){$K^{0}$}
-      \put(28, 47){$K^{+}$}
-      \put(-28, -55){$K^{-}$}
-      \put(28, -55){$\overline{K}^{0}$}
-      \put(55, 0){$\pi^{+}$}
-      \put(-65, 0){$\pi^{-}$}
-      \put(0, 10){$\pi^{0}$}
-      \put(0, -15){$\eta$}
+        \put(-28, 47){$K^{0}$}
+        \put(28, 47){$K^{+}$}
+        \put(-28, -55){$K^{-}$}
+        \put(28, -55){$\overline{K}^{0}$}
+        \put(55, 0){$\pi^{+}$}
+        \put(-65, 0){$\pi^{-}$}
+        \put(0, 10){$\pi^{0}$}
+        \put(0, -15){$\eta$}
 
-      \put(-120, 43){$s=1$}
-      \put(-120, 0){$s=0$}
-      \put(-120, -43){$s=-1$}
+        \put(-120, 43){$s=1$}
+        \put(-120, 0){$s=0$}
+        \put(-120, -43){$s=-1$}
 
-      \put(-20, -85){$q=-1$}
-      \put(45, -85){$q=0$}
-      \put(70, -30){$q=1$}
-    \end{picture}
+        \put(-20, -85){$q=-1$}
+        \put(45, -85){$q=0$}
+        \put(60, -20){$q=1$}
+        }
+      \end{picture}
 
-    \begin{picture}(150, 150)(-375, -200)
-      \put(-75,42){\line(3,-5){75}}
-      \put(-75, 42){\line(1, 0){150}}
-      \put(75, 42){\line(-3,-5){75}}
+      \begin{picture}(150, 150)(-330, -200)
+      \scalebox{.9}[.9]{
+        \put(-75,42){\line(3,-5){75}}
+        \put(-75, 42){\line(1, 0){150}}
+        \put(75, 42){\line(-3,-5){75}}
 
-      \put(-25, 42){\circle*{3}}
-      \put(-25, -42){\circle*{3}}
-      \put(25, 42){\circle*{3}}
-      \put(25, -42){\circle*{3}}
-      \put(-50, 0){\circle*{3}}
-      \put(50, 0){\circle*{3}}
-      \put(0, 0){\circle*{3}}
-      \put(0, -84){\circle*{3}}
-      \put(-75, 42){\circle*{3}}
-      \put(75, 42){\circle*{3}}
+        \put(-25, 42){\circle*{3}}
+        \put(-25, -42){\circle*{3}}
+        \put(25, 42){\circle*{3}}
+        \put(25, -42){\circle*{3}}
+        \put(-50, 0){\circle*{3}}
+        \put(50, 0){\circle*{3}}
+        \put(0, 0){\circle*{3}}
+        \put(0, -84){\circle*{3}}
+        \put(-75, 42){\circle*{3}}
+        \put(75, 42){\circle*{3}}
 
-      \put(-78, 47){$\Delta^{-}$}
-      \put(-28, 47){$\Delta^{0}$}
-      \put(28, 47){$\Delta^{+}$}
-      \put(78, 47){$\Delta^{++}$}
-      \put(-20, -45){$\Xi^{*-}$}
-      \put(30, -45){$\Xi^{*0}$}
-      \put(55, 0){$\Sigma ^{*+}$}
-      \put(-45, 0){$\Sigma^{*-}$}
-      \put(5, 0){$\Sigma^{*0}$}
-      \put(5, -84){$\Omega^{-}$}
+        \put(-78, 47){$\Delta^{-}$}
+        \put(-28, 47){$\Delta^{0}$}
+        \put(28, 47){$\Delta^{+}$}
+        \put(78, 47){$\Delta^{++}$}
+        \put(-20, -45){$\Xi^{*-}$}
+        \put(30, -45){$\Xi^{*0}$}
+        \put(55, 0){$\Sigma ^{*+}$}
+        \put(-45, 0){$\Sigma^{*-}$}
+        \put(5, 0){$\Sigma^{*0}$}
+        \put(5, -84){$\Omega^{-}$}
 
-      \put(-120, 43){$s=0$}
-      \put(-120, 0){$s=-1$}
-      \put(-120, -43){$s=-2$}
-      \put(-120, -85){$s=-3$}
+        \put(-120, 43){$s=0$}
+        \put(-120, 0){$s=-1$}
+        \put(-120, -43){$s=-2$}
+        \put(-120, -85){$s=-3$}
 
-      \put(10, -120){$q=-1$}
-      \put(42, -75){$q=0$}
-      \put(75, -25){$q=1$}
-      \put(105, 15){$q=2$}
-    \end{picture}
+        \put(10, -120){$q=-1$}
+        \put(42, -75){$q=0$}
+        \put(75, -25){$q=1$}
+        \put(105, 15){$q=2$}
+      }
+      \end{picture}
     \vspace*{-50pt}
-    \caption{The meson octet (left) and the baryon decuplet (right). Murray Gell-Mann arrayed elementary particles in these patterns and used them to predict the existence of the $\Omega^-$. This sparked a revolution in elementary particle physics based on discrete symmetries. \cite{eightfold_way}}
+    \caption{The meson octet (left) and the baryon decuplet (right). Murray Gell-Mann arrayed elementary particles in these patterns and used them to predict the existence of the $\Omega^-$. This sparked a revolution in elementary particle physics based on discrete symmetries. Modified from \cite{eightfold_way}}
   \end{figure}
 
-    Gell-Mann and Zweig independently proposed that the origin of these patterns were due to the fact that hadrons are made up of \emph{quarks}. The quark model was successful at reproducing the predictions of the eightfold way, and gave a mechanism for why particles with certain electric charges, masses, and decay pathways exist while others don't. Additionally, deep inelastic scattering experiments, much the same as Rutherford's, showed that the charge inside protons also seem to be collected in lumps, and in a way that is consistent with the three fractionally charged partons described in the quark model. \cite{proton_structure} The quark model eventually became encoded in Quantum Chromodynamics, which took it's modern form in the early 1970s with the discovery of asymptotic freedom.
+    Gell-Mann and Zweig independently proposed that the origin of these patterns were due to the fact that hadrons are made up of \emph{quarks}. The quark model was successful at reproducing the predictions of the eightfold way, and gave a mechanism for why particles with certain electric charges, masses, and decay pathways exist while others don't. Additionally, deep inelastic scattering experiments, much the same as Rutherford's, showed that the charge inside protons also seem to be collected in lumps, and in a way that is consistent with the three fractionally charged partons described in the quark model. \cite{proton_structure} The quark model eventually became encoded in Quantum Chromodynamics, which took its modern form in the early 1970s with the discovery of asymptotic freedom. The gauge bosons in QCD are called gluons. In 1979, gluon emission, and therefore gluons themselves, was experimentally observed in three jet final states using electron-positron collisions at DESY. \cite{ellis_gluon}
 
-    In the 1930s, the theoretical problem of infinities in quantum field theory began to emerge, specifically when calculating the mass of the electron. By the 1950s, much of the theoretical foundation for Quantum Field Theory had been laid in pursuit of a theory of Quantum Electrodynamics (QED). Julian Schwinger and Sin-itiro Tomonaga independently developed a formalism based on operator mathematics. This approach was shown to be equivalent to a formalism developed by Richard Feynman using path integrals by Freeman Dyson in 1949.\footnote{The prominant physicist Oppenheimer was so sure that Feynman's ideas were wrong that Dyson's proof earned him a lifetime appointment at the Institute for Advanced Study in Princeton without ever needing to earn a PhD.} The theoretical progress during this time explained the observation of the Lamb shift in the spectrum of hydrogen, and the electron's anomalous magnetic moment, a computation which is experimentally verified to better than 1 part per billion and has elevated the standard model to be called the best tested theory in science. In formulating the equivalence of theories, Dyson laid out criteria to decide whether a theory was renormalizable, an important feature expected from any physical QFT.
+    In the 1930s, the theoretical problem of infinities in quantum field theory was systematically studied, specifically in the context of the self-energy of the electron. These problems were addressed by charge and mass renormalization, ideas born at the Shelter Island Conference in 1947, addressing the Lamb shift and anomalous magnetic moment of the electron. By the 1950s, much of the theoretical foundation for Quantum Field Theory had been laid in pursuit of a theory of Quantum Electrodynamics (QED). Julian Schwinger and Sin-itiro Tomonaga independently developed a formalism based on operator mathematics. This approach was shown to be equivalent to a formalism developed by Richard Feynman using path integrals by Freeman Dyson in 1949.\footnote{The prominent physicist Oppenheimer was so sure that Feynman's ideas were wrong that Dyson's proof earned him a lifetime appointment at the Institute for Advanced Study in Princeton without ever needing to earn a PhD.} The theoretical progress during this time explained the observation of the Lamb shift in the spectrum of hydrogen, and the electron's anomalous magnetic moment, a computation which is experimentally verified to better than 1 part per billion and has elevated the standard model to be called the best tested theory in science. In formulating the equivalence of theories, Dyson laid out criteria to decide whether a theory was renormalizable, an important feature expected from any physical QFT.
 
-    In the 1950s an enormous theoretical breakthrough was made by Yang and Mills, who developed the concept of a Gauge theory. The gauge group SU(2)xU(1) was found to be at the heart of the unified theory of the electromagnetic and weak interactions, now called electroweak theory. Steven Weinberg invoked the Higgs mechanism in 1967 to bring the theory into modern form, showing that a massless theory in the high energy limit could "spontaneous break" into a theory with a massless photon but massive Ws and Zs at laboratory energy scales. Weinberg's theory required the existence of a scalar boson called the Higgs. \cite{Weinberg_EWK} His theory was partially confirmed with the discovery of the W and Z bosons at the UA1 and UA2 experiments at CERN in 1973. The final prediction of the electroweak theory was verified in 2012 with the discovery Higgs boson decaying to 2 photons in 2012 by the CMS and ATLAS collaborations at the Large Hadron Collider. \cite{CMS_higgs,ATLAS_higgs} The search presented in this thesis was conducted within the CMS collaboration.
+    In the 1950s an enormous theoretical breakthrough was made by Yang and Mills, who developed the concept of a Gauge theory. The gauge group SU(2)xU(1) was found to be at the heart of the unified theory of the electromagnetic and weak interactions, now called electroweak theory. Steven Weinberg invoked the Higgs mechanism in 1967 to bring the theory into modern form, showing that a massless theory in the high energy limit could "spontaneous break" into a theory with a massless photon but massive Ws and Zs at laboratory energy scales. \footnote{Weinberg's work was largely ignored for several years because the it was an example of a spontaneously broken non-Abelian gauge theory. The renormalizability of that type of theory was not shown until 1971 by 't Hooft and Veltman. ~\cite{thooft_nonabelian} ~\cite{ellis_gluon}.} Weinberg's theory also required the existence of a scalar boson called the Higgs. \cite{Weinberg_EWK} His theory was partially confirmed with the discovery of the W and Z bosons at the UA1 and UA2 experiments at CERN in 1983. The final prediction of the electroweak theory was verified in 2012 with the discovery Higgs boson decaying to 2 photons in 2012 by the CMS and ATLAS collaborations at the Large Hadron Collider. \cite{CMS_higgs,ATLAS_higgs} The search presented in this thesis was conducted within the CMS collaboration.
 
     With the combination of QCD and electroweak theory, a total Lagrangian could be written with the symmetry group SU(3)xSU(2)xU(1), this is now what we called the standard model. But the particle content of the standard model still was being discovered into the next decade. In the 1970s, several breakthroughs were made. The discovery of the J/Psi meson in 1974 confirmed the existence of a fourth heavier quark, now called the charm. This brought the total number of known quarks to 4. However in the previous year experiments showed violation of CP symmetry in Kaon decays, and it was worked out by Kobayashi and Maskawa that a 4 quark model could not accommodate CP violation, at least 6 quarks were needed. 
 
-    In 1975, the Tau lepton and it's neutrino were discovered, which gave another hint that there were 6 quarks, as it seemed natural to have the same number of quarks and leptons. Finally 1977, the bottom quark was discovered at Fermilab, giving further evidence of a sixth quark. The final piece of the puzzle was the detection of the top quark in 1995 in proton-antiproton collisions at Fermilab.
+    In 1975, the Tau lepton and its neutrino were discovered. This provided another hint that there were 6 quarks, as it seemed natural to have the same number of quarks and leptons. In 1977, the bottom quark was discovered at Fermilab, bringing the total number of known quarks 5. The top quark was finally detected 1995 in proton-antiproton collisions at Fermilab. This completed the currently understood quarks sector. 
 
-    As described above, the standard model has successfully predicted the existence of the W, Z, and Higgs bosons, including their decays. It predicted the electrons anomalous magnetic moment to extremely high precisions. It predicted the existence of a third generation of quarks and leptons based on CP violation. Indeed, at the current state of affairs, the standard model it incorporates essentially all known particle phenomenology except neutrino masses and dark matter.
+    As described above, the standard model has successfully predicted the existence of the W, Z, and Higgs bosons, including their decays. It predicted the electron's anomalous magnetic moment to extremely high precisions. It predicted the existence of a third generation of quarks and leptons based on CP violation. Indeed, at the current state of affairs, the standard model it incorporates essentially all known particle phenomenology, with the notable exceptions of neutrino masses and dark matter.
 
 \section{The Standard Model}
   The standard model of particle physics is the combination of electroweak theory with quantum chromodynamics. In section \ref{sec:history} we covered some of the highlights in the experimental and theoretical progress made while constructing this theory. In this section, we will take a look at the particle content and interactions of the standard model. 
@@ -121,7 +125,7 @@
     \label{fig:standard_model}
   \end{figure}  
 
-  Figure \ref{fig:standard_model} is a table that summarizes all the particles in the standard model. In purple, the quarks are shown. Each quark comes in one of 3 colors and has an associated anti-quark which comes in one of 3 anti-colors. In other words, the 6 slots in the figure really correspond to 36 quantum fields and equally 36 different particles. A quark is called up-type if it is positively charged (like the up quark), and down-type if it is negatively charged. The gluon comes in 8 varieties, very roughly, each gluon carries a color and an anti-color. The charged leptons: electron, muon, and tau, each come in negatively charged and positively charged varieties, positively charged leptons are called the anti-leptons. In the standard model, the neutrinos each have a partner anti-particle, but it is not known whether anti-neutrinos exist or if neutrinos are their own anti-particles. The only other hidden detail is the W boson, which comes in both positively and negatively charged variates.
+  Figure \ref{fig:standard_model} is a table that summarizes all the particles in the standard model. In purple, the quarks are shown. Each quark comes in one of 3 colors and has an associated anti-quark which comes in one of 3 anti-colors. In other words, the 6 slots in the figure really correspond to 36 quantum fields and equally 36 different particles. Quarks carry baryon number $\frac{1}{3}$, and anti-quarks carry baryon number $\frac{-1}{3}$. A quark is called up-type if it is positively charged (like the up quark), and down-type if it is negatively charged. The gluon comes in 8 varieties, very roughly, each gluon carries a color and an anti-color. The charged leptons: electron, muon, and tau, each come in negatively charged and positively charged varieties, positively charged leptons are called the anti-leptons. In the standard model, the neutrinos each have a partner anti-particle, but it is not known whether anti-neutrinos exist or if neutrinos are their own anti-particles. Leptons carry lepton number $\frac{1}{3}$ and anti-leptons carry lepton number $\frac{-1}{3}$. The only other hidden detail is the W boson, which comes in both positively and negatively charged variates.
 
   Each particle in the standard model is associated with a tensor field \footnote{A tensor a sort of generalization of a matrix, it includes real and complex numbers, vectors, matrices, and higher dimensional analogs of matrices. A tensor field associates one of these objects with each point in spacetime. For instance, a "scalar field" associates a complex number with each point in space and time. Electromagnetism associates the "Maxwell-stress tensor", a 4x4 matrix, with each point in spacetime.} that permeates all of spacetime, excitations of the fields manifest in reality as particles. The motion of particles is characterized by the propagation of excitations in spacetime. Analogously, a rock thrown into a pond will cause the water level to shift slightly downward before it breaks the surface tension. The deviation of the water height from equilibrium is a type of excitation, and it travels outward from the location the rock landed. 
 
@@ -149,7 +153,7 @@
     \begin{figure}[h!]
       \centering
       \includegraphics[width=0.7\textwidth]{figures/proton_pdf.pdf}
-      \caption{The probability of colliding with a quark, by flavor, or gluon with fraction $x$ of the proton's total energy in a proton collision. The y-axis is the probability scaled by the energy fraction $x$. The gluon line has been scaled down by a factor of 10 to fit nicely with the rest of the curves, in other words, gluons are the most likely fundamental particle to interact in proton collisions. On the left (a), the curves are drawn for protons with 10 GeV of energy, on the right (b), with 100 GeV. Proton collisions at the LHC are done at approximately 7,000 GeV. The peaks for the u and d lines show the valence quark content. Taken from \cite[sec. ``Structure Functions"]{PDG}}
+      \caption[The probability of colliding with a quark, by flavor, or gluon with fraction $x$ of the proton's total energy in a proton collision. ]{The probability of colliding with a quark, by flavor, or gluon with fraction $x$ of the proton's total energy in a proton collision. The y-axis is the probability scaled by the energy fraction $x$. The gluon line has been scaled down by a factor of 10 to fit nicely with the rest of the curves, in other words, gluons are the most likely fundamental particle to interact in proton collisions. On the left (a), the curves are drawn for protons with 10 GeV of energy, on the right (b), with 100 GeV. Proton collisions at the LHC are done at approximately 7,000 GeV. The peaks for the u and d lines show the valence quark content. Taken from \cite[sec. ``Structure Functions"]{PDG}}
       \label{fig:proton_pdf}
     \end{figure}  
 
@@ -162,21 +166,20 @@
 \section{Problems with the Standard Model} \label{sec:problems_with_sm}
   Though the standard model has had incredible successes, there are still many open questions. The following list some observational and theoretical motivations for physics beyond the standard model. No attempt at completeness is made.
 
-  \subsubsection{Observational Issues}
+  \subsubsection{Observational Issues} \label{sec:observational_issues_with_sm}
 
     \begin{enumerate}
-      \bitem{Dark Matter} Observations in astronomy show that particle content based on the standard model can not explain the galactic rotation curves. I.e. the standard model does not contain dark matter.\cite{particle_dm}
-      \bitem{Gravitation} There is no mechanism for gravitation in the standard model. Attempts to build a quantum theory of gravity using the same methods employed to build the standard model seem to fail and yield non-renormalizable theories with irreducible infinities.
-      \item{Neutrino Masses} Neutrinos are modeled as massless, but neutrino oscillations show that they must have some mass.
-      \item{Hubble Expansion and Inflation} There is no mechanism for dark energy, if inflation did occur, a particle called the inflaton should exist.
-      \item LEP b-bbar forward backward asymmetry.
-      \item anomalous muon magnetic moment.
+      \bitem{Dark Matter} Observations in astronomy show that the ratio of luminous matter to non-luminous matter in large-scale astrophysical bodies does not agree with standard model predictions. A few key observations are: The rotation speed of objects in spiral galaxies is higher than expected at the galactic edges, the commonly accepted conclusion drawn from this observation is the existence of a dark matter halo that encloses the galaxies. In larger scales, galaxy clusters also provide three independent mass tests: the rotational speed of galaxies in the cluster, the x-ray energy spectrum and flux, and the strength of gravitational lensing. All three of these measurements agree with the dark matter hypothesis with an approximate dark-matter to luminous matter ratio of 5 to 1. \cite{rev_galaxy_clusters} Next, the effects of dark matter in the early universe create a signature in the cosmic microwave background polarization, the WMAP and Planck satellite experiments observed this signature and found it to be in excellent agreement with the $\Lambda$CDM dark matter model. \cite{WMAP} ~\cite{Planck} Finally, the bullet cluster is a the result of a collision of two galaxies and gravitational lensing observations show that the center of mass of this cluster is well offset from the center of luminous mass, a prediction of dark matter without strong self-interactions. \cite{particle_dm} \cite[ch. 26]{PDG}
+      \bitem{Gravitation} There is no mechanism for gravitation in the standard model. Attempts to build a quantum theory of gravity using standard methods yields a non-renormalizable theory, inferring that the high energy physics is not understood. The quest to quantize gravitation has been ongoing for almost 100 years.
+      \bitem{Neutrino Masses} Neutrinos are modeled as massless in the standard model, however neutrino oscillations have shown that they must have some mass. Massive neutrinos can be either Dirac or Majorana particles, current experiments are attempting the decide which is the appropriate model and to find the precise neutrino masses.
+      \bitem{Spacetime Expansion} Observations show that spacetime is expanding, an effect first seen by Edwin Hubble, and is doing so at an accelerating rate. The most common and straightforward explanation for this fact is the inclusion of a cosmological constant term in general relativity, which, by dimensional analysis, is amenable to being interpreted as a constant energy density that permeates spacetime. Therefore, it is sensible to identify the cosmological constant term with the energy density of the vacuum in QFT. \cite{cc_problem} Although no direct calculation of this quantity exists for the standard model, back of the envelope calculations show that the vacuum energy of the standard model is expected to be between 50 and 120 orders of magnitude off from the measured value for the cosmological constant from astrophysical observations. This is known as the cosmological constant problem. \cite{cosmological_constant} \cite{weinberg_CC}
+      \bitem{Anomalous $\mu$ g-factor} Although this result is still being tested, there are some indications that the muon magnetic moment differs from the standard model prediction by 3 standard deviations.\cite{mu_g-2} This result becomes somewhat more convincing when considering the electron magnetic moment is considered one of the most accurate predictions in science, as was previously discussed.
     \end{enumerate}
 
-  \subsubsection{Theoretical Issues}
+  \subsubsection{Theoretical Issues} \label{sec:theoretical_issues_with_sm}
     \begin{enumerate}
-      \bitem{GUT Scale Renormalization} There is precedent to assume that at high enough energies, all three forces in the standard model combine into a single force, a Lagrangian with this feature is called a grand unified theory (GUT). The energy at which this occurs is typically called the GUT scale. Using the methods of renormalization, one can fine the GUT scale to be between $10^{15}$ and $10^{16}$ GeV. Using renormalization theory, the expected strength of the gauge interactions can be extrapolated to that energy, as can be seen in figure \ref{fig:susy_gut}. However, the standard model does not seem to show that the interaction strengths will converge at this energy. Theorists take this as a hint that the model is incomplete.
-      \bitem{Naturalness and the Hierarchy problem} There are several energy scales in the standard model. The two heaviest are the electroweak scale at roughly 100 GeV and the Planck scale at roughly $10^{18}$ GeV. The electroweak scale is the mass scale of the massive electroweak bosons and the Higgs, this is where electrodynamics and the weak force combine into a single force. The Planck scale is where quantum gravitational effects are expected to become important and is the typical cutoff scale for standard model calculations. The fact that these two scales are wildly different is called the Hierarchy problem, it is also sometimes presented as the difference between the strength of gravity and the weak interaction.
+      \bitem{GUT Scale Renormalization} There is precedent to assume that at high enough energies, all three forces in the standard model combine into a single force, a Lagrangian with this feature is called a grand unified theory (GUT). The energy at which this occurs is typically called the GUT scale. Using the methods of renormalization, one can find the GUT scale to be between $10^{15}$ and $10^{16}$ GeV. Using renormalization theory, the expected strength of the gauge interactions can be extrapolated to that energy, as can be seen in figure \ref{fig:susy_gut}. However, the standard model does not seem to show that the interaction strengths will converge at this energy. Theorists take this as a hint that the model is incomplete.
+      \bitem{Naturalness and the Hierarchy problem} There are several energy scales in the standard model. The two heaviest are the electroweak scale at roughly 100 GeV and the Planck scale at roughly $10^{18}$ GeV. The electroweak scale is the mass scale of the massive electroweak bosons and the Higgs, this is where electrodynamics and the weak force combine into a single force. The Planck scale is where quantum gravitational effects are expected to become important and is the typical cutoff scale for standard model calculations\footnote{if using a cutoff for regularization}. The fact that these two scales are wildly different is called the Hierarchy problem, which is also sometimes presented as the difference between the strength of gravity and the weak interaction.
 
       A complete exposition of theoretical aspects of the scale difference is beyond the scope of this thesis, however, the flavor of the issue is that the wildly different scales create odd interplays and ``fine-tuning" in standard model calculations. For instance, when computing the mass of the Higgs boson, the one-loop correction to the Higgs mass from a fermion $f$ is
 
@@ -186,42 +189,46 @@
 
       where $\Lambda_{UV}$ is the scale at which the theory is expected to break down, taken to be the Planck scale if no new physics exists between the standard model and quantum gravity. Therefore, the Higgs mass, measured to be 125 GeV, gets quantum corrections of order the Planck mass squared, some 30-odd orders of magnitude larger. In other words, the canonical theory requires that the sum of infinitely many terms, all of order $10^{36}$ should sum to some number which is order $10^2$ GeV.
 
-      It is important to note that theorists disagree about the validity of this argument, as it may be reading too deeply into a perturbation calculation. However, the oddity of this calculation was one of the main driving influences behind the development of supersymmetry. As will be discussed in section \ref{sec:why_susy}, the addition of supersymmetric particles cancels the quadratic dependence on the cutoff scale in this calculation.
+      It is important to note that theorists disagree about the validity of this argument, as it may be reading too deeply into a perturbative calculation. However, the oddity of this calculation was one of the main driving influences behind the development of supersymmetry. The addition of supersymmetric particles cancels the quadratic dependence on the cutoff scale in this calculation.
 
       \bitem{Why \emph{these} parameters} The standard model has 19 free parameters. The current theory provides no clues as to why those 19 numbers have the values they have.
       \bitem{3 Generations} Figure \ref{fig:standard_model} shows that the fermions in the SM can be grouped into three very distinct generations. The particles in these different generations are identical in all respects except for their masses. This striking feature begs for an explanation, but like the choice of parameters, the standard model has nothing to say about why three generations of fermions exist.
-      \bitem{Strong CP Problem} A discrete symmetry of the standard model is called CP. An interaction obeying CP symmetry implies that anti-particles which spin in some direction should experience the same interactions with the same strengths as regular particles which spin the opposite direction. Why does QCD respect CP symmetry while it is essentially maximally broken in the electroweak theory?
-      \bitem{unstable universe} The universe is said to be in a metastable state given the standard model fits. Taken at face value, this means the Higgs field could decay at any moment and destroy the universe. Like Schrodinger's cat, the absurdity of this result can be considered motivation for a theory which gives less ridiculous predictions.
+    
+      \bitem{Strong CP Problem} The strong interaction obeys a symmetry called CP: interaction rates are identical for a process if all particles are exchanged for their anti-particles, and the particle's spins are flipped. However, the weak force does not obey this symmetry, implying it is not a generic symmetry of nature. Further, the QCD Lagrangian is written in such a way that CP violation is readily accommodated, ensuring CP symmetry in QCD requires that parameters in the theory be fine tuned such that their CP violation cancels in a seemingly contrived manner. This, like the hierarchy problem above, is seen as an oddity which calls for a dynamical mechanism to ensure these parameters have a relationship that protects CP symmetry. The currently favored theoretical fix is the addition of the ``axion", a particle whose equations of motion naturally enforce CP symmetry in QCD.~\cite{axion}
+
+
+      \bitem{Inflation} In addition to the standard expansion, Inflation is often invoked as a solution to several oddities in cosmological observations, e.g. the apparent thermal equilibrium between distant regions of the universe. Inflation requires the addition of a scalar field to the standard model called the inflaton.
+      \bitem{Unstable Universe} Using standard model parameters, e.g. the Higgs and top quark masses, it is possible to compute the Higgs potential in the standard model. If the Higgs is at a local minimum of its potential, then it is possible that the universe is only meta-stable, implying the Higgs field could decay to its true vacuum state at any time, releasing a large amount of energy in the process and therefore destroying the universe. Recent analyses show that the best fit to experimental observations imply a metastable universe, although stability is still possible within uncertainties. \cite{Unstable_universe} The absurdity of this result can be considered motivation for a theory which gives less ridiculous predictions.
     \end{enumerate}                 
   
-\section{The Solutions of Supersymmetry}
-  Supersymmetry (SUSY) is a framework which can be used to build infinitely many extensions of the SM. It can be traced back to the late 1960s, with the first physical models of SUSY in 4 dimensions discovered by Weiss and Zumio in the 1974. \cite[ch. 24]{weinberg_SUSY} The key idea behind SUSY is the treatment of boson and fermion fields as pairs, called \emph{superpartners}.\footnote{The most commonly cited review is \cite{susy_primer}} A Lagrangian is called supersymmetric, roughly, if you can interchange the two superpartners without changing its physical predictions. It illustrates the right flavor to say ``the superpartners experience the same interactions."\footnote{This is an overstatement. In reality, supersymmetry transformations are built through infinitesimal translations of the fields which depend on the superpartner's state. Fields and their superpartners will be mathematical objects with different dimensions, a strict substitution doesn't truly make sense. \todo{Is this right?}}
+\section{How Does Supersymmetry Help?}
+  Supersymmetry (SUSY) is a framework which can be used to build infinitely many extensions of the SM. It can be traced back to the late 1960s, with the first physical models of SUSY in 4 dimensions discovered by Wess and Zumino in the 1974. \cite[ch. 24]{weinberg_SUSY} The key idea behind SUSY is the treatment of boson and fermion fields as pairs, called \emph{superpartners}.\footnote{The most commonly cited review is \cite{SUSY_Primer}} Superpartners are required to have exactly the same quantum numbers\footnote{Mass and charge. As we will discuss in sec \ref{sec:susy_breaking}, the mass of the sparticles in physical models of SUSY are not actually identical to those in the standard model. This is possible in models where SUSY a broken symmetry.}, except of course their spin. A Lagrangian is called supersymmetric if boson and fermion superpartners can be rotated into one another without changing its form.
 
   It is useful now to introduce some terminology. Particles which appear in the standard model are called \emph{baryonic matter}\footnote{This is a bit of a misnomer given leptons and the gauge bosons carry no baryon number, but are still lumped into this classification}. Superpartners to baryonic matter are called \emph{sparticles}, a portmanteau of supersymmetric and particles. The superpartners of quarks and leptons are called squarks and sleptons respectively; here the ``s" stands for scalar. For technical reasons based on the chiral nature of some standard model interaction, superpartners of fermions must have spin 0. Finally, the superpartners of the gauge bosons are given the suffix -ino, e.g. gluino and Zino, they are collectively called the gauginos. 
 
   \subsection{The Minimal Supersymmetric Standard Model Extension}
-    Supersymmetry operators take bosons into fermions and visa versa. It is possible to construct SUSY theories where each standard model particle has multiple superpartners, typically the number of superpartners in a SUSY theory is denoted by $\EuScript{N}$. The minimal model of SUSY that incorporates the standard model has one superpartner, $\EuScript{N} = 1$, and is called the Minimal Supersymmetric Standard Model (MSSM). 
+    Supersymmetry operators take bosons into fermions and visa versa. It is possible to construct SUSY theories where each standard model particle has multiple superpartners, typically the number of supersymmetries in a SUSY theory is denoted by $\EuScript{N}$. The minimal model of SUSY that incorporates the standard model has one supersymmetry and roughly one superpartner per standard model particle, $\EuScript{N} = 1$, and is called the Minimal Supersymmetric Standard Model (MSSM). 
 
-    The particle content of the MSSM is not precisely double the particle content of the standard model. For technical reasons, the number of Higgs-like bosons in the MSSM is expected to be 5 in total. These include the known Higgs, being the lightest at 125 GeV, two charged Higgs called the H$^+$ and H$-$, and two neutral Higgs called the A and H. In addition, gravitation can be incorporated into SUSY theories. The $\EuScript{N} = 1$ SUSY theory with gravitation is called the minimal supersymmetric theory of gravity (mSUGRA). These theories include massless gravitons and their superpartner, gravitinos. 
+    The particle content of the MSSM is not precisely double the particle content of the standard model. For technical reasons, the number of Higgs-like bosons in the MSSM is expected to be 5 in total. These include the known Higgs, being the lightest at 125 GeV, two charged Higgs called the H$^+$ and H$^-$, and two neutral Higgs called the A and H. In addition, gravitation can be incorporated into SUSY theories. The $\EuScript{N} = 1$ SUSY theory with gravitation is called the minimal supersymmetric theory of gravity (mSUGRA). These theories include massless gravitons and their superpartner, gravitinos. 
 
   \subsection{R-parity} \label{sec:r-parity}
 
     An attractive ad-hoc symmetry is added is to most supersymmetry models called R-parity. R-parity requires a multiplicatively conserved quantum number at each interaction vertex. Each particle is assigned a number
 
     \[
-      P_R = (-1)^{3(B-L)+2s}.
+      P_R = (-1)^{3(B-L)+2s},
     \]
 
-    $P_R = +1$ for baryonic matter and $P_R = -1$ for sparticles. Without R-parity, SUSY models would allow for the violation of baryon and lepton numbers in laboratory decays, while no such decays have ever been detected. A particularly strong limit on R-parity violation comes from the proton lifetime, which is currently observed as $> 10^{32}$ years, 22 orders of magnitude larger than the age of the universe. 
+    where $B$, $L$, and $s$, are the particle's baryon, lepton, and spin quantum numbers respectively. $P_R = +1$ for baryonic matter and $P_R = -1$ for sparticles. Without R-parity, SUSY models could allow for the violation of baryon and lepton numbers in laboratory decays, while no such decays have ever been detected. \footnote{R-parity is sufficient, but not strictly necessary to accomplish this.} A particularly strong limit on R-parity violation comes from the proton lifetime, which is currently observed as $> 10^{32}$ years, 22 orders of magnitude larger than the age of the universe. 
 
-    Another consequence of exact R-parity conservation is that there must be an even number of sparticles at each interaction vertex. With baryonic initial states, like at the LHC, SUSY particles would need to be pair produced. Additionally, heavy sparticle decay products must include at least one lighter sparticle. Taking this to its logical conclusion, the lightest supersymmetric particle (LSP) will be absolutely stable, i.e. will not be able to decay into standard model particles even if they are lighter, and must eventually appear as part of the decay chain of any SUSY particle produced. This means that in models with R-parity conservation, the LSP could provide a ubiquitous dark matter candidate, provided it is electrically neutral. \cite[sec. 6.2]{susy_primer}
+    Another consequence of exact R-parity conservation is that there must be an even number of sparticles at each interaction vertex. With baryonic initial states, like at the LHC, SUSY particles would need to be pair produced. Additionally, heavy sparticle decay products must include at least one lighter sparticle. Taking this to its logical conclusion, the lightest supersymmetric particle (LSP) will be absolutely stable, i.e. will not be able to decay into standard model particles even if they are lighter, and must eventually appear as part of the decay chain when any SUSY particle is produced. This means that in models with R-parity conservation, the LSP could provide a ubiquitous dark matter candidate, provided it is electrically neutral. \cite[sec. 6.2]{SUSY_Primer}
 
-  \subsection{SUSY Breaking}
-    If supersymmetry were an exact symmetry, then sparticles should have the same mass as their standard model superpartner. For instance, a selectron should exist with a mass of 0.511 MeV, such a particle should have been produced in laboratory experiments long ago. Because no such sparticles have been observed, there must be a breaking of SUSY in the vacuum state of that we experience as our physical reality. Such a phenomena is known as spontaneous symmetry breaking, a short review can be found in \cite{symmetry_breaking}. Theoretical investigations show that in most scenarios for SUSY breaking, the sparticles are expected to have their own mass scale and not vary in mass over more than an order of magnitude. This is an important feature because the non-observation of sparticles implies they are heavier than baryonic matter. 
+  \subsection{SUSY Breaking} \label{sec:susy_breaking}
+    If supersymmetry were an exact symmetry, then sparticles should have the same mass as their standard model superpartner. For instance, a selectron should exist with a mass of 0.511 MeV, such a particle should have been produced in laboratory experiments long ago. Because no such sparticles have been observed, there must be a breaking of SUSY in the vacuum state that we experience as our physical reality. Such a phenomenon is known as spontaneous symmetry breaking, a short review can be found in \cite{symmetry_breaking}. Theoretical investigations show that in most scenarios for SUSY breaking, the sparticles are amenable to having their own mass scale, meaning they do not vary in mass over more than an order of magnitude. This is an important feature because the non-observation of sparticles implies they are heavier than baryonic matter. 
 
     Another important feature of SUSY breaking is the possibility of mixing of electroweak gaugino and higgsino states, as well as inter-squark mixing and inter-slepton mixing. This means that the mass eigenstates seen in nature do not need to correspond to the SUSY eigenstates. As an example, if SUSY exists in nature, a collider like the LHC need not produce exactly selectrons or smuons, but rather particles which are some linear combination of those states.
 
-    The scale of SUSY breaking is related to its attractiveness as an extension to the standard model. The hierarchy problem can be boiled down to a sensitivity of the low energy physics in the standard model to physics at arbitrarily high energy scales. Put very roughly, SUSY is the fix for this problem given that the superpartner masses are not large compared to the Planck mass.\cite[pg. 11]{susy_primer} Using this criteria, SUSY breaking models estimate that the mass scale of SUSY particles should not be much larger than a few TeV. This is sometimes called ``electroweak scale SUSY breaking," and it is main reason many scientists at CERN are looking at SUSY models to motivate searches for new particles.
+    The scale of SUSY breaking is related to its attractiveness as an extension to the standard model. The hierarchy problem can be boiled down to a ``disturbing sensitivity of the Higgs potential" to any physics larger energy scale that shows up in extensions to the standard model. SUSY is a fix for this problem, given that the superpartner masses are not large compared to the Planck mass.\cite[pg. 11]{SUSY_Primer} Using this criterion, SUSY breaking models estimate that the mass scale of SUSY particles should not be much larger than a few TeV. This is sometimes called ``electroweak scale SUSY breaking," and it is main reason many scientists at CERN are looking at SUSY models to motivate searches for new particles.
 
     Theoretical investigations of SUSY breaking show that it is not possible to accommodate SUSY breaking scenarios where all standard model particle masses are lighter than their superpartners without invoking a so-called ``hidden sector", a group of particles which do not interact strongly with the standard model particles or their superpartners with large couplings. One class of these models is called gauge mediated SUSY breaking (GMSB), a schematic of which is shown in figure \ref{fig:gmsb}. In GMSB, SUSY is broken in the hidden sector, which couples to another auxiliary messenger sector. The messenger sector then can be coupled to the MSSM by normal SU(3)$_C \times $ SU(2)$_L \times $ U(1)$_Y $ gauge and gaugino interactions.\cite{gmsb}
 
@@ -232,16 +239,21 @@
       \label{fig:gmsb}
     \end{figure}
 
-  \subsection{Simplified Models}
-    The MSSM itself adds over 100 free parameters to the standard model, not including those that come from the SUSY breaking scheme or gravitation. The large parameter space dimensionality of realistic SUSY models make them extremely difficult to compare with observation. In order to address this issue, a series simplified models of supersymmetry have been developed which attempt to target specific phenomenology of the MSSM. In these models, 
-
-  \subsection{Why SUSY?}
-    Above, we gave a very brief introduction to SUSY and touched on some features of SUSY theories that make it attractive to study. Below, we attempt to summarize the main motivations for distinguishing SUSY as an extension to the standard model.
+  \subsection{Why SUSY?} \label{sec:why_susy}
+    Below, we attempt to summarize the main motivations for distinguishing SUSY as an extension to the standard model:
 
     \begin{itemize}
-    \item Supersymmetry offers a solution to the hierarchy problem described in section \ref{sec:problems_with_sm} by automatically including exactly canceling counter-terms for the large quantum corrections to scalar particle masses, like the Higgs mass.
-    \item One of the issues with supersymmetry is that SUSY models typically predict proton decay. In order to stop proton decay, a new symmetry called R-parity is imposed, and most physical models of SUSY assume R-parity holds. In models with R-parity conservation, supersymmetry provides a natural dark matter candidate. The lightest supersymmetric particle (LSP) should not be able to decay to regular matter because of the new conservation law, and so an electrically neutral LSP could be the dark matter we see in astrophysical observations.
-    \item The minimal supersymmetric extension to the standard model, i.e. the addition of one superpartner for each SM particle, seems to be able to accommodate a GUT Lagrangian, as shown in figure \ref{fig:susy_gut}.
+    \item Supersymmetry offers a solution to the hierarchy problem described in section \ref{sec:problems_with_sm} by automatically including exactly canceling counter-terms for fermion loop corrections to the Higgs mass. In ``natural" models of SUSY breaking, the expected mass scale of SUSY partners is right around the TeV range, and so these particles are likely accessible to the LHC if they exist.
+    \item In models with R-parity conservation, supersymmetry provides a natural dark matter candidate. The lightest supersymmetric particle (LSP) should not be able to decay to regular matter because of the new conservation law, and so an electrically neutral LSP could be the dark matter we see in astrophysical observations.
+    \item The minimal supersymmetric extension to the standard model seems to accommodate a high-energy GUT Lagrangian. As shown in figure \ref{fig:susy_gut}, RG calculations show that the coupling constants related to the SM forces seem to unify near the GUT scale when analyzing the MSSM, while the coupling constants in the standard model do not intersect at a single point. This is seen as a sign that the MSSM could be the low energy theory associated with a GUT.
+      
+      \begin{figure}[h!]
+        \centering
+        \includegraphics[width=.7\textwidth]{figures/SUSY_GUT_couplings.pdf}
+        \caption[The strength of the strong and electroweak coupling constants as a function of energy scale.]{The strength of the strong[SU(3)] and electroweak [SU(2)xU(1)] coupling constants as a function of energy scale. On the left, the prediction derived from the standard model is shown, and on the right, the predictions from the MSSM. In a grand unified theory, all forces unify into a single force. Therefore, when extrapolating the strength of forces to higher energy scales using the RG equations, the strength of the couplings in a low energy effective theory underlying a high energy GUT are expected to meet at a single point, where all the forces unite have equal strength. In the standard model (i.e. assuming no new particles heavier than the top quark exist), there are 8 standard deviations separating a perfect fit, while the MSSM accommodates a unification point much more readily. This is interpreted as a sign that the MSSM might be the legitimate low energy approximation to the GUT of nature. Taken from \cite{SUSY_RG}}
+        \label{fig:susy_gut}
+      \end{figure}
+
     \item Though not mentioned specifically in the previous discussion, some of the interest in SUSY comes from mathematical considerations. Mathematically, supersymmetry is the only known caveat to the Coleman-Mandula theorem, which states that the symmetry group of non-trivial QFTs must be written as
       \[
       G_{\text{Poincaré}} \times G_{\text{internal}}.
@@ -249,15 +261,18 @@
       This result is known as the Haag–Łopuszański–Sohnius theorem. Broadly speaking, supersymmetry is the only known caveat to a quite strong restriction on the structure of QFTs.
     \end{itemize}
 
-    \begin{figure}[h!]
-      \centering
-      \includegraphics[width=.7\textwidth]{figures/SUSY_GUT_couplings.pdf}
-      \caption{The strength of the strong[SU(3)] and electroweak [SU(2)xU(1)] coupling constants. On the left, the prediction derived from the standard model is shown, and the right the predictions from the MSSM. In a grand unified theory, the lines are expected to meet at a single point where all the forces unite and therefore have equal strength. There are 8 standard deviations separating a perfect fit for the standard model (i.e. assuming no new particles heavier than the top quark exist), while the MSSM accommodates a unification point much more readily. This is interpreted as a sign that the MSSM might be the legitimate GUT of nature. Taken from \cite{SUSY_RG}}
-      \label{fig:susy_gut}
-    \end{figure}
+
+  \subsection{Simplified Models}
+    The MSSM itself adds over 100 free parameters to the standard model, not including those that come from the SUSY breaking scheme or gravitation. The large parameter space dimensionality of realistic SUSY models make them extremely difficult to compare with observation. In order to address this issue, a series of simplified models has been developed which attempt to target specific phenomenology that commonly appears in both SUSY and other BSM models. In these models, only a small number particles are added with a single interaction. In typical cases, only one or two of the sparticle masses and/or branching ratios are varied across the relevant parameter space. \cite{cms_sms} \cite{SMS} \cite{SmodelS}
+
+    The simplified models used in this thesis are shown in sec \ref{sec:susy_models}.
     
 \section{Why focus on the Z with \MET final state?}
-  As mentioned in the introduction, the ZMET final state is motivated partially by considerations about the detector and partially by simplified supersymmetric models. Leptons at the LHC are rarely produced compared to hadronic jets,\ref{sec:what_gets_made} and are typically measured with high energy resolution (\ref{sec:electron_measurement_pipeline}, \ref{sec:muon_measurement_pipeline}). This makes a leptonically decaying Z boson a great object to tag as the energy resolution of the Z will be good and the standard model backgrounds for opposite-charge same-flavor leptons with dilepton mass near the Z pole mass is extremely low. The main production method of Z bosons in proton-proton collisions is Drell-Yan production. To reduce this background, we require at least 2 jets are 
+  As mentioned in the introduction, the ZMET final state is motivated partially by considerations about the detector, and partially by simplified supersymmetric models. Leptons at the LHC are rarely produced compared to hadronic jets,\ref{sec:what_gets_made} and are typically measured with high energy resolution (\ref{sec:electron_measurement_pipeline}, \ref{sec:muon_measurement_pipeline}). This makes a leptonically decaying Z boson a great object to tag: the energy resolution is good and the standard model backgrounds for opposite-charge same-flavor leptons with dilepton mass near the Z pole mass are relatively small compared to the main production mode. 
+
+  The main production mode of Z bosons in proton-proton collisions is the Drell-Yan process. The requirement of at least 2 jets and momentum imbalance in the final state suppresses the DY contamination of the background strongly. In fact, with those two cuts, the cross section is close to that of \ttbar production. The background contribution to arbitrary kinematic distributions due to \ttbar production can be predicted using the flavor symmetry of the decay. These background will then have very tight systematic uncertainties. In short, this final state provides a fairly clean signal experimentally.
+
+  On the theoretical side, this is a very generic search; an excellent feature for a physics analysis. In addition to the SUSY motivation, \cite{hz_theory, GMSB_theory, neutralino_theory} encoded in the simplified models in sec \ref{sec:susy_models}, all standard model fermions have some coupling to the Z boson. In broad strokes, we can expect the production of any heavy resonance to have some chance to emit a Z boson, and likely have a long decay chain with many jets. If the Z decays leptonically, our final states should be sensitive to any such model.
 
   \subsection{Past results}
   An analysis in this final state has been published several times from the CMS collaboration, with the latest iteration in 2016.\cite{paper_2012, paper_2015, paper_2016} The differences between the previous version and the analysis presented in this thesis are summarized below:
